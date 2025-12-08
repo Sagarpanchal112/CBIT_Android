@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".7"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_10"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:src="@drawable/app_logo"
+            android:layout_marginStart="@dimen/margin_30"
+            android:layout_marginEnd="@dimen/margin_30"/>
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_30"
+            android:layout_marginEnd="@dimen/margin_30"
+            android:hint="@string/email"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:padding="@dimen/padding_10"
+            android:textSize="@dimen/fontsize_16"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:background="@drawable/selector_edittext"
+            tools:text="jitu@gmail.com"/>
+
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_30"
+            android:layout_marginEnd="@dimen/margin_30"
+            android:hint="@string/password"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:padding="@dimen/padding_10"
+            android:textSize="@dimen/fontsize_16"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            android:background="@drawable/selector_edittext"
+            tools:text="123456789"/>
+
+        <TextView
+            android:id="@+id/tvForgotPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forgotpassword1"
+            android:textColor="@color/white"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/margin_30"
+            android:padding="@dimen/margin_5"
+            android:background="?attr/selectableItemBackground"/>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_30"
+            android:layout_marginEnd="@dimen/margin_30"
+            android:background="@drawable/btn_login"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontsize_16"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/white"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/margin_10"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/or"
+            android:textSize="@dimen/fontsize_14"
+            android:textColor="@color/white"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/white"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/margin_10"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".3"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_10"
+        android:gravity="center_horizontal">
+        <Button
+            android:id="@+id/btnFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_30"
+            android:layout_marginEnd="@dimen/margin_30"
+            android:background="@drawable/btn_fblogin"
+            android:text="@string/loginwithfacebook"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontsize_16"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"/>
+
+        <TextView
+            android:id="@+id/tvHowtoPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/howtoplay"
+            android:layout_marginTop="@dimen/margin_5"
+            android:textColor="@color/color_bdbdbd"
+            android:textSize="@dimen/fontsize_12"
+            android:padding="@dimen/padding_10"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"/>
+    </LinearLayout>-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".30"
+        android:background="@color/color_green_dark">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_60"
+            android:layout_marginEnd="@dimen/margin_60"
+            android:contentDescription="@null"
+            android:src="@drawable/new_logo" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".70"
+        android:background="@drawable/my_gradient_drawable"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@color/color_yellow"
+            android:scaleType="fitXY" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_weight=".9"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:padding="@dimen/margin_5"
+                android:text="@string/welcometocbit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fontsize_18" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/enterlogindetail"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fontsize_16" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="@dimen/height_70"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:background="@null"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:padding="@dimen/padding_10"
+                        android:text="+91"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fontsize_18" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_8f7422" />
+
+                    <EditText
+                        android:id="@+id/edtMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:background="@null"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="@string/mobile"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:padding="@dimen/padding_10"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="@dimen/fontsize_18" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edtEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:background="@null"
+                        android:hint="@string/email"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:padding="@dimen/padding_10"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="@dimen/fontsize_18"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/edtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:background="@null"
+                        android:hint="@string/password"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:padding="@dimen/padding_10"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="@dimen/fontsize_18"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/tvForgotPass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/margin_5"
+                android:text="@string/forgotpassword1"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/fontsize_16"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/btn_login_new"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/montserrat_semibold"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="@string/login"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fontsize_20" />
+
+            <LinearLayout
+                android:id="@+id/linearRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:visibility="gone"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/donthaveanaccount"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_5"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/register"
+                    android:textColor="@color/color_yellow"
+                    android:textSize="@dimen/fontsize_16" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearloginwithmob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Login With Email?"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fontsize_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_5"
+                    android:text="@string/ClickHere"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/fontsize_16" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_weight="1"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/orloginvia"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fontsize_16" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_weight="1"
+                android:background="@color/white" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_weight=".3"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_10">
+
+            <ImageView
+                android:id="@+id/ivFacebook"
+                android:layout_width="@dimen/height_70"
+                android:layout_height="@dimen/height_70"
+                android:contentDescription="@null"
+                android:src="@drawable/facebook_btn"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvHowtoPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="gone"
+                android:fontFamily="@font/montserrat_semibold"
+                android:padding="@dimen/padding_10"
+                android:text="@string/howtoplay"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fontsize_16" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

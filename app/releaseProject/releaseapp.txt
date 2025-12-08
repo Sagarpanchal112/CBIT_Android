@@ -1,0 +1,3 @@
+Alias : Android
+Key Store Pass : 123456
+Key Pass : 123456

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "700352153297",
+    "firebase_url": "https://cbit-a7a2a.firebaseio.com",
+    "project_id": "cbit-a7a2a",
+    "storage_bucket": "cbit-a7a2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700352153297:android:ea5d70c3b47f19a7f5a7f0",
+        "android_client_info": {
+          "package_name": "com.tfb.cbit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "700352153297-2c7gu743dotfda77efv9kogg5rlb3m1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJbnS8sI4rRGlzLKW9zLCCw2XGfOaiW0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "700352153297-2c7gu743dotfda77efv9kogg5rlb3m1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,43 @@
+apply plugin: 'com.android.library'
+
+android {
+    signingConfigs {
+        signingConfigs {
+            storeFile file('/Users/mymac/Documents/GitProjects/CBit-Android/Cbit/cbit.jks')
+            storePassword '123456'
+            keyAlias = 'android'
+            keyPassword '123456'
+        }
+    }
+    namespace "com.malinskiy.superrecyclerview"
+    compileSdkVersion 30
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        signingConfig signingConfigs.signingConfigs
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation "com.nineoldandroids:library:2.4.0"
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+}
+
+if (JavaVersion.current().isJava8Compatible()) {
+    tasks.withType(Javadoc) {
+        // disable the crazy super-strict doclint tool in Java 8
+        //noinspection SpellCheckingInspection
+        options.addStringOption('Xdoclint:none', '-quiet')
+    }
+}
+
+//apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'

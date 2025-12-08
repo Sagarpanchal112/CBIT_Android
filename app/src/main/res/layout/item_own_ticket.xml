@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:gravity="center_vertical"
+
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tv_ticket_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:maxLines="1"
+            android:text="1"
+            android:fontFamily="@font/montserrat_medium"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <TextView
+            android:id="@+id/tv_jticket_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:maxLines="1"
+            android:fontFamily="@font/montserrat_medium"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:layout_toRightOf="@+id/tv_ticket_no"
+            android:layout_centerVertical="true"
+            android:text="111"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <TextView
+            android:id="@+id/tv_cashback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:fontFamily="@font/montserrat_medium"
+            android:maxLines="1"
+            android:layout_centerVertical="true"
+            android:text="300"
+            android:layout_toLeftOf="@+id/chkSelect"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <CheckBox
+            android:id="@+id/chkSelect"
+            android:layout_width="@dimen/height_40"
+            android:layout_height="@dimen/height_40"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/montserrat_medium"
+            android:button="@drawable/select_checkbox_drawable"
+            android:padding="@dimen/margin_5"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/fontsize_14" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

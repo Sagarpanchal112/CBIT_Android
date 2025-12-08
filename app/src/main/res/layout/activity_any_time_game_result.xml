@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.GameResultActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_yellow"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/padding_10"
+                android:src="@drawable/ic_arrow" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/ivBack"
+                android:fontFamily="@font/montserrat_semibold"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Contest Name"
+                android:textColor="@color/color_424242"
+                android:textSize="20sp"
+                tools:ignore="MissingPrefix" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:lines="1"
+                android:maxLines="1"
+                android:visibility="gone"
+                android:singleLine="true"
+                android:text="ATG"
+                android:textColor="@color/color_424242"
+                android:textSize="20sp"
+                tools:ignore="MissingPrefix" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <ProgressBar
+            android:id="@+id/pbProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/linearContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBricks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_5" />
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:gravity="center"
+                android:padding="@dimen/margin_5"
+                android:text=""
+                android:textColor="@color/black"
+                android:visibility="visible"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:gravity="center"
+                android:padding="@dimen/margin_5"
+                android:text="Results are notified when pending players place their answer."
+                android:textColor="@color/color_red"
+                android:visibility="visible"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/tvTBlue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5"
+                    android:text=""
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5"
+                    android:text="You gave correct answer in 1.578 secs"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvTRed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    tools:text="Red Total : 00" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:padding="@dimen/margin_5"
+                android:visibility="gone"
+                android:text="You gave correct answer in 1.578 secs"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/tvWinnings"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_marginStart="@dimen/margin_30"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/margin_30"
+                android:background="@drawable/bg_green_rounded"
+                android:fontFamily="@font/montserrat_semibold"
+                android:visibility="gone"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                tools:ignore="MissingPrefix"
+                tools:text="You win : \u20b9 1000" />
+
+            <TextView
+                android:id="@+id/tvCCWinnings"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_marginStart="@dimen/margin_30"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/margin_30"
+                android:background="@drawable/bg_red_rounded"
+                android:fontFamily="@font/montserrat_semibold"
+                android:visibility="gone"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                tools:ignore="MissingPrefix"
+                tools:text="Total CC Won : CC 1000" />
+
+            <TextView
+                android:id="@+id/tvnowin"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_marginStart="@dimen/margin_30"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="gone"
+                android:layout_marginEnd="@dimen/margin_30"
+                android:background="@drawable/bg_darkblue_rounded"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                tools:ignore="MissingPrefix"
+                tools:text="No win : \u20b9 0000" />
+
+            <TextView
+                android:id="@+id/tv_text_blink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:gravity="center"
+                android:padding="@dimen/margin_5"
+                android:text="The results will be declared after pending players place their answers"
+                android:textColor="@color/color_red"
+                android:visibility="visible"
+                android:textSize="16sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTickets"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_5" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+</RelativeLayout>

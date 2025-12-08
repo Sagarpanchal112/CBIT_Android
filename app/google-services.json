@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "102802232655",
+    "firebase_url": "https://cbit-8351d.firebaseio.com",
+    "project_id": "cbit-8351d",
+    "storage_bucket": "cbit-8351d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102802232655:android:9af6a2ab496c5567aca13a",
+        "android_client_info": {
+          "package_name": "com.tfb.cbit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102802232655-gdl7plvf5qclun656ietdbdufm05i8nm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN819Qy27Cs9Mzvpxc-3KcEU_tdUAK8KE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102802232655-gdl7plvf5qclun656ietdbdufm05i8nm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "102802232655-gct933e63vt9mu3kccmn9lte8mmqgu06.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cbit.org",
+                "app_store_id": "1565769563"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

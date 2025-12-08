@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.CreateGroupActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_yellow"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_arrow" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/ivBack"
+                android:fontFamily="@font/montserrat_semibold"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/createGroup"
+                android:textColor="@color/color_424242"
+                android:textSize="20sp"
+                tools:ignore="MissingPrefix" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingTop="@dimen/padding_10"
+        android:paddingEnd="@dimen/padding_20"
+        android:paddingBottom="@dimen/padding_10">
+
+        <EditText
+            android:id="@+id/edtGrouptName"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="@dimen/margin_10"
+            android:fontFamily="@font/montserrat_medium"
+            android:hint="Enter group name"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:padding="@dimen/padding_10"
+            android:textColor="@color/color_424242"
+            android:textColorHint="@color/color_424242"
+            android:textSize="@dimen/fontsize_18" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/edtContestName"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:background="@drawable/btn_login_new"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/montserrat_semibold"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="Create Group"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

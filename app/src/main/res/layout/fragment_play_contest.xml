@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/yellow_gradiant"
+    tools:context=".fragments.PlayContestFragment">
+
+    <com.malinskiy.superrecyclerview.SuperRecyclerView
+        android:id="@+id/rvPlayGameList"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_170sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_empty="@layout/layout_no_contest_found"
+        app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
+        app:recyclerPaddingBottom="@dimen/padding_10"
+        app:scrollbarStyle="insideInset"
+
+        />
+
+    <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+        android:id="@+id/indicatorSpecialContest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rvPlayGameList"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:spi_dotSelectedColor="@color/colorPrimary" />
+
+
+    <Button
+        android:id="@+id/mSetAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="setAlarm"
+        android:visibility="gone" />
+
+</RelativeLayout>

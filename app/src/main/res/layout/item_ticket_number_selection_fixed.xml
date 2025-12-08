@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_a0a0a0_stock_1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_gane_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:maxLines="1"
+                        android:text="Game No :  1(₹5)"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="Contest Fee"
+                        android:textColor="@color/color_424242"
+                        android:textSize="@dimen/_9sdp" />
+
+                    <TextView
+                        android:id="@+id/tvEntryFees"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp"
+                        tools:text="₹ 1000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="Players"
+                            android:textColor="@color/color_424242"
+                            android:textSize="@dimen/_9sdp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvTotalTicket"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp"
+                        tools:text="500" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="Winnings"
+                            android:textColor="@color/color_424242"
+                            android:textSize="@dimen/_9sdp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvTotalWinnings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp"
+                        tools:text="₹ 2000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="Max winners"
+                            android:textColor="@color/color_424242"
+                            android:textSize="@dimen/_9sdp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvMaxWinners"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp"
+                        tools:text="3000" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="J Ticket Winning"
+                        android:textColor="@color/color_424242"
+                        android:textSize="@dimen/_9sdp" />
+
+                    <TextView
+                        android:id="@+id/tvjtcktwin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp"
+                        tools:text="₹ 000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="J Ticket Holders"
+                        android:textColor="@color/color_424242"
+                        android:textSize="@dimen/_9sdp" />
+
+                    <TextView
+                        android:id="@+id/tvjtcktholder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp"
+                        tools:text="00" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvOprions"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/bg_rounded_colorprimary_ticket"
+                            android:padding="@dimen/_5sdp"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:id="@+id/linear3Options"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/bg_rounded_colorprimary_ticket"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/padding_10"
+                            android:paddingEnd="@dimen/padding_10">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone">
+
+
+                                <ImageView
+                                    android:id="@+id/iv_vadapav"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_120sdp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/open"
+                                    android:visibility="gone" />
+
+                                <ImageView
+                                    android:id="@+id/iv_image"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_120sdp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/close_chit" />
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tvMinus"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_yellow_radius"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/padding_10"
+                                android:paddingTop="@dimen/margin_5"
+                                android:paddingEnd="@dimen/padding_10"
+                                android:paddingBottom="@dimen/margin_5"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/_12sdp"
+                                tools:text="-" />
+
+                            <TextView
+                                android:id="@+id/tvZero"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin_5"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_yellow_radius"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/padding_10"
+                                android:paddingTop="@dimen/margin_5"
+                                android:paddingEnd="@dimen/padding_10"
+                                android:paddingBottom="@dimen/margin_5"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/_12sdp"
+                                tools:text="0" />
+
+                            <TextView
+                                android:id="@+id/tvPlus"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin_5"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_yellow_radius"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/padding_10"
+                                android:paddingTop="@dimen/margin_5"
+                                android:paddingEnd="@dimen/padding_10"
+                                android:paddingBottom="@dimen/margin_5"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/_12sdp"
+                                tools:text="+" />
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_colorprimary_ticket"
+                    android:text="Play\nNow"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <CheckBox
+                    android:id="@+id/chkSelect"
+                    android:layout_width="@dimen/height_40"
+                    android:layout_height="@dimen/height_40"
+                    android:layout_gravity="center"
+                    android:button="@drawable/select_checkbox_drawable"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:padding="@dimen/margin_5"
+                    android:text=""
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/fontsize_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_played"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="100 Played/400 Pending"
+                        android:textColor="@color/color_red"
+                        android:textSize="@dimen/_9sdp"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:maxLines="1"
+                        android:text="Lock Style :"
+                        android:textColor="@color/color_424242"
+                        android:textSize="@dimen/_9sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_lock_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:maxLines="1"
+                        android:text=" Basic"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frmSelected"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_50"
+        android:visibility="gone" />
+</FrameLayout>

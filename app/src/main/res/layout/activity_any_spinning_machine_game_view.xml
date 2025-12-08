@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SpinningMmachineGameViewActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_green_dark"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:tint="@color/white"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/padding_10"
+                android:src="@drawable/ic_arrow" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/ivBack"
+                android:fontFamily="@font/montserrat_semibold"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Spinning Machine"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:ignore="MissingPrefix" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/padding_10"
+                android:src="@drawable/ic_info_1"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="ATG"
+                android:textColor="@color/color_424242"
+                android:textSize="20sp"
+                tools:ignore="MissingPrefix" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ProgressBar
+        android:id="@+id/pbProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/linearContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/tvText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:background="@drawable/bg_rounded_colorprimary"
+                    android:gravity="center"
+                    android:minWidth="@dimen/height_120"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize_30" />
+
+
+                <TextView
+                    android:id="@+id/tvRemainingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:background="@drawable/bg_rounded_colorprimary"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:minWidth="@dimen/height_120"
+                    android:paddingStart="@dimen/padding_10"
+                    android:paddingEnd="@dimen/padding_10"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:text="Game Starts In 00:00:00" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_pause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_toRightOf="@+id/tvRemainingText"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/chk_pause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:button="@drawable/checkbox_green_selector"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/tv_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Pause"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_10sdp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBricks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_5"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/ic_chiku" />
+
+
+            <ImageView
+                android:id="@+id/imgI"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/india_flag" />
+
+            <ImageView
+                android:id="@+id/imgII"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/ic_chiku" />
+
+            <ImageView
+                android:id="@+id/imgIII"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/india_flag" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/india_flag" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/india_flag" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/india_flag" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/india_flag" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/ic_chiku" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/india_flag" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/india_flag" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/india_flag" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/ic_chiku" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/india_flag" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/india_flag" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linBrickes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/slot_bg"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp"
+            android:weightSum="5">
+
+            <ViewFlipper
+                android:id="@+id/view_flipper_1"
+                style="@style/slotViewFliper">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_I"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_II"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_III"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+            </ViewFlipper>
+
+            <ViewFlipper
+                android:id="@+id/view_flipper_2"
+                style="@style/slotViewFliper">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_IV"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_V"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_VI"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+            </ViewFlipper>
+
+            <ViewFlipper
+                android:id="@+id/view_flipper_3"
+                style="@style/slotViewFliper">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_VII"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_VIII"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_IX"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+            </ViewFlipper>
+
+            <ViewFlipper
+                android:id="@+id/view_flipper_4"
+                style="@style/slotViewFliper">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_X"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_XI"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_XII"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+            </ViewFlipper>
+
+            <ViewFlipper
+                android:id="@+id/view_flipper_5"
+                style="@style/slotViewFliper">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_XIII"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_XIV"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_XV"
+                    style="@style/slotRecyclerView"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+            </ViewFlipper>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/gameNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_14sdp" />
+
+        <LinearLayout
+            android:id="@+id/lin_rdb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/Oprions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/color_bg"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvOprions"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="1"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_options_spinig" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/yourselection"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/_11sdp" />
+
+                <TextView
+                    android:id="@+id/tvAnsSelection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@drawable/bg_yellow_radius"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="EMPTY"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+                <ImageView
+                    android:id="@+id/imgAnsSelection"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:gravity="center"
+                    android:scaleType="fitXY"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/linearSelection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tv_LockNow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@drawable/bg_colorprimary"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="LOCK ALL"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/tvLockTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_8sdp"
+                    android:visibility="gone"
+                    tools:text="Locked at: 12:29:55s"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/img_lock"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/padlock"
+                    android:visibility="gone"
+
+
+                    tools:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTickets"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="5"
+            tools:listitem="@layout/list_spinning_tickets" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

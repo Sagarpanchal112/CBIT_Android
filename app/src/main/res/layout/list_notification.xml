@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvNotificationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        tools:text="Alan Caldwell invited you to play"
+        android:textColor="@color/color_424242"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="@dimen/_15sdp"
+        android:padding="@dimen/margin_5"
+        android:layout_marginStart="@dimen/margin_10"/>
+
+    <TextView
+        android:id="@+id/tvNotificationTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="24-04-2019"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="@dimen/_13sdp"
+        android:padding="@dimen/margin_5"
+        android:layout_marginStart="@dimen/margin_10"
+        tools:ignore="MissingPrefix"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_a0a0a0"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginEnd="@dimen/margin_10"/>
+
+
+</LinearLayout>

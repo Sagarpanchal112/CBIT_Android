@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.CreateContestActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_yellow"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_arrow" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+               android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/ivBack"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Private Group"
+                android:textColor="@color/color_424242"
+                android:textSize="20sp"
+                tools:ignore="MissingPrefix" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/padding_20"
+            android:paddingTop="@dimen/padding_10"
+            android:paddingEnd="@dimen/padding_20"
+            android:paddingBottom="@dimen/padding_10">
+
+
+            <LinearLayout
+                android:id="@+id/linearChooseGame"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@drawable/edittext_line"
+                android:padding="@dimen/padding_10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Choose game"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_18" />
+
+                <Spinner
+                    android:id="@+id/spinnerChooseGame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:entries="@array/coose_game"
+                    android:spinnerMode="dialog" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/arrow" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="Level"
+                android:textColor="@color/color_a0a0a0"
+                android:textSize="@dimen/fontsize_18" />
+
+            <RadioGroup
+                android:id="@+id/rgGameMode"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbEasy"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:text="@string/easy"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_18"
+                    app:buttonTint="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".4"
+                    android:text="@string/moderate"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_18"
+                    app:buttonTint="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbPro"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:text="@string/pro"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_18"
+                    app:buttonTint="@color/colorPrimary" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:visibility="gone"
+                android:background="@color/black"/>
+
+            <LinearLayout
+                android:id="@+id/linearAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@drawable/edittext_line"
+                android:padding="@dimen/padding_10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Number of options"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_18" />
+
+                <Spinner
+                    android:id="@+id/spinnerAnswer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:spinnerMode="dialog" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/arrow" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Number of characters"
+                android:textColor="@color/color_a0a0a0"
+                android:textSize="@dimen/fontsize_18" />
+
+            <RadioGroup
+                android:id="@+id/rgType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:text="1"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_18"
+                    app:buttonTint="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:text="2"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_18"
+                    app:buttonTint="@color/colorPrimary" />
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:text="3"
+                    android:layout_marginLeft="@dimen/_15sdp"
+
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_18"
+                    app:buttonTint="@color/colorPrimary" />
+
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:id="@+id/linearNoTickets"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@drawable/edittext_line"
+                android:padding="@dimen/padding_10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Number of items"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_18" />
+
+                <Spinner
+                    android:id="@+id/spinnerNoTickets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:entries="@array/notickets"
+                    android:spinnerMode="dialog" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearMaxWinners"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@drawable/edittext_line"
+                android:padding="@dimen/padding_10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Number of options"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_18" />
+
+                <Spinner
+                    android:id="@+id/spinnerMaxWinners"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:entries="@array/no_of_option"
+                    android:spinnerMode="dialog" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/arrow" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/chkNotify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:button="@drawable/select_checkbox_drawable"
+                android:padding="@dimen/padding_10"
+                android:visibility="gone"
+                android:text="@string/notifyme2min"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/fontsize_16" />
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:background="@drawable/btn_login_new"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="@string/next"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

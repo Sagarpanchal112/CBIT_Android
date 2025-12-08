@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.TicketSelectionActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_yellow"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/padding_10"
+                android:src="@drawable/ic_arrow" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/ivBack"
+                android:fontFamily="@font/montserrat_semibold"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/_13sdp"
+                tools:ignore="MissingPrefix"
+                tools:text="Royal Casino" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="ATG"
+                android:textColor="@color/color_424242"
+                android:textSize="20sp"
+                tools:ignore="MissingPrefix" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_RemainingText"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/listPreferredItemHeightSmall"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_10"
+            android:gravity="center"
+            android:minWidth="@dimen/height_120"
+            android:paddingStart="@dimen/padding_10"
+            android:paddingEnd="@dimen/padding_10"
+            android:text="Any Time Game : Spinning Machine"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+
+        <com.tfb.cbit.views.PagerSlidingTabStrip
+            android:id="@+id/pager_header"
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:layout_below="@+id/header"
+            android:elevation="@dimen/_10sdp"
+            android:focusable="false"
+            android:visibility="gone"
+            app:pstsIndicatorColor="@color/start_color"
+            app:pstsIndicatorHeight="4dp"
+            app:pstsTabPaddingLeftRight="14dip"
+            app:pstsUnderlineHeight="1dp" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></androidx.viewpager.widget.ViewPager>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/img_previous"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:rotation="180"
+            android:src="@drawable/right_arrow" />
+
+        <TextView
+            android:id="@+id/tv_game_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_next"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@drawable/right_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:text="899 Tikcets sold!"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/fontsize_16"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".fragments.HistoryFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/dashboardTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        app:tabIndicatorColor="@color/color_login_btn"
+        app:tabIndicatorHeight="2dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextAppearance="@style/TabTextAppearance"
+        app:tabTextColor="@color/text_hint" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/dashboardViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_10" />
+
+    <com.malinskiy.superrecyclerview.SuperRecyclerView
+        android:id="@+id/rvHistoryList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_empty="@layout/layout_no_data_history"
+        app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
+        app:recyclerClipToPadding="false"
+        app:recyclerPaddingBottom="@dimen/padding_10"
+        app:scrollbarStyle="insideInset" />
+</LinearLayout>

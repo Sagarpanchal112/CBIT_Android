@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/app_bar_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/sideMenu"
+                    layout="@layout/nav_header_home" />
+
+                <TextView
+                    android:id="@+id/tvNewUpdate"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="New Update"
+                    android:visibility="gone"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvDashboard"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/dashboard"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvJTckt"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:drawableEnd="@drawable/ic_white_right_arrow"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:paddingEnd="@dimen/margin_10"
+                    android:text="Apply for cashback"
+                    tools:ignore="MissingPrefix" />
+
+                <LinearLayout
+                    android:id="@+id/linearJSubMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvRedeemJtckt"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/Redeemjtckt" />
+
+                    <TextView
+                        android:id="@+id/tvMyJtckt"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/Myjtckt" />
+
+                    <TextView
+                        android:id="@+id/tvJWaitingRoom"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/WaitingRoom" />
+
+                    <TextView
+                        android:id="@+id/tvJAutomation"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="Auto Pilot Mode" />
+
+                    <TextView
+                        android:id="@+id/tvJTC"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/t_c" />
+                    <!--   <TextView
+                           android:id="@+id/tvJoinByCode"
+                           android:layout_width="match_parent"
+                           android:layout_height="?attr/listPreferredItemHeightSmall"
+                           android:text="@string/joinbycode"
+                           style="@style/SubMenuTextStyle"/>-->
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvOrganize"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:drawableEnd="@drawable/ic_white_right_arrow"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:paddingEnd="@dimen/margin_10"
+                    android:text="@string/privatemode"
+                    android:visibility="gone"
+                    tools:ignore="MissingPrefix"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/linearSubMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvCreateGroup"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/createGroup" />
+
+                    <TextView
+                        android:id="@+id/tvHostContest"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/hostacontest"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvJoinGroup"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="Join Group" />
+
+                    <TextView
+                        android:id="@+id/tvMyGroup"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="My Group" />
+
+                    <TextView
+                        android:id="@+id/tvJoinByCode"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/joinbycode"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvJIds"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:paddingEnd="@dimen/margin_10"
+                    android:text="Referral Network"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvEasyJoin"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:paddingEnd="@dimen/margin_10"
+                    android:text="Easy Join"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvAutoRenew"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:paddingEnd="@dimen/margin_10"
+                    android:text="Auto join live game"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvPackages"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:paddingEnd="@dimen/margin_10"
+                    android:text="@string/packages"
+                    android:visibility="gone"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvHoroscope"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:paddingEnd="@dimen/margin_10"
+                    android:text="@string/horoscope"
+                    android:visibility="gone"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvSpinnigGame"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:paddingEnd="@dimen/margin_10"
+                    android:text="@string/spinning"
+                    android:visibility="gone"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvMyContestPkg"
+                    style="@style/SubMenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:text="@string/mycontestandpkg"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvWallet"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/wallet"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvNotification"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/notification"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvHistory"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/history"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvShareApp"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/shareapp"
+                    android:visibility="gone"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvSettings"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/settings"
+                    tools:ignore="MissingPrefix" />
+                <TextView
+                    android:id="@+id/tvPermission"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Permission"
+                    android:visibility="gone"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvHowToPlay"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/howtoplay1"
+                    android:visibility="visible"
+                    tools:ignore="MissingPrefix" />
+                <TextView
+                    android:id="@+id/tvReport"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Report"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvFaq"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/faqs"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvHelpCenter"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Help Center"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvAboutUs"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:drawableEnd="@drawable/ic_white_right_arrow"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:paddingEnd="@dimen/margin_10"
+                    android:text="@string/aboutus"
+                    tools:ignore="MissingPrefix" />
+
+                <LinearLayout
+                    android:id="@+id/linearAboutSubMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvAboutUsSub"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/aboutus" />
+
+                    <TextView
+                        android:id="@+id/tvTermsCond"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/termscond" />
+
+                    <TextView
+                        android:id="@+id/tvPrivacyPolicy"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/privacypolicy" />
+
+                    <TextView
+                        android:id="@+id/tvlegality"
+                        style="@style/SubMenuTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/listPreferredItemHeightSmall"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/legality" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvChangePass"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/changepass"
+                    android:visibility="gone"
+                    tools:ignore="MissingPrefix" />
+
+
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:background="@drawable/btn_logout"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:text="@string/logout"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_login_btn"
+                    android:textSize="18sp"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvVersion"
+                    style="@style/MenuTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="Version"
+                    tools:ignore="MissingPrefix" />
+
+            </LinearLayout>
+        </ScrollView>
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

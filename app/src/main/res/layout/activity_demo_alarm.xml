@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DemoAlarmActivity"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_20">
+    <EditText
+        android:id="@+id/edtDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Date"
+        android:padding="@dimen/padding_10"
+        android:textSize="@dimen/fontsize_16"
+        android:inputType="text"
+        android:clickable="true"
+        android:focusable="false"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/edtTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Time"
+        android:padding="@dimen/padding_10"
+        android:textSize="@dimen/fontsize_16"
+        android:inputType="text"
+        android:clickable="true"
+        android:focusable="false"
+        android:layout_marginTop="@dimen/padding_10"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnStartAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/fontsize_16"
+        android:text="Start Alarm"
+        android:layout_marginTop="@dimen/margin_10"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Timer"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/btnTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Start Timer"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_gravity="center"/>
+</LinearLayout>

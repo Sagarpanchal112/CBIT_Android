@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ViewFlipper
+        android:id="@+id/myEasyFlipView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlFront"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_dcdcdc"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <RelativeLayout
+                android:id="@+id/rlMian"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/myjticket"
+                android:orientation="vertical"
+                android:padding="@dimen/_3sdp">
+
+                <ImageView
+                    android:id="@+id/ivJTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                     android:scaleType="fitXY"
+                    android:layout_toStartOf="@+id/tv_JtcktNo"
+                    android:layout_toEndOf="@+id/tv_date"
+                    android:contentDescription="@null"
+                    tools:src="@drawable/casas" />
+
+
+                <TextView
+                    android:id="@+id/tv_ccprice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="Redeemed @ CC 00"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="@dimen/_minus21sdp"
+                    android:gravity="center"
+                    android:minWidth="@dimen/_50sdp"
+                    android:rotation="-90"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/tv_JTicketName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="@dimen/_35sdp"
+                    android:text="J 5"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_30sdp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_JtcktNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="@dimen/_minus28sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:rotation="-90"
+                    android:text="J0000000000"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_applied"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlMian"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/btnEO"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_weight="1"
+                    android:background="#1a505d"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Exchange\nOffers:7"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8sdp"
+                    tools:ignore="MissingPrefix" />
+
+                <Button
+                    android:id="@+id/tv_current_waiting"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_weight="1"
+                    android:background="#f2b502"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="Current Waiting\n No:27"
+                    android:textColor="@color/color_green_dark"
+                    android:textSize="@dimen/_8sdp"
+                    tools:ignore="MissingPrefix" />
+
+                <Button
+                    android:id="@+id/tvCashback"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_weight="1"
+                    android:background="#26b34b"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/cashback"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8sdp"
+                    tools:ignore="MissingPrefix" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlMian"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnApplyNow"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/btn_colorprimary_radius_left_side"
+                    android:clickable="true"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:focusable="true"
+                    android:text="Apply Now"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sdp"
+                    tools:ignore="MissingPrefix" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imgHit"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_80sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:src="@drawable/ic_hit" />
+
+            <TextView
+                android:id="@+id/tv_date_hit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_145sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="center"
+                android:rotation="335"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="10/12/2020"
+                android:textColor="#9E0804"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_dcdcdc"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_15sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/myjticket"
+                android:orientation="vertical"
+
+                android:padding="@dimen/_3sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_minus5sdp"
+                    android:layout_marginEnd="@dimen/_minus15sdp"
+                    android:layout_toStartOf="@+id/tv_flip_jTicket"
+                    android:layout_toEndOf="@+id/tv_fillp_date"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingRight="@dimen/_20sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Redeemed on-"
+                        android:textColor="@color/color_808080"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_flip_redeem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="17-11-2020"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Applied on-"
+                        android:textColor="@color/color_808080"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_flip_applied"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:text="17-11-2020"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Received Cashback on-"
+                        android:textColor="@color/color_808080"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_flip_hit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_fillp_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_marginStart="@dimen/_minus16sdp"
+                    android:gravity="center"
+                    android:minWidth="@dimen/_50sdp"
+                    android:rotation="-90"
+                    android:text="J Ticket"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <TextView
+                    android:id="@+id/tv_flip_jTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="@dimen/_minus28sdp"
+                    android:gravity="center"
+                    android:rotation="-90"
+                    android:text="J0000000000"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ViewFlipper>
+</RelativeLayout>

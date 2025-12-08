@@ -1,0 +1,453 @@
+<resources>
+    <string name="app_name">Cbit Original</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="signup">Sign UP</string>
+    <string name="download_completed">New Version Download Completed</string>
+    <string name="downloading_new_version">Downloading New Version</string>
+    <string name="installing_new_version">Installing New Version</string>
+
+    <string name="findNewVersion_title">Find New Version</string>
+    <string name="updateLog">%1$sv%2$s update log: </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="Montserrat_Regular">fonts/Montserrat-Regular.otf</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="hostgame"><u>Host a Game</u></string>
+    <string name="kyc"><u>Click here to complete KYC to receive referral commission</u></string>
+    <string name="or">OR</string>
+    <string name="loginwithfacebook">Login With Facebook</string>
+    <string name="howtoplay"><b><u>How to play?</u></b></string>
+    <string name="fullname">Full Name</string>
+    <string name="mobile">Mobile No.</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="dashboard">Home</string>
+    <string name="organize">Organize</string>
+    <string name="wallet">Wallet</string>
+    <string name="auto_renew">Auto Renew</string>
+    <string name="notification">Notification</string>
+    <string name="history">History</string>
+    <string name="joinbycode">Join By Code</string>
+    <string name="ligality">Ligality</string>
+    <string name="howtoplay1">How To Play</string>
+    <string name="aboutus">About Us</string>
+    <string name="tc">Terms &amp; Conditions</string>
+    <string name="entryfees">Entry Fees:</string>
+    <string name="totaltickets">Total Tickets:</string>
+    <string name="totalwinnings">Total Winnings:</string>
+    <string name="changepass">Change Password</string>
+    <string name="logout">Logout</string>
+    <string name="buy">Buy</string>
+    <string name="bracketsize">Bracket Size:</string>
+    <string name="invitedfriends">Invited Friends:</string>
+    <string name="comission">Comission:</string>
+    <string name="noofcontest">No. of Contest:</string>
+    <string name="sortby">Sort By:</string>
+    <string name="lowtohigh">Price: Low to High</string>
+    <string name="hightolow">Price: High to Low</string>
+    <string name="mintomax">Contest: Min to Max</string>
+    <string name="maxtomin">Contest: Max to Min</string>
+    <string name="latetoearly">Time: Late to Early</string>
+    <string name="forgotpassword">Forgot Password</string>
+    <string name="forgotemail">Enter your register email</string>
+    <string name="send">Send</string>
+    <string name="resetpassword">Reset Password</string>
+    <string name="currentpassword">Current Password</string>
+    <string name="newpassword">New Password</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="reset">Reset</string>
+    <string name="dummytext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="price">Price</string>
+    <string name="cancel">Cancel</string>
+    <string name="apply">Apply</string>
+    <string name="balance">Balance</string>
+    <string name="winnings">Winnings</string>
+    <string name="addmoney">Add Money</string>
+    <string name="redeem">Redeem</string>
+    <string name="passbook">Passbook</string>
+    <string name="enterjoincode">Enter Join Code</string>
+    <string name="youwon">You Won:</string>
+    <string name="enteramount">Enter Amount</string>
+    <string name="selectoption">Select Option</string>
+    <string name="enterupivpa">Enter UPA VPA</string>
+    <string name="accountnumber">Account Number</string>
+    <string name="accountname">Account Holder Name</string>
+    <string name="ifsccode">IFSC Code</string>
+    <string name="amount">Amount</string>
+    <string name="amount_debited">Amount debited from wallet :</string>
+    <string name="packages_purchesed">Packages purchased :</string>
+
+    <string name="createcontest">Create Contest</string>
+    <string name="updatecontest">Update Contest</string>
+    <string name="entryfees1">Entry Fees</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="bracketsize1">Bracket Size</string>
+    <string name="notifyme2min">Notify me 2 min before game</string>
+    <string name="next">Next</string>
+    <string name="update">Update</string>
+    <string name="invitefriends">Invite Friends</string>
+    <string name="done">Done</string>
+    <string name="min_text">Minimum</string>
+    <string name="max_text">Maximum</string>
+    <string name="character_requiredeterr">characters required.</string>
+    <string name="congratulations">Congratulation</string>
+    <string name="sorry">Sorry</string>
+
+    <string name="crypt_pass">dePQ8#NtBSxUcgHM</string>
+    <string name="pay">Pay</string>
+    <string name="confirmpay">Confirm &amp; Pay</string>
+    <string name="addtowallet">Add to Wallet</string>
+    <string name="insuficientbal">Insuficient Balance</string>
+    <string name="join">Join</string>
+    <string name="hostacontest">Host a contest</string>
+    <string name="Redeemjtckt">Redeem J Ticket</string>
+    <string name="Myjtckt">My J Ticket</string>
+    <string name="WaitingRoom">Waiting Room</string>
+    <string name="Automation">Automation</string>
+    <string name="forgotpassword1"><b><u>Forgot Password?</u></b></string>
+    <string name="paymentsummary">Payment Summary</string>
+    <string name="contests">Games</string>
+    <string name="yourselection">Your Selection</string>
+    <string name="locknow">Lock Now</string>
+    <string name="gameresult">Game Result</string>
+    <string name="mytickets">My Tickets</string>
+    <string name="enter">Enter</string>
+    <string name="buymoretickets">Join More tickets</string>
+    <string name="ok">Ok</string>
+    <string name="addpayment">Add Payment</string>
+    <string name="loading">Loading...</string>
+    <string name="termscond">T&amp;C</string>
+    <string name="viewwinner">View Winners</string>
+    <string name="error_cropping_photo">Error Cropping Photo</string>
+    <string name="choose_image_source">Choose Image</string>
+    <string name="permission_denied_camera">Camera Permission Denied</string>
+    <string name="permission_denied_read_storage">Read Storage permission denied</string>
+
+    <!--    <string name="facebook_app_id">601003210400979</string>-->
+    <!--    <string name="fb_login_protocol_scheme">fb601003210400979</string>-->
+    <string name="cashback">Cashback\nUpto: \u20B9300</string>
+    <string name="facebook_app_id">1256161984727361</string>
+    <string name="fb_login_protocol_scheme">fb1256161984727361</string>
+
+    <string name="contestname">Contest Name</string>
+    <string name="contestmode">Contest Mode</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="moderate">Moderate</string>
+    <string name="pro">Pro</string>
+    <string name="contesttype">Contest Type</string>
+    <string name="flexibar">Flexibar</string>
+    <string name="fixbar">Fixbar</string>
+    <string name="nooftickets">Number of Tickets</string>
+    <string name="maxwinners">Max Winners</string>
+    <string name="ticketdetails">Ticket Details</string>
+    <string name="ticketprice">Ticket Price</string>
+    <string name="save">Save</string>
+    <string name="noofslot">Number of Slot</string>
+    <string name="privatecontest">Private Contest</string>
+    <string name="privatemode">Private Room</string>
+    <string name="JTicket">J Ticket</string>
+    <string name="packages">Packages</string>
+    <string name="horoscope">Horoscope</string>
+    <string name="spinning">Spinning Machine</string>
+    <string name="mycontestandpkg">My Contest &amp; Packages</string>
+    <string name="share">Share</string>
+    <string name="mycontest">My Contests</string>
+    <string name="entryfee">Entry Fee</string>
+    <string name="participantjoined">Participant\nJoined</string>
+    <string name="participant">Participants</string>
+    <string name="view">View</string>
+    <string name="participantwinner">Participant\nWinner</string>
+    <string name="winners">Winners</string>
+    <string name="noofcontest1">Number of Contests</string>
+    <string name="fixslot">Fixslot</string>
+    <string name="entryclosingin">Entries Closing In</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="validity">Validity</string>
+    <string name="unutilizedbal">Unutilized Balance</string>
+    <string name="withdrawablebal">Withdrawable Balance</string>
+    <string name="transfertowallet">Transfer To Wallet</string>
+    <string name="transfertoaccount">Transfer To Account</string>
+    <string name="entermobileno">Enter Mobile number</string>
+    <string name="otpverification">OTP Verification</string>
+    <string name="verify">Verify</string>
+    <string name="enterotp">Enter Verification code</string>
+    <string name="notificationalert">Notification Alert</string>
+    <string name="settings">Settings</string>
+    <string name="connecting">Connecting...</string>
+    <string name="calculatingmsg">The system is calculating the answer Please wait !!!</string>
+    <string name="kycverification">KYC Verification</string>
+    <string name="skip"><b><u>Skip</u></b></string>
+    <string name="uploadpan">Upload PAN CARD photo</string>
+    <string name="enterasperpancard">Full Name as on Pan Card</string>
+    <string name="enterpancardno">Pan Card Number</string>
+    <string name="submit">Submit</string>
+    <string name="dateofbirth">Date of Birth</string>
+    <string name="username">UserName</string>
+    <string name="linkbankaccount">Link Bank Account</string>
+    <string name="enterbankname">Enter Bank Name</string>
+    <string name="enterbankaccountnumber">Enter Bank Account Number</string>
+    <string name="enterbankifsccode">Enter Bank IFSC Code</string>
+    <string name="profile">Profile</string>
+    <string name="edit">Edit</string>
+    <string name="emailaddress">Email Address</string>
+    <string name="mobilenumber">Mobile Number</string>
+    <string name="pannumber">PAN Number</string>
+    <string name="bankaccount">Bank Account</string>
+    <string name="addanotheraccount">Add another account</string>
+    <string name="answerrange">Answer Range</string>
+    <string name="privateRoom">Private Room</string>
+    <string name="createGroup">Create Group</string>
+    <string name="joinGroup">Join Group</string>
+    <string name="hostGames">Host Games</string>
+
+
+    <string-array name="noslots">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="sortby">
+        <item>Till Date</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Custome Date</item>
+    </string-array>
+    <string-array name="sortbyeasy">
+        <item>All</item>
+        <item>Hourly</item>
+        <item>Half hourly</item>
+        <item>Quarterly</item>
+    </string-array>
+    <string-array name="notickets">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="lockstyle">
+        <item>Basic</item>
+        <item>Paper Chit</item>
+        <item>Catch the object</item>
+    </string-array>
+    <string-array name="group">
+        <item>Group</item>
+        <item>Happy Family(40)</item>
+        <item>Old is Gold(25)</item>
+        <item>Family Forever(33)</item>
+        <item>Create Group</item>
+    </string-array>
+    <string-array name="game">
+        <item>Game</item>
+        <item>Classic Grids</item>
+        <item>Spinning Machine</item>
+    </string-array>
+
+    <string-array name="level">
+        <item>Easy</item>
+        <item>Moderate</item>
+        <item>Pro</item>
+    </string-array>
+    <string-array name="option">
+        <item>Red Draw Blue</item>
+        <item>Numeric Slot</item>
+    </string-array>
+
+    <string-array name="gamemode">
+        <item>Single Game</item>
+        <item>Back to Back Game</item>
+        <item>Best of all</item>
+        <item>Series</item>
+    </string-array>
+    <string-array name="maxwinners">
+        <item>10%</item>
+        <item>20%</item>
+        <item>30%</item>
+        <item>40%</item>
+        <item>50%</item>
+        <item>60%</item>
+    </string-array>
+
+    <string-array name="no_of_option">
+        <item>Win, draw, win</item>
+        <item>Win, win, win</item>
+        <item>Win, win, win, win</item>
+        <item>Win, win, win, win, win</item>
+    </string-array>
+
+    <string-array name="coose_game">
+        <item>Classic Grids</item>
+        <item>Spinning Machine</item>
+        <item>Roulette style</item>
+        <item>Sky Divers</item>
+        <item>Up-Down</item>
+        <item>Traffic Junction</item>
+    </string-array>
+
+
+    <string-array name="bracketsize_type0">
+        <item>10</item>
+        <item>20</item>
+        <item>40</item>
+        <item>60</item>
+        <item>80</item>
+    </string-array>
+
+    <string-array name="bracketsize_type1">
+        <item>2</item>
+        <item>3</item>
+        <item>5</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="bracketsize_type2">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="packag_days">
+        <item>1 days</item>
+        <item>2 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>5 days</item>
+        <item>6 days</item>
+        <item>7 days</item>
+        <item>8 days</item>
+        <item>9 days</item>
+        <item>10 days</item>
+        <item>11 days</item>
+        <item>12 days</item>
+        <item>13 days</item>
+        <item>14 days</item>
+        <item>15 days</item>
+        <item>16 days</item>
+        <item>17 days</item>
+        <item>18 days</item>
+        <item>19 days</item>
+        <item>20 days</item>
+        <item>21 days</item>
+        <item>22 days</item>
+        <item>23 days</item>
+        <item>24 days</item>
+        <item>25 days</item>
+    </string-array>
+
+    <string-array name="packag_time">
+        <item>1 AM</item>
+        <item>2 AM</item>
+        <item>3 AM</item>
+        <item>4 AM</item>
+        <item>5 AM</item>
+        <item>6 AM</item>
+        <item>7 AM</item>
+        <item>8 AM</item>
+        <item>9 AM</item>
+        <item>10 AM</item>
+        <item>11 AM</item>
+        <item>12 AM</item>
+        <item>1 AM</item>
+        <item>2 PM</item>
+        <item>3 PM</item>
+        <item>4 PM</item>
+        <item>5 PM</item>
+        <item>6 PM</item>
+        <item>7 PM</item>
+        <item>8 PM</item>
+        <item>9 PM</item>
+        <item>10 PM</item>
+        <item>11 PM</item>
+        <item>12 PM</item>
+    </string-array>
+
+    <string name="host">188.166.46.24</string>
+    <!--<string name="host_deep_link">clientsdemosite.in</string>-->
+    <string name="host_deep_link">admin.cbitoriginal.com</string>
+    <string name="pathprefix">/deeplink</string>
+    <string name="host_deep_link2">www.cbitoriginal.com</string>
+    <string name="host_deep_link4">https://cbitoriginal.com/test.php?code=</string>
+    <string name="host_deep_link3">cbitoriginal.com/cbitoriginal.apk</string>
+    <string name="pathprefix2">/referral</string>
+    <string name="port">:3500</string>
+    <string name="stopalarm">Stop Reminder</string>
+    <string name="fromutilizedbalance">From Unutilized Balance:</string>
+    <string name="fromwithdrawablebalance">From Withdrawable Balance:</string>
+    <string name="total">Total:</string>
+    <string name="welcometocbit">Welcome To Cbit Original!</string>
+    <string name="enterlogindetail">Enter Mobile Number</string>
+    <string name="donthaveanaccount">Don\'t have an account?</string>
+    <string name="register"><b><u>Register</u></b></string>
+    <string name="ClickHere"><b><u>Click Here</u></b></string>
+    <string name="login_bold_underline"><b><u>Login</u></b></string>
+    <string name="orloginvia">Or Login Via Facebook</string>
+    <string name="alreadyhaveanaccount">Already have an account?</string>
+    <string name="enterregisterdetail">Registration form-</string>
+    <string name="verificationcode">Verification Code</string>
+    <string name="otp_sub_title">Please enter Verification code send\nto cbitoriginal@gmail.com</string>
+    <string name="didntreceiveverifycode">Didn\'t receive the code yet?</string>
+    <string name="resendcode"><b><u>Resend Code</u></b></string>
+    <string name="uploadimage">Upload PAN Image</string>
+    <string name="contesttime">Game Time</string>
+    <string name="timeremaining">Time Remaining</string>
+    <string name="buytickets">Buy Tickets</string>
+    <string name="totalbalance">Total Balance</string>
+    <string name="privacypolicy">Privacy Policy</string>
+    <string name="legality">Legality</string>
+
+    <!-- Link -->
+    <string name="about_link">http://www.cbitoriginal.com</string>
+    <string name="termscondition">https://cbitoriginal.com/j_tickit.html</string>
+    <string name="faqsLink">https://Cbitoriginal.com/faq.html</string>
+    <string name="legality_link">http://188.166.46.24:3500/page/legality</string>
+    <string name="privacy_link">http://cbitoriginal.com/privacy-policy-app.html</string>
+    <string name="terms_link">http://188.166.46.24:3500/page/termsofuse_mobileapp</string>
+    <string name="help">Help</string>
+    <string name="popup_title">Checkmark the box and click on pay at the bottom of the screen to proceed. Join contest now and wait for the game time to play the game.</string>
+    <string name="popup_subtitle">Note :- you can join multiple contest too.</string>
+    <string name="gotit">Got It</string>
+    <string name="skip1">Skip</string>
+    <string name="error">Error</string>
+    <string name="firstname">First Name</string>
+    <string name="middlename">Middle Name(as per PAN Card)</string>
+    <string name="surname">Surname</string>
+    <string name="faqs">FAQ\'s</string>
+    <string name="shareapp">Invite friends</string>
+    <string name="t_c"><![CDATA[T & C]]></string>
+
+    <string name="ask_for_camera_permission_button">Camera</string>
+    <string name="ask_for_contacts_permission_button">Contacts</string>
+    <string name="ask_for_audio_permission_button">Audio</string>
+    <string name="ask_for_all_permissions_button">Request all</string>
+    <string name="permission_granted_feedback">GRANTED</string>
+    <string name="permission_denied_feedback">DENIED</string>
+    <string name="permission_permanently_denied_feedback">PERMANENTLY DENIED</string>
+    <string name="permission_unknown_feedback">UNKNOWN</string>
+    <string name="all_permissions_denied_feedback">All those permissions are needed for doing some magic</string>
+    <string name="camera_permission_denied_feedback">Camera permission is needed for doing some magic</string>
+    <string name="contacts_permission_denied_feedback">Contacts permission is needed for doing some magic</string>
+    <string name="audio_permission_denied_dialog_title">Audio permission request</string>
+    <string name="audio_permission_denied_dialog_feedback">Audio recording will not be available until you accept the permission request</string>
+    <string name="permission_rationale_title">We need this permission</string>
+    <string name="permission_rationale_message">This permission is needed for doing some fancy stuff so please, allow it!</string>
+    <string name="permission_rationale_settings_button_text">SETTINGS</string>
+</resources>

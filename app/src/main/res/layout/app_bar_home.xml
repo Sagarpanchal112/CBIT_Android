@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.HomeActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/color_green_dark"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@null"
+                    android:padding="@dimen/padding_16"
+                    android:src="@drawable/ic_menu"
+                    android:tint="@color/white" />
+
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/ivMenu"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Home"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:ignore="MissingPrefix" />
+
+
+                <ImageView
+                    android:id="@+id/ivSorting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/ivFilter"
+                    android:clickable="true"
+                    android:contentDescription="@null"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="@dimen/padding_10"
+                    android:src="@drawable/ic_sorting"
+                    android:tint="@color/white"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/ivFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:contentDescription="@null"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="@dimen/padding_10"
+                    android:src="@drawable/ic_filter"
+                    android:tint="@color/white"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/lin_wallet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/ivInfo"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:src="@drawable/wallet_icon" />
+
+                    <TextView
+                        android:id="@+id/tv_wallet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:contentDescription="@null"
+                        android:drawablePadding="@dimen/_8sdp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/padding_10"
+                        android:text="1000"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:contentDescription="@null"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="@dimen/padding_10"
+                    android:src="@drawable/ic_info_1"
+                    android:tint="@color/white" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_home" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

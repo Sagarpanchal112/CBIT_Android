@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_166sdp"
+    android:background="@color/colorPrimary"
+    android:gravity="center_vertical|bottom"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/bg_red_rounded"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APD : -"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnAPD"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:background="@drawable/bg_blue_radius"
+                android:fontFamily="@font/montserrat_medium"
+                android:text=""
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/bg_red_rounded"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EFM : -"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnEFM"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:background="@drawable/bg_blue_radius"
+                android:fontFamily="@font/montserrat_medium"
+                android:textStyle="bold"
+                android:text=""
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/bg_red_rounded"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EM : -  "
+                android:fontFamily="@font/montserrat_semibold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnEM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:background="@drawable/bg_blue_radius"
+                android:fontFamily="@font/montserrat_medium"
+                android:text=""
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/bg_red_rounded"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BAP : -"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnBAP"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:background="@drawable/bg_blue_radius"
+                android:text=""
+                android:textStyle="bold"
+
+                android:textAllCaps="false"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivProfilePic"
+            android:layout_width="@dimen/height_70"
+            android:layout_height="@dimen/height_60"
+            android:contentDescription="@string/nav_header_desc"
+            android:src="@drawable/temp_profile_pic" />
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            android:fontFamily="@font/montserrat_medium"
+            tools:ignore="MissingPrefix"
+            tools:text="TFB 132" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawableEnd="@drawable/ic_share"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        android:visibility="gone"
+        tools:text="My Code : 13245687" />
+
+</LinearLayout>

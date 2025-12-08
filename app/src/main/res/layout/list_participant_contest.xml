@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_10"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="0dp"
+        android:layout_height="?attr/listPreferredItemHeightSmall"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_15sdp"
+        tools:text="100" />
+
+    <TextView
+        android:id="@+id/tvUsers"
+        android:layout_width="0dp"
+        android:layout_height="?attr/listPreferredItemHeightSmall"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_15sdp"
+        tools:text="7" />
+
+    <Button
+        android:id="@+id/btnView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/margin_30"
+        android:layout_weight="1"
+        android:background="@drawable/bg_yellow_radius"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="@string/view"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_17sdp" />
+</LinearLayout>

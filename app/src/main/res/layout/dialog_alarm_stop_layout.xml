@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_10"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvConstestID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Asd"
+        android:textSize="@dimen/fontsize_14"
+        android:textColor="@color/black"
+        android:padding="@dimen/padding_10"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvConstestName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Asd"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="@dimen/fontsize_20"
+        android:textColor="@color/black"
+        android:padding="@dimen/padding_10"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/btnStopAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/listPreferredItemHeightSmall"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_login"
+        android:text="@string/stopalarm"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/fontsize_20"
+        android:clickable="true"
+        android:fontFamily="@font/montserrat_semibold"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_10"/>
+</LinearLayout>

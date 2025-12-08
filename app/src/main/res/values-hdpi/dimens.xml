@@ -1,0 +1,56 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">12dp</dimen>
+    <dimen name="activity_vertical_margin">12dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+   <!-- <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>-->
+
+    <!-- Margin -->
+    <dimen name="margin_5">3dp</dimen>
+    <dimen name="margin_10">8dp</dimen>
+    <dimen name="margin_20">15dp</dimen>
+    <dimen name="margin_30">23dp</dimen>
+    <dimen name="margin_50">38dp</dimen>
+    <dimen name="margin_60">45dp</dimen>
+    <dimen name="margin_110">83dp</dimen>
+
+    <!-- Padding -->
+    <dimen name="padding_10">8dp</dimen>
+    <dimen name="padding_16">12dp</dimen>
+    <dimen name="padding_20">15dp</dimen>
+    <dimen name="padding_30">23dp</dimen>
+
+    <!-- Height -->
+    <dimen name="height_40">30dp</dimen>
+    <dimen name="height_48">36dp</dimen>
+    <dimen name="height_50">38dp</dimen>
+    <dimen name="height_56">42dp</dimen>
+    <dimen name="height_58">43dp</dimen>
+    <dimen name="height_60">45dp</dimen>
+    <dimen name="height_63">47dp</dimen>
+    <dimen name="height_70">52dp</dimen>
+    <dimen name="height_95">71dp</dimen>
+    <dimen name="height_100">75dp</dimen>
+    <dimen name="height_120">90dp</dimen>
+    <dimen name="height_135">101dp</dimen>
+    <dimen name="height_150">112dp</dimen>
+    <dimen name="height_185">138dp</dimen>
+    <dimen name="height_200">150dp</dimen>
+    <dimen name="height_280">210dp</dimen>
+    <dimen name="height_307">230dp</dimen>
+
+    <!-- FontSize -->
+    <dimen name="fontsize_8">6sp</dimen>
+    <dimen name="fontsize_10">7sp</dimen>
+    <dimen name="fontsize_12">9sp</dimen>
+    <dimen name="fontsize_14">10sp</dimen>
+    <dimen name="fontsize_15">11sp</dimen>
+    <dimen name="fontsize_16">12sp</dimen>
+    <dimen name="fontsize_18">13sp</dimen>
+    <dimen name="fontsize_20">15sp</dimen>
+    <dimen name="fontsize_30">22sp</dimen>
+    <dimen name="fontsize_45">33sp</dimen>
+    <dimen name="fontsize_90">67sp</dimen>
+</resources>

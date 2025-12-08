@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.GameResultActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_green_dark"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/padding_10"
+                android:tint="@color/white"
+                android:src="@drawable/ic_arrow" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/ivBack"
+                android:fontFamily="@font/montserrat_semibold"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Contest Name"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:ignore="MissingPrefix" />
+
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <ProgressBar
+            android:id="@+id/pbProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/linearContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/linBrickes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_5"
+                android:background="@drawable/slot_bg"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp"
+                android:weightSum="5">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_I"
+                    style="@style/slotRecyclerView"
+                    android:layout_weight="1"
+                    android:background="@drawable/yellow_forground"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_IV"
+                    style="@style/slotRecyclerView"
+                    android:layout_weight="1"
+                    android:background="@drawable/yellow_forground"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_VII"
+                    style="@style/slotRecyclerView"
+                    android:layout_weight="1"
+                    android:background="@drawable/yellow_forground"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_X"
+                    style="@style/slotRecyclerView"
+                    android:layout_weight="1"
+                    android:background="@drawable/yellow_forground"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_XIII"
+                    style="@style/slotRecyclerView"
+                    android:layout_weight="1"
+                    android:background="@drawable/yellow_forground"
+                    android:clickable="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/slot_item" />
+
+
+            </LinearLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvWinningOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        ></androidx.recyclerview.widget.RecyclerView>
+
+                     <TextView
+                        android:id="@+id/tvAnsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:padding="@dimen/margin_5"
+                         android:visibility="gone"
+                        android:text="You gave correct answer in 1.578 secs"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_text_blink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_5"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Results are notified when pending players place their answer"
+                        android:textColor="@color/color_red"
+                        android:visibility="visible"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/tvWinnings"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/margin_30"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/margin_30"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:background="@drawable/bg_grdient_yellow"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        tools:ignore="MissingPrefix"
+                        tools:text="You win : \u20b9 1000" />
+
+                    <TextView
+                        android:id="@+id/tvCCWinnings"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/margin_30"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:visibility="gone"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:layout_marginEnd="@dimen/margin_30"
+                        android:background="@drawable/bg_grdient_yellow"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        tools:ignore="MissingPrefix"
+                        tools:text="Total CC Won : CC 1000" />
+
+                    <TextView
+                        android:id="@+id/tvnowin"
+                         android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/margin_30"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/margin_30"
+                        android:background="@drawable/bg_grdient_yellow"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textSize="@dimen/_14sdp"
+                        tools:ignore="MissingPrefix"
+                        tools:text="No win : \u20b9 0000" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTickets"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:nestedScrollingEnabled="false" />
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+    </FrameLayout>
+
+
+</RelativeLayout>

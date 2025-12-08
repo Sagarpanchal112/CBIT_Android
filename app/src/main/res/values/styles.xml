@@ -1,0 +1,214 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+    <style name="DialogStyle_MinWidth.NoTitle">
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTitle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/title_font_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="PermissionButton">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:layout_marginTop">@dimen/permission_button_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/permission_button_margin_vertical</item>
+    </style>
+    <style name="PermissionFeedback">
+        <item name="android:textColor">@color/permission_unknown</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/feedback_margin_left</item>
+        <item name="android:layout_marginTop">@dimen/permission_feedback_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/permission_feedback_margin_vertical</item>
+    </style>
+    <style name="DialogStyle_MinWidth" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowMinWidthMinor">92%</item>
+        <item name="android:windowMinWidthMajor">65%</item>
+    </style>
+
+    <style name="LoginTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="Widget.AppTheme.TextInputLayout.FilledBox.Dense" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="EditTextTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_40sdp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:textColor">#2C3550</item>
+        <item name="android:textColorHint">#B2B2B2</item>
+        <item name="android:background">@color/white</item>
+        <item name="fontFamily">@font/montserrat_semibold</item>
+    </style>
+
+    <style name="ProfileTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/color_282d2f</item>
+    </style>
+
+    <style name="HintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="ProfileHintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/color_5f6161</item>
+    </style>
+
+
+    <style name="WhiteScreenHintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/color_525252</item>
+    </style>
+
+    <!-- <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingprogress</item>
+        <item name="android:minHeight">24dp</item>
+        <item name="android:maxHeight">24dp</item>
+    </style>-->
+
+    <style name="Theme.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="colorAccent">@color/white</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- PopuP Enter Exit Animation -->
+    <!-- <style name="PopupAnimation" parent="Widget.AppCompat.PopupWindow">
+        <item name="android:windowEnterAnimation">@anim/left_to_right</item>
+        <item name="android:windowExitAnimation">@anim/right_to_left</item>
+    </style>-->
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="ProgressTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="PopupAnimation" parent="Widget.AppCompat.PopupWindow">
+        <item name="android:windowEnterAnimation">@anim/bottom_up</item>
+        <item name="android:windowExitAnimation">@anim/bottom_down</item>
+    </style>
+
+    <style name="error_appearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--<style name="PauseDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+    </style>-->
+
+    <!--<style name="PauseDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fadein</item>
+        <item name="android:windowExitAnimation">@anim/fadeout</item>
+    </style>-->
+
+    <style name="MenuTextStyle">
+        <item name="android:textColor">@drawable/drawar_text_selector</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/drawar_menu_selector</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:paddingStart">@dimen/padding_10</item>
+    </style>
+
+    <style name="AppTheme.FloatingActionButton">
+        <item name="colorAccent">@color/theme_orange</item>
+    </style>
+
+    <style name="SubMenuTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:paddingStart">@dimen/padding_10</item>
+
+
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+    <style name="slotRecyclerView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/_5sdp</item>
+        <item name="android:paddingBottom">@dimen/_5sdp</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+    <style name="slotViewFliper">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/yellow_forground</item>
+
+        <item name="android:duplicateParentState">true</item>
+    </style>
+    <!--<item name="android:background">@drawable/yellow_forground</item>-->
+</resources>

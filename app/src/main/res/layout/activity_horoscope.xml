@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".activities.HoroscopeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_yellow"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/padding_10"
+                android:src="@drawable/ic_arrow" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/ivBack"
+                android:fontFamily="@font/montserrat_semibold"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/horoscope"
+                android:textColor="@color/color_424242"
+                android:textSize="20sp"
+                tools:ignore="MissingPrefix" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/padding_10"
+                android:src="@drawable/ic_info_1"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/tvRemainingText"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/listPreferredItemHeightSmall"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@drawable/bg_rounded_colorprimary"
+        android:gravity="center"
+        android:minWidth="@dimen/height_120"
+        android:paddingStart="@dimen/padding_10"
+        android:paddingEnd="@dimen/padding_10"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:text="Game Starts In 00:00:00" />
+    <TextView
+        android:id="@+id/tv_nine_LockNow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/bg_colorprimary"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat_semibold"
+        android:minHeight="@dimen/_30sdp"
+        android:text="LOCK ALL"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp" />
+    <TextView
+        android:id="@+id/tvLockTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_15sdp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text=""
+        />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="28 December, 2020"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_rounded_colorprimary"
+                android:gravity="center"
+                android:paddingStart="@dimen/padding_10"
+                android:paddingEnd="@dimen/padding_10"
+                android:text="Today’s Lucky characters"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/lucky_char_one" />
+
+            <ImageView
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/lucky_char_two" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/bg_rounded_colorprimary"
+                android:gravity="center"
+                android:paddingStart="@dimen/padding_10"
+                android:paddingEnd="@dimen/padding_10"
+                android:text="Today’s Unlucky characters"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/unlucky_char_two" />
+
+            <ImageView
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/unlucky_char_one" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

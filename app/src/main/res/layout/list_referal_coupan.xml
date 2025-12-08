@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/_5sdp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:fontFamily="@font/montserrat_medium"
+        tools:text="Jems Smith"
+        android:textColor="@color/color_green"
+        android:textSize="@dimen/_14sdp"
+        android:layout_marginStart="@dimen/margin_10"/>
+    <TextView
+        android:id="@+id/tvGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text=""
+        android:textColor="@color/color_626262"
+        android:textSize="@dimen/_12sdp"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/margin_10"/>
+
+</LinearLayout>

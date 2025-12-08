@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.TutorialActivity">
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <TextView
+        android:id="@+id/tvSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skip1"
+        android:textSize="@dimen/fontsize_16"
+        android:fontFamily="@font/montserrat_semibold"
+        android:padding="@dimen/padding_10"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        android:layout_alignParentEnd="true"
+        android:textColor="#444444"/>
+
+
+    <Button
+        android:id="@+id/btnGotIt"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/listPreferredItemHeightSmall"
+        android:background="@drawable/btn_login_new"
+        android:text="@string/gotit"
+        android:textColor="@color/color_green_dark"
+        android:textSize="@dimen/fontsize_20"
+        android:clickable="true"
+        android:focusable="true"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserrat_semibold"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:visibility="gone"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"/>
+</RelativeLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_5sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/chkSelect"
+                        android:layout_width="@dimen/height_40"
+                        android:layout_height="@dimen/height_40"
+                        android:button="@drawable/select_checkbox_drawable"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:padding="@dimen/margin_5"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/fontsize_14" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:id="@+id/tv_game_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/_13sdp"
+                            tools:text="₹ 1000" />
+
+                        <TextView
+                            android:id="@+id/tv_game_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Contest Fee : "
+                            android:textColor="@color/color_424242"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+
+                    <Switch
+                        android:id="@+id/switchAutoRenew"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:switchMinWidth="40dp"
+                        android:text=""
+                        android:visibility="gone"
+                        android:textOff=""
+                        android:textOn=""
+                        android:thumb="@drawable/switch_thumb"
+                        android:track="@drawable/switch_track" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+       </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

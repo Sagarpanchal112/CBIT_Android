@@ -1,0 +1,36 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url "https://jitpack.io" }
+        jcenter()
+        /* maven {
+             url "https://cardinalcommerceprod.jfrog.io/artifactory/android"
+             credentials {
+                 // Be sure to add these non-sensitive credentials in order to retrieve dependencies from
+                 // the private repository.
+                 username mavenUser
+                 password mavenPassword
+             }
+         }*/
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        maven { url 'https://maven.cashfree.com/release' }
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.google.com' }
+        maven {
+            url  "https://phonepe.mycloudrepo.io/public/repositories/phonepe-intentsdk-snapshots"
+        }
+    }
+}
+
+
+
+include ':app',  ':SuperRecyclerView',':record-view',':updatelibrary'

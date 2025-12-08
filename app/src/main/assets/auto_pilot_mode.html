@@ -1,0 +1,101 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+
+        <title>Auto Pilot Mode</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <style>
+                h5{
+                    color:#000000;
+                    font-family:"arial";
+                    text-transform:uppercase;
+                    font-size:15px;
+                    padding:15px 0 0 10px;
+                }
+                p{
+                    color:#000000;
+                    font-family:"arial"; 
+                    margin-left:25px;
+                    font-size:14px;
+                    text-align:justify;
+
+                }
+                ul, li{margin-left:25px; padding:0;	font-family:"arial"; font-size:14px;}
+                ul{ margin-left:25px; }
+                li{ list-style:circle; padding-right:5px;
+                color: #000000; font-size: 25px;}
+
+            </style>
+    </head>
+
+    <body style="background-color:#FFF; padding: 10px" >
+ 
+                <p>Auto Pilot Mode is an automated system that redeems and applies the J Tickets by itself at
+regular intervals. The redemption and application highly depends on your Average Play Per
+Day (APD)
+                </p>
+         
+
+<h5>Redeem engine:</h5>
+
+        <ul> 
+            <li>
+              <p>At Regular intervals, the redeem engine will start redeeming J Tickets, starting from
+the lowest value J Vouchers. </p></li>
+
+<li><p>It won’t redeem J Tickets above the APD numbered J Voucher and repeat the cycle
+again starting from the lowest value J Voucher, as per the availability of the
+credentia currency (cc).</p></li>
+</ul>
+
+<h5>Example:</h5>
+<p>If a Player has an APD of Rs. 28, J Vouchers numbered less than or equal to 28 will only be
+redeemed in auto pilot mode. </p>
+<p>i.e., J5, J11, J25 will be redeemed, J55 won’t be redeemed as the number is higher than 28.
+And if there’s cc available after redeeming one set of these J Vouchers, the redeem engine
+will repeat the redeem cycle again from J5, followed by J11, so on and so forth.</p>
+
+
+<h5>Apply engine:</h5>
+
+        <ul> 
+            <li>
+              <p>Once the J Ticket is redeemed, it will get applied automatically at regular intervals. </p></li>
+<li><p>X number tickets of each J Voucher will be applied at Regular intervals.</p></li>
+<li><p>System will keep applying J tickets only until the Maximum Apply Potential per day. </p></li>
+<li><p>Maximum Apply Potential per day (in cc) = Average play per day (in Rs).
+Example: If a players APD is Rs.70, then his Maximum Apply Potential will be CC 70</p></li>
+</ul>
+
+<h5>Example:</h5>
+
+        
+              <p>Let’s assume a player has a total of 46.92 CC worth J tickets redeemed </p>
+<p>i.e., the player has 6 J Tickets each of the following J Vouchers waiting to be applied</p>
+<p>J5 Redeemed @0.91 cc so 6 JT x 0.91 = 5.46 cc worth J5 </p>
+<p>J11 Redeemed @1.91 cc so 6 JT x 1.91 = 11.46 cc worth J11</p>
+<p>J25 Redeemed @5.0 cc so 6 JT x 5.0 = 30 cc worth J25</p>
+
+<p>So here total worth of available J Tickets is 46.92cc</p>
+
+<p>Now the APD is Rs.28, so the Maximum Apply Potential “MAP” is “28 cc / day”</p>
+
+<p style="margin-top:30px;">As per MAP the following J Tickets will be applied-</p>
+
+<p>6 (J5) worth 5.46 cc +</p>
+<p>6 (J11) worth 11.46 cc +</p>
+<p>2 (J25) worth 10 cc</p>
+<p>That’s total worth of 26.92 cc J Tickets</p>
+
+<p style="margin-top:20px;">The remaining 4 (J25) will not get applied, because 6 (J5) + 6 (J11) + 2 (J25) = 26.92 and
+Maximum Apply Potential is 28 cc only.</p>
+
+ <ul  style="margin-top:10px; margin-left: 30px"> 
+            <li>
+              <p>Balance Apply potential = Maximum Apply Potential – Net worth of Already applied JTicket (in cc)</p></li>
+          </ul>
+          <p>So, after the apply hourly cycle, balance of apply potential will be 28cc – 26.92cc = 1.08 cc</p>
+        </div>
+    </body>
+</html>

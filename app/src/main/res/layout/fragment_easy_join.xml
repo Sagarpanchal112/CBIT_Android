@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearPay"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="Sort By"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gray_rounded">
+
+                    <Spinner
+                        android:id="@+id/spinnerSortBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:entries="@array/sortbyeasy"
+                        android:gravity="center"
+                        android:spinnerMode="dialog" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            tools:ignore="MissingConstraints">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.40"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Choose Games"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_16" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+
+                    <CheckBox
+                        android:id="@+id/chkall"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center"
+                        android:button="@drawable/select_checkbox_drawable"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_5"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/fontsize_14" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:text="Select all"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@color/color_c6c6c6" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvContest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.60"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Choose contests"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_16" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <CheckBox
+                        android:id="@+id/chkContsestAll"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center"
+                        android:button="@drawable/select_checkbox_drawable"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_5"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/fontsize_14" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:text="Select all"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@color/color_c6c6c6" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvContestPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearPay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/tvPayTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/padding_10"
+            android:text="Confirm &amp; Pay"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontsize_18" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="₹ 00"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fontsize_18" />
+
+            <TextView
+                android:id="@+id/tvWallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Wallet ₹ 2000"
+                android:textColor="@color/color_green"
+                android:textSize="@dimen/fontsize_18" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

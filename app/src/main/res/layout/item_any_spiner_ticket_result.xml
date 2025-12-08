@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_a0a0a0_stock_1"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_10">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_gane_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Game No :  1(₹5)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Entry Fees"
+                    android:textSize="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:textColor="@color/color_424242"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+                <TextView
+                    android:id="@+id/tvEntryFees"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="₹ 1000"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Players"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:textColor="@color/color_424242"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvTotalTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="500"
+                    android:textSize="@dimen/_10sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Winnings"
+                        android:textSize="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:textColor="@color/color_424242"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvTotalWinnings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="₹ 2000"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Winners"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:textColor="@color/color_424242"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvMaxWinners"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="3000"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+            </LinearLayout>
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="bottom">
+
+                <TextView
+                    android:id="@+id/tvViewWinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_login"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="@string/viewwinner"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/tvCancelled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancelled"
+                    android:textSize="@dimen/fontsize_14"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:background="@drawable/btn_cancelled"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:visibility="gone"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOprions"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_played"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:maxLines="1"
+                    android:text="100 Played/400 Pending"
+                    android:textColor="@color/color_red"
+                    android:textSize="@dimen/_9sdp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvLockTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="@dimen/_10sdp"
+                tools:text="Locked at: 12:29:55s" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="@dimen/_10sdp"
+                    tools:text="Your Selection" />
+                <ImageView
+                    android:id="@+id/tvAns"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:gravity="right" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_ans_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="You chose right answer"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvWinnings"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeightSmall"
+            android:layout_marginStart="@dimen/margin_30"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/margin_30"
+            android:background="@drawable/bg_green_rounded"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            tools:ignore="MissingPrefix"
+            android:visibility="gone"
+            tools:text="You win : \u20b9 1000" />
+    </LinearLayout>
+</FrameLayout>

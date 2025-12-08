@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CropPhotoActivity"
+    android:background="@android:color/black">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_green_dark"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:contentInsetStart="0dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow"
+                android:padding="@dimen/padding_16"
+                android:contentDescription="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:tint="@color/white"
+                android:background="?attr/selectableItemBackground"/>
+
+            <TextView
+                android:layout_toEndOf="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_centerVertical="true"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivRotate"
+                android:layout_toStartOf="@+id/ivDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_rotate_right_white"
+                android:padding="@dimen/padding_16"
+                android:contentDescription="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:tint="@color/white"
+                android:background="?attr/selectableItemBackground"
+                app:tint="@color/color_424242"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_done_white"
+                android:padding="@dimen/padding_16"
+                android:contentDescription="@null"
+                android:clickable="true"
+                android:tint="@color/white"
+                android:focusable="true"
+                android:layout_alignParentEnd="true"
+                android:background="?attr/selectableItemBackground"
+                app:tint="@color/color_424242"/>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.canhub.cropper.CropImageView
+        android:id="@+id/crop_image_view"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

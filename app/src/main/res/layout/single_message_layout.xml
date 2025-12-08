@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/messageUserImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="05dp"
+            android:src="@drawable/default_profile_image"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="0.40dp" />
+
+        <TextView
+            android:id="@+id/receiverMessageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="51dp"
+            android:layout_marginTop="08dp"
+            android:background="@drawable/single_message_text_background"
+            android:fontFamily="@font/montserrat_medium"
+            android:padding="8dp"
+            android:text="From Receiver"
+            android:textColor="@color/white" />
+<!--        <me.jagar.chatvoiceplayerlibrary.VoicePlayerView-->
+<!--            android:id="@+id/receiverPlayerView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_marginStart="51dp"-->
+<!--            android:layout_marginTop="08dp"-->
+<!--            android:visibility="gone"-->
+<!--            app:enableVisualizer="true"-->
+<!--            app:playPauseBackgroundColor="@color/colorPrimaryDark"-->
+<!--            app:playPauseCornerRadius="100"-->
+<!--            app:playProgressbarColor="@color/colorPrimaryDark"-->
+<!--            app:progressTimeColor="@color/white"-->
+<!--            app:seekBarProgressColor="@color/white"-->
+<!--            app:seekBarThumbColor="#FFC107"-->
+<!--            app:shareBackgroundColor="@color/colorPrimaryDark"-->
+<!--            app:shareCornerRadius="100"-->
+<!--            app:showShareButton="false"-->
+<!--            app:showTiming="true"-->
+<!--            app:timingBackgroundColor="@color/colorPrimaryDark"-->
+<!--            app:viewBackground="@color/color_yellow"-->
+<!--            app:viewCornerRadius="100"-->
+<!--            app:visualizationNotPlayedColor="@color/color_yellow"-->
+<!--            app:visualizationPlayedColor="@color/colorPrimaryDark" />-->
+
+        <ImageView
+            android:id="@+id/receiverMessageImage"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginStart="51dp"
+            android:layout_marginTop="08dp"
+            android:padding="8dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/senderMessageImage"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="51dp"
+            android:layout_marginTop="08dp"
+            android:layout_marginEnd="1dp"
+            android:padding="8dp" />
+
+<!--        <me.jagar.chatvoiceplayerlibrary.VoicePlayerView-->
+<!--            android:id="@+id/senderPlayerView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginTop="08dp"-->
+<!--            android:layout_marginEnd="1dp"-->
+<!--            android:visibility="gone"-->
+<!--            app:enableVisualizer="true"-->
+<!--            app:playPauseBackgroundColor="@color/colorPrimaryDark"-->
+<!--            app:playPauseCornerRadius="100"-->
+<!--            app:playProgressbarColor="@color/colorPrimaryDark"-->
+<!--            app:progressTimeColor="@color/white"-->
+<!--            app:seekBarProgressColor="@color/white"-->
+<!--            app:seekBarThumbColor="@color/colorPrimaryDark"-->
+<!--            app:shareBackgroundColor="@color/colorPrimaryDark"-->
+<!--            app:shareCornerRadius="100"-->
+<!--            app:showShareButton="false"-->
+<!--            app:showTiming="true"-->
+<!--            app:timingBackgroundColor="@color/colorPrimaryDark"-->
+<!--            app:viewBackground="@color/color_yellow"-->
+<!--            app:viewCornerRadius="100"-->
+<!--            app:visualizationNotPlayedColor="@color/color_yellow"-->
+<!--            app:visualizationPlayedColor="@color/colorPrimaryDark" />-->
+
+        <TextView
+            android:id="@+id/senderMessageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="08dp"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/single_message_text_another_background"
+            android:fontFamily="@font/montserrat_medium"
+            android:padding="8dp"
+            android:text="From Sender"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

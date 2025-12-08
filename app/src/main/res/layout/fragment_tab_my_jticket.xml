@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.PackagesTabFragment"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvAPDValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="center"
+        android:padding="@dimen/_3sdp"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone"
+        tools:text="Average Play Per Day(APD) : " />
+
+    <TextView
+        android:id="@+id/DayOfJoin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:padding="@dimen/_3sdp"
+        android:visibility="gone"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        tools:text="DayOfJoin " />
+    <Button
+        android:id="@+id/btnApplyDaily"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@drawable/btn_login_new"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/montserrat_semibold"
+        android:layout_margin="@dimen/_10sdp"
+        android:visibility="gone"
+        android:text="Apply Daily Quota"
+        android:textColor="@color/color_green_dark"
+        android:textSize="@dimen/_12sdp"
+        tools:ignore="MissingPrefix" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.malinskiy.superrecyclerview.SuperRecyclerView
+            android:id="@+id/rvPackagesList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_empty="@layout/layout_no_data_found"
+            app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
+            app:recyclerClipToPadding="false"
+            app:recyclerPaddingBottom="@dimen/padding_10"
+            app:scrollbarStyle="insideInset" />
+
+
+        <ImageButton
+            android:id="@+id/imgFilter"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/filter" />
+    </RelativeLayout>
+
+
+</LinearLayout>

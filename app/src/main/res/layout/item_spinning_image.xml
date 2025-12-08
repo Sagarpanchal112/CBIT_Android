@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/tvOption"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_2sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_paper_chit" />
+
+    <CheckBox
+        android:id="@+id/chkSelect"
+        android:layout_width="@dimen/height_40"
+        android:layout_height="@dimen/height_40"
+        android:button="@drawable/select_checkbox_drawable"
+        android:padding="@dimen/margin_5"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/fontsize_14" />
+</LinearLayout>

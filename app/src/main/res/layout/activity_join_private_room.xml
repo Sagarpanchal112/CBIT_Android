@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_yellow"
+    android:orientation="vertical"
+    tools:context=".activities.JoinPrivateRoomActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_yellow"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/padding_10"
+                android:src="@drawable/ic_arrow" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/ivBack"
+                android:fontFamily="@font/montserrat_semibold"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Private Groups"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/_13sdp"
+                tools:ignore="MissingPrefix" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_colorprimary"
+            android:drawableLeft="@drawable/ic_search"
+            android:drawablePadding="@dimen/_3sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:minHeight="@dimen/_30sdp"
+            android:paddingStart="@dimen/_2sdp"
+            android:paddingEnd="@dimen/_2sdp"
+            android:text="Search Group"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp" />
+
+        <TextView
+            android:id="@+id/tv_create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_colorprimary"
+            android:drawableLeft="@drawable/ic_create"
+            android:drawablePadding="@dimen/_3sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:minHeight="@dimen/_30sdp"
+            android:paddingStart="@dimen/_2sdp"
+            android:paddingEnd="@dimen/_2sdp"
+            android:text="Create Group"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/tv_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_colorprimary"
+            android:drawableLeft="@drawable/ic_edit"
+            android:drawablePadding="@dimen/_3sdp"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:minHeight="@dimen/_30sdp"
+            android:paddingStart="@dimen/_2sdp"
+            android:paddingEnd="@dimen/_2sdp"
+            android:text="Edit Game"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_start_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Date : 04-11-2020"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/fontsize_16"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/bg_white_radius"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/contesttime"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="MissingPrefix" />
+
+            <TextView
+                android:id="@+id/tvGameTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_stock"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingStart="@dimen/padding_10"
+                android:paddingTop="@dimen/margin_5"
+                android:paddingEnd="@dimen/padding_10"
+                android:paddingBottom="@dimen/margin_5"
+                android:text="09 : 00 PM"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_11sdp"
+                tools:ignore="MissingPrefix" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_b2b2b2" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/timeremaining"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="MissingPrefix" />
+
+            <TextView
+                android:id="@+id/tvRemainigTime"
+                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_stock"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingStart="@dimen/padding_10"
+                android:paddingTop="@dimen/margin_5"
+                android:paddingEnd="@dimen/padding_10"
+                android:paddingBottom="@dimen/margin_5"
+                android:text="05 : 00 : 29"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_11sdp"
+                tools:ignore="MissingPrefix" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_b2b2b2" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/entryclosingin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="MissingPrefix" />
+
+            <TextView
+                android:id="@+id/tvEntryClosingTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_stock"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingStart="@dimen/padding_10"
+                android:paddingTop="@dimen/margin_5"
+                android:paddingEnd="@dimen/padding_10"
+                android:paddingBottom="@dimen/margin_5"
+                android:text="05 : 00 : 29"
+                android:textColor="@color/color_red"
+                android:textSize="@dimen/_11sdp"
+                tools:ignore="MissingPrefix" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.malinskiy.superrecyclerview.SuperRecyclerView
+        android:id="@+id/rvTicketsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_grdient_yellow"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_empty="@layout/layout_no_contest_found"
+        app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
+        app:recyclerClipToPadding="false"
+        app:recyclerPaddingBottom="@dimen/padding_10"
+        app:scrollbarStyle="insideInset" />
+</LinearLayout>

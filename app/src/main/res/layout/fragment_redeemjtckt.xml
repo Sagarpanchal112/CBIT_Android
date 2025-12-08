@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".fragments.RedeemJTicketFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/tvtotal_entryFee"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Entry Fee Meter : 0000"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/tv_total_earning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Earning Meter : 0000"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvMyCCValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        tools:text="My CC Value 00" />
+
+    <com.malinskiy.superrecyclerview.SuperRecyclerView
+        android:id="@+id/rvRedeemJTicketList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_empty="@layout/layout_no_data_found"
+        app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
+        app:recyclerClipToPadding="false"
+        app:recyclerPaddingBottom="@dimen/padding_10"
+        app:scrollbarStyle="insideInset" />
+
+</LinearLayout>

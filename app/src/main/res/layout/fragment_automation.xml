@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/_5sdp"
+    tools:context=".fragments.PackagesTabFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/listPreferredItemHeightSmall"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_medium"
+            android:padding="@dimen/padding_10"
+            android:text="Auto Pilot Mode"
+            android:textColor="@color/color_424242"
+            android:textSize="@dimen/fontsize_18" />
+
+        <Switch
+            android:id="@+id/switchAutoPilotUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:checked="true"
+            android:switchMinWidth="40dp"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:background="@color/color_424242" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/listPreferredItemHeightSmall"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_medium"
+            android:padding="@dimen/padding_10"
+            android:text="Redeem &amp; Apply Daily Quota"
+            android:textColor="@color/color_424242"
+            android:textSize="@dimen/fontsize_18" />
+
+        <Switch
+            android:id="@+id/switchRedeemDailyQoutaUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:switchMinWidth="40dp"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:background="@color/color_424242"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:padding="@dimen/padding_10"
+        android:text="Auto pilot mode redeems and applies the Cashback vouchers, i.e., J tickets, automatically. Feature available for free only for the 1st month after which ₹20/day or cc50 per day will be deducted from your unutilized balance for enabling the feature. Players can anytime enable / disable the autopilot mode from the above toggle."
+        android:textColor="@color/color_424242"
+        android:textSize="@dimen/fontsize_18" />
+
+    <WebView
+        android:id="@+id/webInstarction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="COMING SOON...!"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_14sdp"
+        android:visibility="gone" />
+</LinearLayout>

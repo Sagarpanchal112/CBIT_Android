@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvGameStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/color_login_btn"
+        android:textSize="@dimen/fontsize_16"
+        tools:text="@string/congratulations" />
+
+    <ImageView
+        android:id="@+id/ivGameStatus"
+        android:layout_width="@dimen/height_135"
+        android:layout_height="@dimen/height_135"
+        android:layout_marginTop="@dimen/margin_20"
+        android:contentDescription="@null"
+        tools:src="@drawable/win_popup" />
+
+
+    <TextView
+        android:id="@+id/tvAns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:fontFamily="@font/montserrat_medium"
+        android:textAllCaps="true"
+        android:textColor="@color/color_login_btn"
+        android:textSize="@dimen/fontsize_20"
+        tools:text="Answer is 500" />
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="@dimen/height_135"
+        android:layout_height="@dimen/height_56"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:background="@drawable/btn_login"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/montserrat_semibold"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="@string/done"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/fontsize_20" />
+</LinearLayout>

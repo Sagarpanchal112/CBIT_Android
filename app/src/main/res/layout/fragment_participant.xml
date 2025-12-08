@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ParticipantFragment"
+    android:background="@color/white">
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="?attr/listPreferredItemHeightSmall"
+            android:layout_weight="1"
+            android:text="@string/entryfee"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:maxLines="1"
+            android:fontFamily="@font/montserrat_medium"
+
+            android:ellipsize="end"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="?attr/listPreferredItemHeightSmall"
+            android:layout_weight="1"
+            android:text="@string/participantjoined"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <com.malinskiy.superrecyclerview.SuperRecyclerView
+        android:id="@+id/rvParticipantList"
+        android:layout_below="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
+        app:recyclerClipToPadding="false"
+        app:recyclerPaddingBottom="@dimen/icon_circular_width_large"
+        app:scrollbarStyle="insideInset"
+        app:layout_empty="@layout/layout_no_data_found"/>
+
+</RelativeLayout>

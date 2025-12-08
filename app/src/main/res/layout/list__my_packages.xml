@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_40sdp"
+    android:layout_marginStart="@dimen/margin_10"
+    android:layout_marginTop="@dimen/margin_10"
+    android:layout_marginEnd="@dimen/margin_10"
+    app:cardBackgroundColor="@color/color_e8e8e8"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/bg_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:gravity="left"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Game Time"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/_9sdp" />
+
+            <TextView
+                android:id="@+id/tvRemaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_9sdp"
+                android:fontFamily="@font/montserrat_medium"
+                tools:text="23:00:05" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Package Detail"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/_9sdp" />
+
+            <TextView
+                android:id="@+id/tvPackagesDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/fontsize_10"
+                tools:text="" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat_medium"
+                android:maxLines="1"
+                android:text="Expiry"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/_9sdp" />
+
+            <TextView
+                android:id="@+id/tvExpDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/fontsize_10"
+                tools:text="15-04-2019 11:20pm" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat_medium"
+                android:maxLines="1"
+                android:text="Auto Renew"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/_9sdp" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView><!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="@dimen/margin_10"
+    android:layout_marginEnd="@dimen/margin_5"
+    android:layout_marginTop="@dimen/margin_10"
+    android:background="@drawable/bg_a0a0a0_stock">
+
+    <TextView
+        android:id="@+id/tvRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="2%"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone"
+        android:textColor="@color/color_424242"
+        android:background="@drawable/bg_grdient_yellow"
+        android:layout_marginTop="@dimen/margin_10"
+        android:padding="@dimen/padding_10"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/margin_10">
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="₹ 500"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/colorPrimary"
+            android:padding="@dimen/padding_10"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_a0a0a0"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginStart="@dimen/margin_10">
+            <TextView
+                android:id="@+id/tvRemaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="23:00:05"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/color_red"/>
+            <TextView
+                android:id="@+id/tvStartDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="15-04-2019 11:20pm"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/color_424242"
+                android:layout_marginStart="@dimen/margin_5"
+                fontPath="@string/Montserrat_Medium"
+                tools:ignore="MissingPrefix"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>-->
+
+    <!--<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/color_e8e8e8"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_10">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="2%"
+                    android:textSize="@dimen/fontsize_14"
+                    android:paddingStart="@dimen/padding_20"
+                    android:paddingEnd="@dimen/padding_20"
+                    android:background="@drawable/bg_yellow_radius"
+                    android:layout_marginTop="@dimen/margin_10"/>
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="₹ 500"
+                    android:textSize="@dimen/fontsize_16"
+                    android:textColor="@color/colorPrimary"
+                    android:padding="@dimen/padding_10"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginBottom="@dimen/margin_10"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginEnd="@dimen/margin_5">
+                <TextView
+                    android:id="@+id/tvRemaining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="23:00:05"
+                    android:textSize="@dimen/fontsize_16"
+                    android:textColor="@color/colorPrimary"/>
+
+                <TextView
+                    android:id="@+id/tvStartDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="15-04-2019 11:20pm"
+                    android:textSize="@dimen/fontsize_10"
+                    android:textColor="@color/color_c6c6c6"
+                    android:layout_marginTop="@dimen/margin_5"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>-->

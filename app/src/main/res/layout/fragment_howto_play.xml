@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HowtoPlayFragment"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvHowToPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/dummytext"
+        android:textColor="@color/color_403e3e"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="@dimen/fontsize_18"
+        android:padding="@dimen/padding_10"/>
+
+</ScrollView>

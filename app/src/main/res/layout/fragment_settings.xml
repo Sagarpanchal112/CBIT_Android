@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".fragments.SettingsFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeightSmall"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_medium"
+                android:padding="@dimen/padding_10"
+                android:text="@string/notificationalert"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/fontsize_18" />
+
+            <Switch
+                android:id="@+id/switchNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:switchMinWidth="40dp"
+                android:text=""
+                android:textOff=""
+                android:textOn=""
+                android:thumb="@drawable/switch_thumb"
+                android:track="@drawable/switch_track" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:background="@color/color_424242" />
+             <TextView
+            android:id="@+id/tvVersionName"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeightSmall"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_10"
+            android:textColor="@color/color_424242"
+            android:textSize="@dimen/fontsize_18"
+            tools:text="1.0" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:padding="@dimen/padding_10"
+                android:text="Choose default selection"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/fontsize_16" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="Check All"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_10sdp"
+                    android:visibility="visible" />
+
+                <CheckBox
+                    android:id="@+id/chkall"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:button="@drawable/select_checkbox_drawable"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_5"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/fontsize_14" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDefaultJoin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/margin_30"
+                    android:background="@drawable/rounded_blue_btn"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="Save Changes"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="MissingPrefix" />
+            </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HostedContestFragment"
+    android:background="@color/white">
+
+        <com.malinskiy.superrecyclerview.SuperRecyclerView
+            android:id="@+id/rvHostedContestList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
+            app:recyclerClipToPadding="false"
+            app:recyclerPaddingBottom="@dimen/icon_circular_width_large"
+            app:scrollbarStyle="insideInset"
+            app:layout_empty="@layout/layout_no_contest_found"/>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabCreateContest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:src="@drawable/add"
+            app:elevation="4dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

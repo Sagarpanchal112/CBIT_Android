@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.CreateContestActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_yellow"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_arrow" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/ivBack"
+                android:fontFamily="@font/montserrat_semibold"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Edit Game"
+                android:textColor="@color/color_424242"
+                android:textSize="20sp"
+                tools:ignore="MissingPrefix" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/padding_20"
+            android:paddingTop="@dimen/padding_10"
+            android:paddingEnd="@dimen/padding_20"
+            android:paddingBottom="@dimen/padding_10">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@drawable/edittext_line"
+                android:padding="@dimen/padding_10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center_vertical"
+                    android:text="Choose Group"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_18" />
+
+                <Spinner
+                    android:id="@+id/sp_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:entries="@array/group"
+                    android:gravity="right"
+                    android:spinnerMode="dialog" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/arrow" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Choose Game"
+                android:textColor="@color/color_a0a0a0"
+                android:textSize="@dimen/fontsize_18" />
+
+            <RadioGroup
+                android:id="@+id/rgGame"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_marginTop="@dimen/margin_10"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Classic Grid"
+                    android:textColor="@color/color_424242"
+                    android:textSize="12dp"
+                    app:buttonTint="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Spinning Machine"
+                    android:textColor="@color/color_424242"
+                    android:textSize="12dp"
+                    app:buttonTint="@color/colorPrimary" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/lin_spinning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/img_previous"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:rotation="180"
+                        android:src="@drawable/right_arrow" />
+
+                    <TextView
+                        android:id="@+id/tv_game_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:text="Colour Colour"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/img_next"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:src="@drawable/right_arrow" />
+
+
+                </LinearLayout>
+
+                <com.tfb.cbit.views.PagerSlidingTabStrip
+                    android:id="@+id/pager_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_below="@+id/header"
+                    android:elevation="@dimen/_10sdp"
+                    android:focusable="false"
+                    android:visibility="gone"
+                    app:pstsIndicatorColor="@color/start_color"
+                    app:pstsIndicatorHeight="4dp"
+                    app:pstsTabPaddingLeftRight="14dip"
+                    app:pstsUnderlineHeight="1dp" />
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBricks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_5"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/linBrickes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/slot_bg"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp"
+                android:visibility="gone"
+                android:weightSum="5">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_I"
+                    style="@style/slotRecyclerView"
+                    android:layout_weight="1"
+                    android:background="@drawable/yellow_forground" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_IV"
+                    style="@style/slotRecyclerView"
+                    android:layout_weight="1"
+                    android:background="@drawable/yellow_forground" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_VII"
+                    style="@style/slotRecyclerView"
+                    android:layout_weight="1"
+                    android:background="@drawable/yellow_forground" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_X"
+                    style="@style/slotRecyclerView"
+                    android:layout_weight="1"
+                    android:background="@drawable/yellow_forground" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_XIII"
+                    style="@style/slotRecyclerView"
+                    android:layout_weight="1"
+
+                    android:background="@drawable/yellow_forground" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Choose Level"
+                android:textColor="@color/color_a0a0a0"
+                android:textSize="@dimen/fontsize_18" />
+
+            <RadioGroup
+                android:id="@+id/rgGameLevel"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_marginTop="@dimen/margin_10"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/easy"
+                    android:textColor="@color/color_424242"
+                    android:textSize="12dp"
+                    app:buttonTint="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".4"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/moderate"
+                    android:textColor="@color/color_424242"
+                    android:textSize="12dp"
+                    app:buttonTint="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/pro"
+                    android:textColor="@color/color_424242"
+                    android:textSize="12dp"
+                    app:buttonTint="@color/colorPrimary" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/lin_game_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Game Type"
+                    android:textColor="@color/color_a0a0a0"
+                    android:textSize="@dimen/fontsize_18" />
+
+                <RadioGroup
+                    android:id="@+id/rgGameType"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".3"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Colour Colour"
+                        android:textColor="@color/color_424242"
+                        android:textSize="12dp"
+                        app:buttonTint="@color/colorPrimary" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".4"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Numeric Slot"
+                        android:textColor="@color/color_424242"
+                        android:textSize="12dp"
+                        app:buttonTint="@color/colorPrimary" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_numeric_slot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="No Of Slots"
+                    android:textColor="@color/color_a0a0a0"
+                    android:textSize="@dimen/fontsize_18" />
+
+                <RadioGroup
+                    android:id="@+id/rgNoSlot"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/listPreferredItemHeightSmall"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".25"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="2 Slots"
+                        android:textColor="@color/color_424242"
+                        android:textSize="12dp"
+                        app:buttonTint="@color/colorPrimary" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".25"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="3 Slots"
+                        android:textColor="@color/color_424242"
+                        android:textSize="12dp"
+                        app:buttonTint="@color/colorPrimary" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".25"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="5 Slots"
+                        android:textColor="@color/color_424242"
+                        android:textSize="12dp"
+                        app:buttonTint="@color/colorPrimary" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".25"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="10 Slots"
+                        android:textColor="@color/color_424242"
+                        android:textSize="12dp"
+                        app:buttonTint="@color/colorPrimary" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Choose Lockstyle"
+                android:textColor="@color/color_a0a0a0"
+                android:textSize="@dimen/fontsize_18" />
+
+            <RadioGroup
+                android:id="@+id/rgLockStyle"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_marginTop="@dimen/margin_10"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Basic"
+                    android:textColor="@color/color_424242"
+                    android:textSize="12dp"
+                    app:buttonTint="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Paper Chit"
+                    android:textColor="@color/color_424242"
+                    android:textSize="12dp"
+                    app:buttonTint="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".4"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Catch the Object"
+                    android:textColor="@color/color_424242"
+                    android:textSize="12dp"
+                    app:buttonTint="@color/colorPrimary" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@drawable/edittext_line"
+                android:padding="@dimen/padding_10"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center_vertical"
+                    android:text="Choose Game Mode"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/fontsize_18" />
+
+                <Spinner
+                    android:id="@+id/sp_game_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:entries="@array/gamemode"
+                    android:gravity="right"
+                    android:spinnerMode="dialog" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/arrow" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:background="@drawable/btn_login_new"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/montserrat_semibold"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="Edit Game"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

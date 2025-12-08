@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_350sdp"
+        android:padding="@dimen/padding_10"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_5sdp"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/lin_bottom"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Choose contests"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_16sdp" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvContestPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"></androidx.recyclerview.widget.RecyclerView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_colorprimary_radius_left_side"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Cancel"
+                    android:textColor="@color/white"
+                    tools:ignore="MissingPrefix" />
+
+                <Button
+                    android:id="@+id/btnSet"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_yellow_radius_right_side"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Save changes"
+                    android:textColor="@color/color_green_dark"
+                    tools:ignore="MissingPrefix" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
