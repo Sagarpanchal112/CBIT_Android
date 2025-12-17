@@ -11,7 +11,7 @@
         android:id="@+id/rvPlayGameList"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_170sdp"
-        android:background="@drawable/yellow_gradiant"
+        android:background="@drawable/new_yellow_gradiant"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_empty="@layout/layout_no_contest_found"
         app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"

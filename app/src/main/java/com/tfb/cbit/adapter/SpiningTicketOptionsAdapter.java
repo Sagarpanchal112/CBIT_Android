@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -14,7 +13,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.tfb.cbit.R;
 import com.tfb.cbit.databinding.ItemOptionsSpinigBinding;
-import com.tfb.cbit.databinding.ListAccountBinding;
 import com.tfb.cbit.interfaces.OnItemClickListener;
 import com.tfb.cbit.models.contestdetails.Slote;
 import com.tfb.cbit.utility.LogHelper;

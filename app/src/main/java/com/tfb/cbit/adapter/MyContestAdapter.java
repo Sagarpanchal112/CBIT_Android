@@ -51,12 +51,12 @@ public class MyContestAdapter extends RecyclerView.Adapter<MyContestAdapter.View
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
         viewHolder.binding.btnEnter.setVisibility(View.GONE);
-        viewHolder.binding.btnMyTickets.setBackground(ContextCompat.getDrawable(context, R.drawable.btn_colorprimary_radius_left_side));
+        viewHolder.binding.btnMyTickets.setBackground(ContextCompat.getDrawable(context, R.drawable.new_btn_colorprimary_radius_left_side));
         viewHolder.binding.tvContestName.setText(contest_list.get(i).getName());
         viewHolder.binding.tvStartDate.setText("Date : " + Utils.getddMMyyyyformat(contest_list.get(i).getStartDate()));
         viewHolder.binding.tvGameTime.setText(Utils.getHHMM(contest_list.get(i).getStartDate()));
         if (contest_list.get(i).getGame_type().equalsIgnoreCase("spinning-machine")) {
-            viewHolder.binding.ivGameLevel.setImageResource(R.drawable.slot_machine);
+            viewHolder.binding.ivGameLevel.setImageResource(R.drawable.whatsmost);
 
         } else {
             viewHolder.binding.ivGameLevel.setImageResource(R.drawable.classic_grid);
@@ -138,7 +138,7 @@ public class MyContestAdapter extends RecyclerView.Adapter<MyContestAdapter.View
                 }*/
                 viewHolder.binding.btnEnter.setVisibility(View.VISIBLE);
                 //   showTuto();
-                viewHolder.binding.btnMyTickets.setBackground(ContextCompat.getDrawable(context, R.drawable.btn_colorprimary_radius_left_side));
+                viewHolder.binding.btnMyTickets.setBackground(ContextCompat.getDrawable(context, R.drawable.new_btn_colorprimary_radius_left_side));
             }
         }.start();
     }

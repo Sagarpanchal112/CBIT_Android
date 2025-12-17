@@ -67,7 +67,7 @@ public class WinnerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 if (winnerList.get(i).getWinStatus().equalsIgnoreCase("1")) {
                     viewHolder.binding.tvName.setTextColor(Color.parseColor("#6abe45"));
                 } else {
-                    viewHolder.binding.tvName.setTextColor(Color.parseColor("#fb0102"));
+                    viewHolder.binding.tvName.setTextColor(Color.parseColor("#ffffff"));
                 }
                 viewHolder.binding.tvName.setText(winnerList.get(i).getName());
 

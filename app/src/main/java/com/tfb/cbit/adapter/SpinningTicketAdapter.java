@@ -106,7 +106,7 @@ public class SpinningTicketAdapter extends RecyclerView.Adapter<SpinningTicketAd
                 viewHolder.binding.tvLockNow.setEnabled(false);
                 // fixedHolder.linearNotSelection.setVisibility(View.GONE);
                 viewHolder.binding.linearSelection.setVisibility(View.GONE);
-                viewHolder.binding.linearLock.setVisibility(View.VISIBLE);
+                viewHolder.binding.linearLock.setVisibility(View.GONE);
                 viewHolder.optionsAdapter.setGameStatus(true);
                 if (!ticketList.get(i).getDisplayView().isEmpty()) {
                     viewHolder.binding.tvSelectedAns.setVisibility(View.GONE);
@@ -150,7 +150,7 @@ public class SpinningTicketAdapter extends RecyclerView.Adapter<SpinningTicketAd
                 viewHolder.binding.tvAnsSelection.setText(ticketList.get(i).getDisplayView());
 
             } else {
-                viewHolder.binding.linearSelection.setVisibility(View.VISIBLE);
+                viewHolder.binding.linearSelection.setVisibility(View.GONE);
                 viewHolder.binding.linearLock.setVisibility(View.GONE);
             }
 

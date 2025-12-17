@@ -82,6 +82,8 @@ public class AnyTimeTicketResultAdapter extends RecyclerView.Adapter<AnyTimeTick
 
             }*/
         } else {
+            viewHolder.binding.tvWinnings.setText("Result Pending");
+
            /* viewHolder.tvViewWinner.setVisibility(View.GONE);
             viewHolder.tvWinnings.setVisibility(View.GONE);
 

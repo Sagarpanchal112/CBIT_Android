@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_a0a0a0_stock_1"
+        android:background="@drawable/new_appbar"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="@dimen/margin_5">
@@ -81,7 +81,7 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_10sdp"
                         tools:text="₹ 1000" />
                 </LinearLayout>
@@ -106,7 +106,7 @@
                             android:gravity="center"
                             android:maxLines="1"
                             android:text="Table Size"
-                            android:textColor="@color/color_424242"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/_9sdp"
                             android:visibility="gone" />
 
@@ -120,7 +120,7 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_10sdp"
                         tools:text="500" />
                 </LinearLayout>
@@ -158,7 +158,7 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_10sdp"
                         tools:text="₹ 2000" />
                 </LinearLayout>
@@ -196,7 +196,7 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_10sdp"
                         tools:text="3000" />
                 </LinearLayout>
@@ -210,7 +210,8 @@
                     android:fontFamily="@font/montserrat_medium"
                     android:padding="@dimen/margin_5"
                     android:text=""
-                    android:textColor="@color/colorPrimary"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/fontsize_14" />
             </LinearLayout>
 

@@ -15,18 +15,19 @@
         android:padding="@dimen/_5sdp"
         android:textSize="@dimen/fontsize_16"
         android:fontFamily="@font/montserrat_medium"
-        android:textColor="@color/color_green_dark"
+        android:textColor="@color/white"
         android:gravity="center_vertical"
         android:layout_marginStart="@dimen/margin_10"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/_5sdp"
         android:layout_height="wrap_content">
 
          <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/color_blue"
+        app:cardBackgroundColor="@color/lightblue"
         app:cardCornerRadius="8dp"
         app:cardElevation="0dp"
              android:layout_below="@+id/lin_red"
@@ -88,7 +89,7 @@
                         android:id="@+id/btnPayNow"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_35sdp"
-                        android:background="@drawable/btn_spcl_contest"
+                        android:background="@drawable/new_btn_spcl_contest"
                         android:text="Join Contests"
                         android:fontFamily="@font/montserrat_semibold"
                         android:textColor="@color/white"
@@ -227,7 +228,7 @@
             android:orientation="horizontal"
             android:padding="@dimen/_5sdp"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/tv_spcl_contest"
+            android:background="@drawable/new_tv_spcl_contest"
             android:gravity="center">
             <ImageView
                 android:layout_width="@dimen/_15sdp"

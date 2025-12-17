@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="@drawable/new_bg_gradiant_green_strock"
     android:padding="@dimen/padding_10">
     <TextView
         android:layout_width="wrap_content"
@@ -12,7 +12,7 @@
         android:text="@string/amount"
         android:textSize="@dimen/_16sdp"
         android:fontFamily="@font/montserrat_semibold"
-        android:textColor="@color/color_212121"
+        android:textColor="@color/white"
         android:layout_gravity="center" />
 
     <LinearLayout
@@ -26,15 +26,15 @@
             android:layout_weight="1"
             android:text="@string/fromutilizedbalance"
             android:fontFamily="@font/montserrat_medium"
-            android:textColor="@color/color_212121"
+            android:textColor="@color/white"
             android:textSize="@dimen/_14sdp"/>
 
         <TextView
             android:id="@+id/tvPrimaryAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/color_212121"
-            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/color_green"
+            android:fontFamily="@font/montserrat_bold"
             android:textSize="@dimen/_15sdp"
             tools:text="500" />
     </LinearLayout>
@@ -49,16 +49,16 @@
             android:fontFamily="@font/montserrat_medium"
             android:layout_weight="1"
             android:text="@string/fromwithdrawablebalance"
-            android:textColor="@color/color_212121"
+            android:textColor="@color/white"
             android:textSize="@dimen/_14sdp"/>
 
         <TextView
             android:id="@+id/tvSecondaryAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_medium"
+            android:fontFamily="@font/montserrat_bold"
             tools:text="1000"
-            android:textColor="@color/color_212121"
+            android:textColor="@color/color_green"
             android:textSize="@dimen/_15sdp"/>
     </LinearLayout>
     <LinearLayout
@@ -72,7 +72,7 @@
             android:layout_weight="1"
             android:text="@string/total"
             android:fontFamily="@font/montserrat_medium"
-            android:textColor="@color/color_212121"
+            android:textColor="@color/white"
             android:textSize="@dimen/_14sdp"
             android:gravity="end"
             android:layout_marginEnd="@dimen/margin_5"/>
@@ -81,9 +81,9 @@
             android:id="@+id/tvTotalAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_medium"
+            android:fontFamily="@font/montserrat_bold"
             tools:text="1000"
-            android:textColor="@color/color_212121"
+            android:textColor="@color/color_green"
             android:textSize="@dimen/_15sdp"/>
     </LinearLayout>
 
@@ -91,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginBottom="@dimen/margin_10">
         <Button
             android:id="@+id/btnCancel"
@@ -101,8 +101,8 @@
             android:textSize="@dimen/_14sdp"
             android:textAllCaps="false"
             android:fontFamily="@font/montserrat_semibold"
-            android:textColor="@color/color_212121"
-            android:background="@drawable/colorprimary_stock"/>
+            android:textColor="@color/white"
+            android:background="@drawable/new_tv_spcl_contest"/>
 
         <Button
             android:id="@+id/btnOk"
@@ -113,7 +113,7 @@
             android:textAllCaps="false"
             android:fontFamily="@font/montserrat_semibold"
             android:textColor="@color/white"
-            android:background="@drawable/bg_colorprimary"
+            android:background="@drawable/my_gradient_drawable_round"
             android:layout_marginStart="@dimen/margin_10"/>
     </LinearLayout>
 </LinearLayout>

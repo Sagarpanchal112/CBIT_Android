@@ -2,13 +2,12 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/margin_10">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_a0a0a0_stock_1"
+        android:background="@color/darkblue"
         android:orientation="vertical"
         android:padding="@dimen/padding_10">
 
@@ -27,7 +26,7 @@
                 android:maxLines="1"
                 android:fontFamily="@font/montserrat_semibold"
                 android:text="Game No :  1(₹5)"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_12sdp"
                 />
 
@@ -49,7 +48,7 @@
                     android:text="Entry Fees"
                     android:textSize="@dimen/_10sdp"
                     android:gravity="center"
-                    android:textColor="@color/color_424242"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/montserrat_medium"
                     android:maxLines="1"
                     android:ellipsize="end"/>
@@ -60,7 +59,7 @@
                     tools:text="₹ 1000"
                     android:fontFamily="@font/montserrat_medium"
                     android:textSize="@dimen/_10sdp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:gravity="center"
                     android:maxLines="1"
                     android:ellipsize="end"/>
@@ -82,7 +81,7 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:textSize="@dimen/_10sdp"
                         android:gravity="center"
-                        android:textColor="@color/color_424242"
+                        android:textColor="@color/white"
                         android:maxLines="1"
                         android:ellipsize="end"/>
 
@@ -94,7 +93,7 @@
                     tools:text="500"
                     android:textSize="@dimen/_10sdp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:gravity="center"
                     android:maxLines="1"
                     android:ellipsize="end"/>
@@ -115,7 +114,7 @@
                         android:text="Winnings"
                         android:textSize="@dimen/_10sdp"
                         android:gravity="center"
-                        android:textColor="@color/color_424242"
+                        android:textColor="@color/white"
                         android:fontFamily="@font/montserrat_medium"
                         android:maxLines="1"
                         android:ellipsize="end"/>
@@ -127,7 +126,7 @@
                     android:layout_height="wrap_content"
                     tools:text="₹ 2000"
                     android:textSize="@dimen/_10sdp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
                     android:maxLines="1"
@@ -150,7 +149,7 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:textSize="@dimen/_10sdp"
                         android:gravity="center"
-                        android:textColor="@color/color_424242"
+                        android:textColor="@color/white"
                         android:maxLines="1"
                         android:ellipsize="end"/>
 
@@ -161,7 +160,7 @@
                     android:layout_height="wrap_content"
                     tools:text="3000"
                     android:textSize="@dimen/_10sdp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
                     android:maxLines="1"
@@ -177,14 +176,15 @@
                     android:id="@+id/tvViewWinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btn_login"
+                    android:background="@drawable/new_tv_spcl_contest"
                     android:ellipsize="end"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
                     android:maxLines="2"
+                    android:minHeight="@dimen/_32sdp"
                     android:text="@string/viewwinner"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/_10sdp" />
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9sdp" />
 
                 <TextView
                     android:id="@+id/tvCancelled"
@@ -227,7 +227,6 @@
 
                 <TextView
                     android:id="@+id/tv_played"
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
@@ -235,7 +234,7 @@
                     android:fontFamily="@font/montserrat_medium"
                     android:maxLines="1"
                     android:text="100 Played/400 Pending"
-                    android:textColor="@color/color_red"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_9sdp" />
 
 
@@ -247,7 +246,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/white"
                 android:fontFamily="@font/montserrat_medium"
                 android:textSize="@dimen/_10sdp"
                 tools:text="Locked at: 12:29:55s" />
@@ -262,7 +261,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/montserrat_medium"
                     android:textSize="@dimen/_10sdp"
                     tools:text="Your Selection" />
@@ -273,8 +272,6 @@
                     android:layout_gravity="center"
                     android:gravity="right" />
             </LinearLayout>
-
-
         </LinearLayout>
 
         <TextView
@@ -285,7 +282,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:text="You chose right answer"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold" />
         <TextView
@@ -303,5 +300,10 @@
             tools:ignore="MissingPrefix"
             android:visibility="gone"
             tools:text="You win : \u20b9 1000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/lighred"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_height="@dimen/_1sdp"/>
     </LinearLayout>
 </FrameLayout>

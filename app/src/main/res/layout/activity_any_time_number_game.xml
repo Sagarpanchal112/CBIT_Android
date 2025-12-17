@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_yellow"
+        android:background="@drawable/new_appbar"
         app:contentInsetEnd="0dp"
         app:contentInsetLeft="0dp"
         app:contentInsetRight="0dp"
@@ -33,6 +33,7 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:padding="@dimen/padding_10"
+                android:tint="@color/white"
                 android:src="@drawable/ic_arrow" />
 
             <TextView
@@ -45,8 +46,7 @@
                 android:lines="1"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:text="Number Slot"
-                android:textColor="@color/color_424242"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_13sdp"
                 tools:ignore="MissingPrefix" />
 
@@ -61,8 +61,8 @@
                 android:lines="1"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:text="ATG"
-                android:textColor="@color/color_424242"
+                android:text="Play Anytime"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 tools:ignore="MissingPrefix" />
 
@@ -73,6 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"
+        android:background="@color/darkblue"
         android:orientation="vertical">
 
         <TextView
@@ -81,7 +82,6 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_10"
             android:fontFamily="@font/montserrat_medium"
-
             android:gravity="center"
             android:minWidth="@dimen/height_120"
             android:paddingStart="@dimen/padding_10"
@@ -121,21 +121,33 @@
             android:layout_marginTop="@dimen/margin_10"
             android:layout_marginEnd="@dimen/margin_5" />
 
-        <TextView
-            android:id="@+id/tv_RemainingText"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="?attr/listPreferredItemHeightSmall"
+            android:layout_height="@dimen/_45sdp"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/margin_10"
-            android:fontFamily="@font/montserrat_medium"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/slot_bg"
+            >
+            <TextView
+                android:id="@+id/tv_RemainingText"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/listPreferredItemHeightSmall"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:background="@drawable/yellow_forground"
+                android:minWidth="@dimen/height_120"
+                android:paddingStart="@dimen/padding_10"
+                android:paddingEnd="@dimen/padding_10"
+                android:text="Blue-Red"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18sdp" />
+        </LinearLayout>
 
-            android:gravity="center"
-            android:minWidth="@dimen/height_120"
-            android:paddingStart="@dimen/padding_10"
-            android:paddingEnd="@dimen/padding_10"
-            android:text="Blue-Red"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
 
 
         <FrameLayout
@@ -230,6 +242,7 @@
                             android:background="@drawable/bg_a0a0a0_stock_1"
                             android:gravity="center_vertical"
                             android:orientation="horizontal"
+                            android:visibility="gone"
                             android:padding="@dimen/margin_5">
 
 
@@ -481,7 +494,7 @@
                         android:fontFamily="@font/montserrat_semibold"
                         android:gravity="center"
                         android:padding="@dimen/padding_10"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/fontsize_16"
                         android:visibility="gone"
                         tools:text=" 00 Contest Selected" />
@@ -508,7 +521,7 @@
                                 android:gravity="center"
                                 android:maxLines="1"
                                 android:text="Contest Fee"
-                                android:textColor="@color/color_424242"
+                                android:textColor="@color/white"
                                 android:textSize="@dimen/_9sdp" />
 
 
@@ -605,6 +618,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:layout_marginBottom="@dimen/_3sdp"
                             android:gravity="center_horizontal"
                             android:orientation="vertical">
 
@@ -621,10 +635,8 @@
                                     android:fontFamily="@font/montserrat_bold"
                                     android:gravity="center"
                                     android:maxLines="1"
-
                                     android:text="Select All"
-
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/_9sdp" />
                             </LinearLayout>
 
@@ -648,7 +660,7 @@
                         android:id="@+id/linearPay"
                         android:layout_width="match_parent"
                         android:layout_height="?attr/actionBarSize"
-                        android:background="@color/colorPrimary">
+                        android:background="@drawable/my_gradient_drawable_round">
 
                         <TextView
                             android:id="@+id/tvPayTitle"

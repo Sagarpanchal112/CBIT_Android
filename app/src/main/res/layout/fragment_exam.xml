@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkblue"
     tools:context=".fragments.AnyTimeGameFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -61,22 +61,18 @@
                     android:layout_weight="1"
 
                     android:background="@drawable/yellow_forground" />
-
-
             </LinearLayout>
             <TextView
                 android:id="@+id/tv_RemainingText"
                 android:layout_width="wrap_content"
                 android:layout_height="?attr/listPreferredItemHeightSmall"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/margin_10"
                 android:fontFamily="@font/montserrat_medium"
-
                 android:gravity="center"
                 android:paddingStart="@dimen/padding_10"
                 android:paddingEnd="@dimen/padding_10"
                 android:text="What's Most?"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="18sp" />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -152,15 +148,17 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_85sdp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/margin_5">
-
-
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:background="@drawable/slot_bg"
+                    android:orientation="horizontal">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/yellow_forground"
+                        android:layout_margin="@dimen/_7sdp"
                         android:gravity="center">
 
                         <LinearLayout
@@ -201,7 +199,6 @@
                                         android:layout_height="@dimen/_60sdp"
                                         android:layout_marginStart="@dimen/_10sdp"
                                         android:layout_marginEnd="@dimen/_10sdp"
-                                        android:gravity="center"
                                         android:src="@drawable/ic_draw" />
 
                                     <ImageView
@@ -251,7 +248,7 @@
                 android:fontFamily="@font/montserrat_semibold"
                 android:gravity="center"
                 android:padding="@dimen/padding_10"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/fontsize_16"
                 android:visibility="gone"
                 tools:text=" 00 Contest Selected" />
@@ -260,7 +257,8 @@
                 android:id="@+id/lin_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp">
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_8sdp">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -277,7 +275,7 @@
                         android:gravity="center"
                         android:maxLines="1"
                         android:text="Contest Fee"
-                        android:textColor="@color/color_424242"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_9sdp" />
 
 
@@ -303,7 +301,7 @@
                             android:gravity="center"
                             android:maxLines="1"
                             android:text="Players"
-                            android:textColor="@color/color_424242"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/_9sdp" />
 
                     </LinearLayout>
@@ -331,7 +329,7 @@
                             android:gravity="center"
                             android:maxLines="1"
                             android:text="Winnings"
-                            android:textColor="@color/color_424242"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/_9sdp" />
 
                     </LinearLayout>
@@ -359,7 +357,7 @@
                             android:gravity="center"
                             android:maxLines="1"
                             android:text="Max winners"
-                            android:textColor="@color/color_424242"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/_9sdp" />
 
                     </LinearLayout>
@@ -388,8 +386,7 @@
                             android:gravity="center"
                             android:maxLines="1"
                             android:text="Select All"
-
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/_9sdp" />
 
                     </LinearLayout>
@@ -418,13 +415,14 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginRight="@dimen/_30sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
+                android:tint="@color/lighred"
                 android:src="@drawable/suffle" />
 
             <LinearLayout
                 android:id="@+id/linearPay"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/colorPrimary">
+                android:background="@drawable/my_gradient_drawable_round">
 
                 <TextView
                     android:id="@+id/tvPayTitle"

@@ -127,6 +127,27 @@ public class DashBoardFragment extends Fragment implements OnItemClickListener {
         binding.dashboardViewPager.setAdapter(tabsPagerAdapter);
         binding.dashboardTabLayout.setupWithViewPager(binding.dashboardViewPager);
 
+        binding.dashboardViewPager.addOnPageChangeListener(
+                new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+                    @Override
+                    public void onPageSelected(int position) {
+                        ViewGroup.LayoutParams params =
+                                binding.dashboardViewPager.getLayoutParams();
+                        if (position == 0) {
+                            // Tab 1 - chhoti height
+                            params.height = getResources().getDimensionPixelSize(com.intuit.sdp.R.dimen._110sdp);
+                        } else if (position == 1) {
+                            // Tab 2 - badi height
+                            params.height = getResources().getDimensionPixelSize(com.intuit.sdp.R.dimen._170sdp);
+                        }
+                        binding.dashboardViewPager.setLayoutParams(params);
+                    }
+                    @Override
+                    public void onPageScrollStateChanged(int state) {}
+                });
+
         sessionUtil = new SessionUtil(context);
         //   getAds();
 
@@ -304,6 +325,7 @@ public class DashBoardFragment extends Fragment implements OnItemClickListener {
             }
         });
     }
+
 
     private class TabsPagerAdapter extends FragmentStatePagerAdapter {
         private int NUM_ITEMS = 2;

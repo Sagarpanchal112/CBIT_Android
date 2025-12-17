@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/margin_5"
-    android:background="@color/color_bg"
+    android:background="@color/darkblue"
     android:orientation="horizontal"
     android:padding="@dimen/margin_5">
 
@@ -14,6 +14,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:minHeight="@dimen/_30sdp"
+        android:background="@drawable/new_tv_spcl_contest"
         android:orientation="vertical">
 
         <LinearLayout
@@ -35,7 +37,7 @@
                     android:maxLines="1"
                     android:fontFamily="@font/montserrat_medium"
                     android:text="Entry Fees"
-                    android:textColor="@color/color_424242"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
@@ -47,7 +49,7 @@
                     android:fontFamily="@font/montserrat_medium"
                     android:maxLines="1"
                     android:text="₹ 5.00"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_10sdp" />
             </LinearLayout>
 
@@ -71,7 +73,7 @@
                         android:gravity="center"
                         android:maxLines="1"
                         android:text="Players"
-                        android:textColor="@color/color_424242"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -84,7 +86,7 @@
                     android:maxLines="1"
                     android:fontFamily="@font/montserrat_medium"
                     android:text="1053813"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_10sdp" />
             </LinearLayout>
 
@@ -108,7 +110,7 @@
                         android:maxLines="1"
                         android:fontFamily="@font/montserrat_medium"
                         android:text="Winnings"
-                        android:textColor="@color/color_424242"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_9sdp" />
 
                 </LinearLayout>
@@ -122,7 +124,7 @@
                     android:maxLines="1"
                     android:fontFamily="@font/montserrat_medium"
                     android:text="₹ 42,15,252"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_10sdp" />
             </LinearLayout>
 
@@ -146,7 +148,7 @@
                         android:maxLines="1"
                         android:fontFamily="@font/montserrat_medium"
                         android:text="Winners"
-                        android:textColor="@color/color_424242"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -159,7 +161,7 @@
                     android:fontFamily="@font/montserrat_medium"
                     android:maxLines="1"
                     android:text="4,21,525"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_10sdp" />
             </LinearLayout>
         </LinearLayout>
@@ -168,6 +170,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_70sdp"
             android:gravity="center"
+            android:visibility="gone"
             android:orientation="horizontal">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -191,7 +194,7 @@
         android:layout_marginLeft="@dimen/_5sdp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"

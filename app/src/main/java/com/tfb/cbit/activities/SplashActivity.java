@@ -15,6 +15,8 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.VideoView;
 
 import androidx.core.app.ActivityCompat;
 
@@ -61,7 +63,8 @@ public class SplashActivity extends BaseAppCompactActivity {
   //  int PERMISSION_ALL = 1;
     private NewApiLoginCall newApiLoginCall;
     private ProgressDialog progressDialog;
-
+    VideoView videoView;
+    Button btnSkip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +82,31 @@ public class SplashActivity extends BaseAppCompactActivity {
       /*  if (!hasPermissions(this, PERMISSIONS)) {
             //ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
         }*/
+        videoView = findViewById(R.id.videoView);
+        btnSkip = findViewById(R.id.btnSkip);
+
+        // Video path
+        Uri videoUri = Uri.parse("android.resource://"
+                + getPackageName() + "/" + R.raw.splash);
+
+        videoView.setVideoURI(videoUri);
+        videoView.setOnPreparedListener(mp -> {
+            float videoRatio = mp.getVideoWidth() / (float) mp.getVideoHeight();
+            float screenRatio = videoView.getWidth() / (float) videoView.getHeight();
+
+            float scale = videoRatio / screenRatio;
+
+            if (scale >= 1f) {
+                videoView.setScaleX(scale);
+            } else {
+                videoView.setScaleY(1f / scale);
+            }
+        });
+        videoView.start();
+        videoView.setOnCompletionListener(mp -> openNextScreen());
+        btnSkip.setOnClickListener(v -> openNextScreen());
+    }
+    private void openNextScreen() {
         if (sessionUtil.isLogin()) {
             if (!sessionUtil.getSocialId().isEmpty()) {
                 getSocialLogin(sessionUtil.getSocialId(), sessionUtil.getSocialType());
@@ -97,7 +125,6 @@ public class SplashActivity extends BaseAppCompactActivity {
             }, 2000);
         }
     }
-
     public static boolean hasPermissions(Context context, String... permissions) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
             for (String permission : permissions) {
@@ -108,7 +135,6 @@ public class SplashActivity extends BaseAppCompactActivity {
         }
         return true;
     }
-
     private void getSignIn() {
         JSONObject jsonObject = new JSONObject();
         byte[] data;
@@ -184,7 +210,6 @@ public class SplashActivity extends BaseAppCompactActivity {
         });
 
     }
-
     private void checkVersion() {
         File file = new File(Environment.getExternalStorageDirectory() + "/Android/data/" + getPackageName() + "/files/cbitoriginal.apk");
         LogHelper.e("TAG", "Path : " + file.getAbsolutePath());
@@ -298,7 +323,6 @@ public class SplashActivity extends BaseAppCompactActivity {
             }
         });
     }
-
     private void getSocialLogin(final String social_Id, final String social_type) {
         JSONObject jsonObject = new JSONObject();
         byte[] data;
@@ -367,5 +391,4 @@ public class SplashActivity extends BaseAppCompactActivity {
         });
 
     }
-
 }

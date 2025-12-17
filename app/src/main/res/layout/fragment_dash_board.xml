@@ -4,26 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/darkblue"
     tools:context=".fragments.DashBoardFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/darkblue"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lin_j_ticket"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/my_gradient_drawable_round"
+            android:gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_6sdp"
+            android:paddingEnd="@dimen/_6sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Cashback Received     "
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/tvJHitsAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingStart="@dimen/_4sdp"
+                android:text="\u20B9 0"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+        </LinearLayout>
+
 
         <RelativeLayout
             android:id="@+id/rlSpecial"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_160sdp">
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:layout_height="@dimen/_167sdp">
 
             <com.malinskiy.superrecyclerview.SuperRecyclerView
                 android:id="@+id/rvSpecialContest"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_160sdp"
-
-                android:background="@drawable/yellow_gradiant"
+                android:layout_height="@dimen/_163sdp"
+                android:background="@drawable/new_yellow_gradiant"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
                 app:recyclerClipToPadding="false"
@@ -36,7 +67,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
                 android:layout_marginBottom="@dimen/_8sdp"
-                app:spi_dotSelectedColor="@color/colorPrimary" />
+                app:spi_dotSelectedColor="@color/lighred" />
         </RelativeLayout>
 
         <LinearLayout
@@ -47,8 +78,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#033475"
-
+                android:background="@drawable/new_blue_gradiant"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -56,7 +86,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginEnd="@dimen/_5sdp"
-                    app:srcCompat="@drawable/icon_time"/>
+                    app:srcCompat="@drawable/icon_time" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -69,11 +99,12 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp"
                     android:textStyle="bold" />
+
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginStart="@dimen/_5sdp"
-                    app:srcCompat="@drawable/icon_trophy"/>
+                    app:srcCompat="@drawable/icon_trophy" />
 
             </LinearLayout>
 
@@ -87,7 +118,7 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:layout_marginRight="@dimen/_10sdp"
-                    android:background="@drawable/bg_gradiant_green_round"
+                    android:background="@drawable/new_bg_gradiant_green_round"
                     android:orientation="horizontal"
                     android:paddingTop="@dimen/_25sdp"
                     android:paddingBottom="@dimen/_10sdp">
@@ -108,18 +139,18 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/montserrat_medium"
                             android:gravity="center"
-                            android:text="What's \nMore"
+                            android:text="What's More"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/fontsize_16" />
+                            android:textSize="@dimen/fontsize_12" />
 
                         <ImageView
                             android:id="@+id/lblRegister"
-                            android:layout_width="@dimen/_24sdp"
-                            android:layout_height="@dimen/_24sdp"
+                            android:layout_width="@dimen/_32sdp"
+                            android:layout_height="@dimen/_32sdp"
                             android:layout_below="@+id/btnCalssicGrid"
                             android:layout_centerHorizontal="true"
                             android:gravity="center"
-                            android:src="@drawable/color_color" />
+                            android:src="@drawable/whatsmore" />
 
                     </RelativeLayout>
 
@@ -146,17 +177,17 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/montserrat_medium"
                             android:gravity="center"
-                            android:text="What's\nMost"
+                            android:text="What's Most"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/fontsize_16" />
+                            android:textSize="@dimen/fontsize_12" />
 
                         <ImageView
-                            android:layout_width="@dimen/_24sdp"
-                            android:layout_height="@dimen/_24sdp"
+                            android:layout_width="@dimen/_32sdp"
+                            android:layout_height="@dimen/_32sdp"
                             android:layout_below="@+id/btnSpinMachine"
                             android:layout_centerHorizontal="true"
                             android:gravity="center"
-                            android:src="@drawable/spinning_icon" />
+                            android:src="@drawable/whatsmost" />
 
 
                     </RelativeLayout>
@@ -182,16 +213,16 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/montserrat_medium"
                             android:gravity="center"
-                            android:text="What's \nThat "
+                            android:text="What's That "
                             android:textColor="@color/white"
-                            android:textSize="@dimen/fontsize_16" />
+                            android:textSize="@dimen/fontsize_12" />
 
                         <ImageView
-                            android:layout_width="@dimen/_24sdp"
-                            android:layout_height="@dimen/_24sdp"
+                            android:layout_width="@dimen/_32sdp"
+                            android:layout_height="@dimen/_32sdp"
                             android:layout_centerHorizontal="true"
                             android:gravity="center"
-                            android:src="@drawable/number_slot" />
+                            android:src="@drawable/whatsthat" />
 
 
                     </LinearLayout>
@@ -221,7 +252,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:background="@drawable/my_gradient_drawable_round"
+                    android:background="@drawable/new_tv_spcl_contest"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="@dimen/_5sdp">
@@ -236,7 +267,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat_medium"
                         android:padding="@dimen/_2sdp"
-                        android:text="QUIZ GAMES"
+                        android:text="PLAY ANYTIME"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_11sdp" />
 
@@ -249,16 +280,17 @@
             </RelativeLayout>
         </LinearLayout>
 
-
         <LinearLayout
             android:id="@+id/lin_noti_count"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_10sdp"
-            android:background="@drawable/my_gradient_drawable_round"
+            android:background="@drawable/new_tv_spcl_contest"
             android:minHeight="@dimen/_50sdp"
             android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:padding="@dimen/_10sdp">
 
             <ImageView
@@ -286,7 +318,6 @@
                     android:fontFamily="@font/montserrat_bold"
                     android:gravity="center_vertical"
                     android:text="2 New Result Declar "
-
                     android:textColor="#FFFFFF"
                     android:textSize="12sp" />
 
@@ -354,6 +385,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
             android:orientation="vertical">
 
 
@@ -369,7 +401,7 @@
                 android:textStyle="bold" />
 
             <LinearLayout
-                android:id="@+id/lin_j_ticket"
+                android:id="@+id/lin_j_tickett"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_5sdp"
@@ -407,7 +439,6 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
                 </LinearLayout>
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -460,7 +491,7 @@
                         android:textSize="@dimen/_8sdp" />
 
                     <TextView
-                        android:id="@+id/tvJHitsAmount"
+                        android:id="@+id/tvJHitsAmountt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat_bold"
@@ -473,50 +504,56 @@
 
             </LinearLayout>
 
-
         </LinearLayout>
-
-
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/dashboardTabLayout"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white"
-            app:tabIndicatorColor="@color/color_green_dark"
+            app:tabIndicatorColor="@color/lighred"
             app:tabIndicatorHeight="2dp"
             app:tabMode="fixed"
-            app:tabSelectedTextColor="@color/color_green_dark"
+            app:tabSelectedTextColor="@color/darkblue"
             app:tabTextAppearance="@style/TabTextAppearance"
             app:tabTextColor="@color/text_hint" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/dashboardViewPager"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_140sdp" />
-        <com.tfb.cbit.views.FixedAspectRatioFrameLayout
-            android:id="@+id/frmAds"
+            android:layout_height="@dimen/_110sdp" />
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_100sdp"
-            app:aspectRatioHeight="1"
-            app:aspectRatioWidth="3">
-            <!-- <com.tfb.cbit.views.MetalRecyclerViewPager
-                 android:id="@+id/viewPager"
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 app:itemMargin="32dp"/>-->
+            android:layout_height="@dimen/_100sdp">
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </com.tfb.cbit.views.FixedAspectRatioFrameLayout>
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+<!--        <com.tfb.cbit.views.FixedAspectRatioFrameLayout-->
+<!--            android:id="@+id/frmAds"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_145sdp"-->
+<!--            app:aspectRatioHeight="1">-->
+<!--            &lt;!&ndash; <com.tfb.cbit.views.MetalRecyclerViewPager-->
+<!--                 android:id="@+id/viewPager"-->
+<!--                 android:layout_width="match_parent"-->
+<!--                 android:layout_height="match_parent"-->
+<!--                 app:itemMargin="32dp"/>&ndash;&gt;-->
+<!--            <androidx.viewpager.widget.ViewPager-->
+<!--                android:id="@+id/viewPager"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent" />-->
+<!--        </com.tfb.cbit.views.FixedAspectRatioFrameLayout>-->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_10sdp"
-            android:background="@drawable/bg_gradiant_green_round"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/new_bg_gradiant_green_round"
             android:orientation="vertical">
 
 
@@ -546,7 +583,7 @@
                     android:layout_marginLeft="@dimen/_5sdp"
                     android:layout_marginRight="@dimen/_5sdp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_light_blue_rounded"
+                    android:background="@drawable/new_tv_spcl_contest"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -556,7 +593,7 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:gravity="center"
                         android:text="Total Referral"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_8sdp" />
 
                     <TextView
@@ -567,7 +604,7 @@
                         android:gravity="center"
                         android:padding="@dimen/_3sdp"
                         android:text=" 0 "
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
                 </LinearLayout>
 
@@ -577,7 +614,7 @@
                     android:layout_marginLeft="@dimen/_5sdp"
                     android:layout_marginRight="@dimen/_5sdp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_light_blue_rounded"
+                    android:background="@drawable/new_tv_spcl_contest"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -587,7 +624,7 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:gravity="center"
                         android:text="Referral Commission"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_8sdp" />
 
                     <TextView
@@ -598,7 +635,7 @@
                         android:gravity="center"
                         android:padding="@dimen/_3sdp"
                         android:text="\u20B9 0 "
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
                 </LinearLayout>
 

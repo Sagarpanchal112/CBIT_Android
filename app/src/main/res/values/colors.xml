@@ -4,6 +4,9 @@
     <color name="colorPrimary">@color/color_green_dark</color>
     <color name="colorPrimaryDark">@color/color_green_dark</color>
     <color name="colorAccent">@color/color_green_light</color>
+<!--    <color name="colorPrimary">@color/darkblue</color>-->
+<!--    <color name="colorPrimaryDark">@color/middleblue</color>-->
+<!--    <color name="colorAccent">@color/lightblue</color>-->
     <color name="color_login">#3f718a</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
@@ -67,5 +70,11 @@
 
     <color name="start_color">#008081</color>
     <color name="end_color">#2eb9ba</color>
+
+    <color name="darkblue">#0d1a43</color>
+    <color name="lightblue">#2e52cc</color>
+    <color name="middleblue">#033475</color>
+    <color name="lighred">#d9202d</color>
+    <color name="darkred">#5B050A</color>
 
 </resources>

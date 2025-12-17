@@ -2,6 +2,7 @@ package com.tfb.cbit.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +14,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
 import com.tfb.cbit.R;
 import com.tfb.cbit.databinding.ItemTicketNumberSelectionFixedBinding;
 import com.tfb.cbit.databinding.ListAccountBinding;
 import com.tfb.cbit.interfaces.OnItemClickListener;
 import com.tfb.cbit.interfaces.OnItemLongClickListener;
 import com.tfb.cbit.models.anytimegame.Content;
+import com.tfb.cbit.models.anytimegame.SlotesValue;
 import com.tfb.cbit.utility.Utils;
 
 import java.util.List;
@@ -59,21 +62,42 @@ public class AnyNumberTicketSelectionAdapter extends RecyclerView.Adapter<Recycl
         fixedHolder.binding.tvTotalTicket.setText(Utils.getComaFormat(String.valueOf(ticketList.get(i).getNo_of_players())));
         fixedHolder.binding.tvMaxWinners.setText(ticketList.get(i).getNo_of_winners());
         fixedHolder.binding.tvTotalWinnings.setText(Utils.getCurrencyFormat(String.valueOf(ticketList.get(i).getWinningAmount())));
+//        Gson gson = new Gson();
+//        Log.d(TAG, "AYAZ JSON >>>>> " + gson.toJson(ticketList));
 
         if (ticketList.get(i).getGame_type().equals("0-9")) {
             if(ticketList.get(i).getSlotes().equals("3")){
                 fixedHolder.binding.tvMinus.setText("0 to 3");
                 fixedHolder.binding.tvZero.setText("4 to 6");
                 fixedHolder.binding.tvPlus.setText("7 to 9");
+                List<SlotesValue> values = ticketList.get(i).getSlotesValue();
+                if (values != null) {
+                    if (!values.isEmpty()) {
+                        fixedHolder.binding.tvMinus.setText(values.get(0).getDisplayValue());
+                    }
+                    if (values.size() > 1) {
+                        fixedHolder.binding.tvZero.setText(values.get(1).getDisplayValue());
+                    }
+                    if (values.size() > 2) {
+                        fixedHolder.binding.tvPlus.setText(values.get(2).getDisplayValue());
+                    }
+                }
                 fixedHolder.binding.tvPlus.setVisibility(View.VISIBLE);
-
             }else if(ticketList.get(i).getSlotes().equals("2")){
-                fixedHolder.binding.tvMinus.setText("0 to 4");
-                fixedHolder.binding.tvZero.setText("5 to 9");
+                fixedHolder.binding.tvMinus.setText("0"); //16 dec 2025
+                fixedHolder.binding.tvZero.setText("1 to 9");//16 dec 2025
+                List<SlotesValue> values = ticketList.get(i).getSlotesValue();
+                if (values != null) {
+                    if (!values.isEmpty()) {
+                        fixedHolder.binding.tvMinus.setText(values.get(0).getDisplayValue());
+                    }
+                    if (values.size() > 1) {
+                        fixedHolder.binding.tvZero.setText(values.get(1).getDisplayValue());
+                    }
+                }
                 fixedHolder.binding.tvPlus.setVisibility(View.GONE);
-
             }
-         }else if(ticketList.get(i).getGame_type().equals("rdb")){
+        }else if(ticketList.get(i).getGame_type().equals("rdb")){
             fixedHolder.binding.linear3Options.setBackgroundColor(Color.parseColor("#E6E2E2"));
             fixedHolder.binding.tvMinus.setText("Red");
             fixedHolder.binding.tvMinus.setBackgroundResource(R.drawable.bg_red);
@@ -82,16 +106,12 @@ public class AnyNumberTicketSelectionAdapter extends RecyclerView.Adapter<Recycl
             fixedHolder.binding.tvPlus.setText("Blue");
             fixedHolder.binding.tvPlus.setBackgroundResource(R.drawable.bg_blue);
             fixedHolder.binding.tvPlus.setTextColor(Color.parseColor("#ffffff"));
-
         }
         if(ticketList.get(i).isSelected()){
             fixedHolder.binding.chkSelect.setChecked(true);
         }else{
             fixedHolder.binding.chkSelect.setChecked(false);
-
         }
-
-
     }
 
     @Override
@@ -103,7 +123,6 @@ public class AnyNumberTicketSelectionAdapter extends RecyclerView.Adapter<Recycl
     public int getItemCount() {
         return ticketList.size();
     }
-
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
@@ -124,7 +143,6 @@ public class AnyNumberTicketSelectionAdapter extends RecyclerView.Adapter<Recycl
     public void setMaxAns(int maxAns) {
         this.maxAns = maxAns;
     }
-
 
     class FixedHolder extends RecyclerView.ViewHolder {
         ItemTicketNumberSelectionFixedBinding binding;

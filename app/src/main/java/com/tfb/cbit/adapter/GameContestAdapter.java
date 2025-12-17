@@ -103,7 +103,7 @@ public class GameContestAdapter extends RecyclerView.Adapter<GameContestAdapter.
                 break;
         }*/
         if(contest_list.get(i).getGame_type().equalsIgnoreCase("spinning-machine")){
-            viewHolder.binding.ivGameLevel.setImageResource(R.drawable.slot_machine);
+            viewHolder.binding.ivGameLevel.setImageResource(R.drawable.whatsmost);
 
         }else{
             viewHolder.binding.ivGameLevel.setImageResource(R.drawable.classic_grid);

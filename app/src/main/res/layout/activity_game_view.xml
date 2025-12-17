@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkblue"
     tools:context=".activities.GameViewActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_green_dark"
+        android:background="@drawable/new_appbar"
         app:contentInsetEnd="0dp"
         app:contentInsetLeft="0dp"
         app:contentInsetRight="0dp"
@@ -88,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_10"
             android:fontFamily="@font/montserrat_medium"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/white"
             android:textSize="@dimen/_14sdp" />
 
         <LinearLayout
@@ -106,7 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="?attr/listPreferredItemHeightSmall"
                     android:layout_marginTop="@dimen/margin_10"
-                    android:background="@drawable/bg_rounded_colorprimary"
+                    android:background="@drawable/new_tv_spcl_contest"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
                     android:minWidth="@dimen/height_120"
@@ -120,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="?attr/listPreferredItemHeightSmall"
                     android:layout_marginTop="@dimen/margin_10"
-                    android:background="@drawable/bg_rounded_colorprimary"
+                    android:background="@drawable/new_tv_spcl_contest"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
                     android:minWidth="@dimen/height_120"
@@ -152,6 +153,7 @@
                     android:button="@drawable/checkbox_green_selector"
                     android:gravity="center"
                     android:singleLine="true"
+                    android:buttonTint="@color/white"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -161,7 +163,7 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="Pause"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_10sdp" />
             </LinearLayout>
 
@@ -206,24 +208,25 @@
             android:id="@+id/lin_rdb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_5sdp"
+            android:layout_margin="@dimen/_10sdp"
             android:orientation="vertical"
             android:visibility="gone"
             tools:visibility="visible">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_65sdp"
+                android:background="@drawable/slot_bg"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:orientation="horizontal">
-
 
                 <LinearLayout
                     android:id="@+id/rvOprions"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_10"
-                    android:layout_marginBottom="@dimen/margin_10"
-                    android:background="@color/color_bg"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/yellow_forground"
                     android:orientation="horizontal">
 
 
@@ -335,7 +338,7 @@
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
                     android:padding="@dimen/_5sdp"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -389,15 +392,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/slot_bg"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_10"
-                    android:layout_marginBottom="@dimen/margin_10"
+                    android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1.2"
-                    android:background="@drawable/bg_rounded_colorprimary_ticket"
+                    android:background="@drawable/yellow_forground"
                     android:orientation="vertical">
 
                     <!--   <LinearLayout
@@ -574,7 +577,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_40sdp"
                                 android:layout_marginRight="@dimen/_5sdp"
-                                android:background="@drawable/price_group_sel"
+                                android:background="@drawable/new_price_group_sel"
                                 android:button="@android:color/transparent"
                                 android:clickable="false"
                                 android:fontFamily="@font/montserrat_medium"
@@ -582,14 +585,14 @@
                                 android:minWidth="@dimen/_35sdp"
                                 android:padding="@dimen/_10sdp"
                                 android:text="0"
-                                android:textColor="@color/black" />
+                                android:textColor="@drawable/new_text" />
 
                             <RadioButton
                                 android:id="@+id/rd_one"
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_40sdp"
                                 android:layout_marginRight="@dimen/_5sdp"
-                                android:background="@drawable/price_group_sel"
+                                android:background="@drawable/new_price_group_sel"
                                 android:button="@android:color/transparent"
                                 android:clickable="false"
                                 android:fontFamily="@font/montserrat_medium"
@@ -597,14 +600,14 @@
                                 android:minWidth="@dimen/_35sdp"
                                 android:padding="@dimen/_10sdp"
                                 android:text="1"
-                                android:textColor="@color/black" />
+                                android:textColor="@drawable/new_text" />
 
                             <RadioButton
                                 android:id="@+id/rd_two"
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_40sdp"
                                 android:layout_marginRight="@dimen/_5sdp"
-                                android:background="@drawable/price_group_sel"
+                                android:background="@drawable/new_price_group_sel"
                                 android:button="@android:color/transparent"
                                 android:clickable="false"
                                 android:fontFamily="@font/montserrat_medium"
@@ -612,14 +615,14 @@
                                 android:minWidth="@dimen/_35sdp"
                                 android:padding="@dimen/_10sdp"
                                 android:text="2"
-                                android:textColor="@color/black" />
+                                android:textColor="@drawable/new_text" />
 
                             <RadioButton
                                 android:id="@+id/rd_three"
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_40sdp"
                                 android:layout_marginRight="@dimen/_5sdp"
-                                android:background="@drawable/price_group_sel"
+                                android:background="@drawable/new_price_group_sel"
                                 android:button="@android:color/transparent"
                                 android:clickable="false"
                                 android:fontFamily="@font/montserrat_medium"
@@ -627,14 +630,14 @@
                                 android:minWidth="@dimen/_35sdp"
                                 android:padding="@dimen/_10sdp"
                                 android:text="3"
-                                android:textColor="@color/black" />
+                                android:textColor="@drawable/new_text" />
 
                             <RadioButton
                                 android:id="@+id/rd_four"
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_40sdp"
                                 android:layout_marginRight="@dimen/_5sdp"
-                                android:background="@drawable/price_group_sel"
+                                android:background="@drawable/new_price_group_sel"
                                 android:button="@android:color/transparent"
                                 android:clickable="false"
                                 android:fontFamily="@font/montserrat_medium"
@@ -642,7 +645,7 @@
                                 android:minWidth="@dimen/_35sdp"
                                 android:padding="@dimen/_10sdp"
                                 android:text="4"
-                                android:textColor="@color/black" />
+                                android:textColor="@drawable/new_text" />
                         </RadioGroup>
 
                     </LinearLayout>
@@ -669,7 +672,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_40sdp"
                                 android:layout_marginRight="@dimen/_5sdp"
-                                android:background="@drawable/price_group_sel"
+                                android:background="@drawable/new_price_group_sel"
                                 android:button="@android:color/transparent"
                                 android:clickable="false"
                                 android:fontFamily="@font/montserrat_medium"
@@ -677,14 +680,14 @@
                                 android:minWidth="@dimen/_35sdp"
                                 android:padding="@dimen/_10sdp"
                                 android:text="5"
-                                android:textColor="@color/black" />
+                                android:textColor="@drawable/new_text" />
 
                             <RadioButton
                                 android:id="@+id/rd_six"
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_40sdp"
                                 android:layout_marginRight="@dimen/_5sdp"
-                                android:background="@drawable/price_group_sel"
+                                android:background="@drawable/new_price_group_sel"
                                 android:button="@android:color/transparent"
                                 android:clickable="false"
                                 android:fontFamily="@font/montserrat_medium"
@@ -692,14 +695,14 @@
                                 android:minWidth="@dimen/_35sdp"
                                 android:padding="@dimen/_10sdp"
                                 android:text="6"
-                                android:textColor="@color/black" />
+                                android:textColor="@drawable/new_text" />
 
                             <RadioButton
                                 android:id="@+id/rd_seven"
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_40sdp"
                                 android:layout_marginRight="@dimen/_5sdp"
-                                android:background="@drawable/price_group_sel"
+                                android:background="@drawable/new_price_group_sel"
                                 android:button="@android:color/transparent"
                                 android:clickable="false"
                                 android:fontFamily="@font/montserrat_medium"
@@ -707,14 +710,14 @@
                                 android:minWidth="@dimen/_35sdp"
                                 android:padding="@dimen/_10sdp"
                                 android:text="7"
-                                android:textColor="@color/black" />
+                                android:textColor="@drawable/new_text" />
 
                             <RadioButton
                                 android:id="@+id/rd_eight"
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_40sdp"
                                 android:layout_marginRight="@dimen/_5sdp"
-                                android:background="@drawable/price_group_sel"
+                                android:background="@drawable/new_price_group_sel"
                                 android:button="@android:color/transparent"
                                 android:clickable="false"
                                 android:fontFamily="@font/montserrat_medium"
@@ -722,14 +725,14 @@
                                 android:minWidth="@dimen/_35sdp"
                                 android:padding="@dimen/_10sdp"
                                 android:text="8"
-                                android:textColor="@color/black" />
+                                android:textColor="@drawable/new_text" />
 
                             <RadioButton
                                 android:id="@+id/rd_nine"
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_40sdp"
                                 android:layout_marginRight="@dimen/_5sdp"
-                                android:background="@drawable/price_group_sel"
+                                android:background="@drawable/new_price_group_sel"
                                 android:button="@android:color/transparent"
                                 android:clickable="false"
                                 android:fontFamily="@font/montserrat_medium"
@@ -737,7 +740,7 @@
                                 android:minWidth="@dimen/_35sdp"
                                 android:padding="@dimen/_10sdp"
                                 android:text="9"
-                                android:textColor="@color/black" />
+                                android:textColor="@drawable/new_text" />
                         </RadioGroup>
                     </LinearLayout>
 
@@ -753,7 +756,7 @@
                     android:layout_weight="0.5"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
 
                     <TextView
@@ -776,13 +779,8 @@
                         android:text="EMPTY"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_12sdp" />
-
-
                 </LinearLayout>
-
             </LinearLayout>
-
-
         </LinearLayout>
 
         <TextView
@@ -790,11 +788,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_5sdp"
-            android:background="@drawable/bg_colorprimary"
+            android:background="@drawable/my_gradient_drawable_round"
             android:fontFamily="@font/montserrat_semibold"
             android:gravity="center"
             android:minHeight="@dimen/_30sdp"
-            android:text="LOCK ALL"
+            android:text="LOCK"
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp" />
 
@@ -804,7 +802,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_semibold"
             android:padding="@dimen/_5sdp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/white"
             android:textSize="@dimen/_8sdp"
             android:visibility="gone"
             tools:text="Locked at: 12:29:55s"
@@ -816,16 +814,14 @@
             android:layout_height="@dimen/_25sdp"
             android:layout_marginBottom="@dimen/_5sdp"
             android:src="@drawable/padlock"
-            android:tint="@color/color_green_dark"
+            android:tint="@color/white"
             android:visibility="gone"
             tools:visibility="visible" />
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvTickets"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/margin_10" />
-
     </LinearLayout>
 </RelativeLayout>

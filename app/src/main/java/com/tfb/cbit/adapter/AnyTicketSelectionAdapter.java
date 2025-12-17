@@ -61,8 +61,8 @@ public class AnyTicketSelectionAdapter extends RecyclerView.Adapter<RecyclerView
                 fixedHolder.binding.tvPlus.setVisibility(View.VISIBLE);
 
             }else if(ticketList.get(i).getSlotes().equals("2")){
-                fixedHolder.binding.tvMinus.setText("0 to 4");
-                fixedHolder.binding.tvZero.setText("5 to 9");
+                fixedHolder.binding.tvMinus.setText("0");//16 dec 2025
+                fixedHolder.binding.tvZero.setText("1 to 9");//16 dec 2025
                 fixedHolder.binding.tvPlus.setVisibility(View.GONE);
 
             }

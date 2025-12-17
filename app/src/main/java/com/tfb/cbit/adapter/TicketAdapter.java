@@ -110,7 +110,7 @@ public class TicketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
             if (gameStatus.equals(Utils.GAME_NOT_START)) {
                 //flexiHolder.linearNotSelection.setVisibility(View.VISIBLE);
-                flexiHolder.binding.linearSelection.setVisibility(View.VISIBLE);
+                flexiHolder.binding.linearSelection.setVisibility(View.GONE);
                 flexiHolder.binding.tvAnsSelection.setText("Empty");
                 flexiHolder.binding.tvLockNow.setAlpha(.5f);
                 flexiHolder.binding.tvLockNow.setEnabled(false);
@@ -180,7 +180,7 @@ public class TicketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     });*/
                 } else {
                     // flexiHolder.linearNotSelection.setVisibility(View.GONE);
-                    flexiHolder.binding.linearSelection.setVisibility(View.VISIBLE);
+                    flexiHolder.binding.linearSelection.setVisibility(View.GONE);
                     flexiHolder.binding.linearLock.setVisibility(View.GONE);
                    /* flexiHolder.rangeSeekBar.setOnTouchListener(new View.OnTouchListener() {
                         @Override
@@ -325,11 +325,18 @@ public class TicketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
                     }
                 }
-
-                fixedHolder.binding.linear3Options.setVisibility(View.VISIBLE);
+                //set on 15-dec 2025
+//                if (ticketList.get(i).getSlotes().size() == 3) {
+//                    fixedHolder.binding.frameContent.setVisibility(View.GONE);
+//                    fixedHolder.binding.linear3Options.setVisibility(View.GONE);
+//                    fixedHolder.binding.rvOprions.setVisibility(View.GONE);
+//                }else{
+//                    fixedHolder.binding.frameContent.setVisibility(View.VISIBLE);
+//                    fixedHolder.binding.linear3Options.setVisibility(View.VISIBLE);
+//                    fixedHolder.binding.rvOprions.setVisibility(View.GONE);
+//                }
+                fixedHolder.binding.linear3Options.setVisibility(View.GONE);
                 fixedHolder.binding.rvOprions.setVisibility(View.GONE);
-
-
             } else {
                 fixedHolder.binding.linear3Options.setVisibility(View.GONE);
                 fixedHolder.binding.rvOprions.setVisibility(View.VISIBLE);
@@ -395,7 +402,7 @@ public class TicketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     fixedHolder.binding.tvZero.setTextColor(context.getResources().getColor(R.color.white));
                 fixedHolder.binding.tvPlus.setBackgroundColor(context.getResources().getColor(android.R.color.darker_gray));
 
-                fixedHolder.binding.linearSelection.setVisibility(View.VISIBLE);
+                fixedHolder.binding.linearSelection.setVisibility(View.GONE);
                 fixedHolder.binding.linearLock.setVisibility(View.GONE);
             } else {
                 fixedHolder.binding.tvLockNow.setAlpha(1f);
@@ -479,7 +486,7 @@ public class TicketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
                 } else {
                     //fixedHolder.linearNotSelection.setVisibility(View.GONE);
-                    fixedHolder.binding.linearSelection.setVisibility(View.VISIBLE);
+                    fixedHolder.binding.linearSelection.setVisibility(View.GONE);
                     fixedHolder.binding.linearLock.setVisibility(View.GONE);
                     fixedHolder.binding.tvMinus.setOnClickListener(new View.OnClickListener() {
                         @Override

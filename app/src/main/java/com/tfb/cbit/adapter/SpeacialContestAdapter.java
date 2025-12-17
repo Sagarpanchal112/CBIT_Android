@@ -56,7 +56,7 @@ public class SpeacialContestAdapter extends RecyclerView.Adapter<SpeacialContest
         viewHolder.binding.tvStartDate.setText("Date : " + Utils.getddMMyyyyformat(contest_list.get(i).getStartDate()));
         viewHolder.binding.tvGameTime.setText(Utils.getHHMM(contest_list.get(i).getStartDate()));
         if(contest_list.get(i).getGame_type().equalsIgnoreCase("spinning-machine")){
-            viewHolder.binding.ivGameLevel.setImageResource(R.drawable.slot_machine);
+            viewHolder.binding.ivGameLevel.setImageResource(R.drawable.whatsmost);
         }else{
             viewHolder.binding.ivGameLevel.setImageResource(R.drawable.classic_grid);
 

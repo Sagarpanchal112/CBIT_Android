@@ -1,29 +1,19 @@
 package com.tfb.cbit.adapter;
 
 import android.content.Context;
-import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.tfb.cbit.R;
 import com.tfb.cbit.databinding.ItemWinningOptionBinding;
-import com.tfb.cbit.databinding.ListAccountBinding;
 import com.tfb.cbit.interfaces.OnItemClickListener;
 import com.tfb.cbit.models.contestdetails.WinningOptions;
 
 import java.util.List;
-
 
 public class WinningOptionsAdapter extends RecyclerView.Adapter<WinningOptionsAdapter.ViewHolder> {
 

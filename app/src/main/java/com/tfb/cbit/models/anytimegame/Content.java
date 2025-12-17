@@ -3,6 +3,8 @@ package com.tfb.cbit.models.anytimegame;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Content {
     @SerializedName("contestID")
     @Expose
@@ -229,7 +231,13 @@ public class Content {
     public void setNo_of_winners(String no_of_winners) {
         this.no_of_winners = no_of_winners;
     }
+    public List<SlotesValue> getSlotesValue() {
+        return slotesValue;
+    }
 
+    public void setSlotesValue(List<SlotesValue> slotesValue) {
+        this.slotesValue = slotesValue;
+    }
     @SerializedName("winningAmount")
     @Expose
     private String winningAmount;
@@ -293,4 +301,8 @@ public class Content {
     @SerializedName("pendingTickets")
     @Expose
     private int pendingTickets;
+
+    @SerializedName("slotes_value")
+    @Expose
+    private List<SlotesValue> slotesValue;
 }

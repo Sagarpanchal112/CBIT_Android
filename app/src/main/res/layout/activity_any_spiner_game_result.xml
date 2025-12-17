@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_green_dark"
+        android:background="@drawable/new_appbar"
         app:contentInsetEnd="0dp"
         app:contentInsetLeft="0dp"
         app:contentInsetRight="0dp"
@@ -57,6 +57,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/darkblue"
         android:layout_below="@+id/toolbar">
 
         <ProgressBar
@@ -154,12 +155,33 @@
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
                     android:orientation="vertical">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rvWinningOption"
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/rvWinningOption"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_margin="@dimen/_5sdp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                       />-->
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        ></androidx.recyclerview.widget.RecyclerView>
+                        android:layout_height="@dimen/_105sdp"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@drawable/slot_bg"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_margin="@dimen/_8sdp"
+                            android:background="@drawable/yellow_forground"
+                            android:layout_height="wrap_content">
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvWinningOption"
+                                android:layout_width="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
 
                      <TextView
                         android:id="@+id/tvAnsText"

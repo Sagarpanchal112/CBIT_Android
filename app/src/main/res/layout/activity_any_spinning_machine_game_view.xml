@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_green_dark"
+        android:background="@drawable/new_appbar"
         app:contentInsetEnd="0dp"
         app:contentInsetLeft="0dp"
         app:contentInsetRight="0dp"
@@ -74,8 +74,8 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="ATG"
-                android:textColor="@color/color_424242"
+                android:text="Play Anytime"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 tools:ignore="MissingPrefix" />
 
@@ -94,6 +94,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"
+        android:background="@color/darkblue"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -112,7 +113,7 @@
                     android:id="@+id/tvText"
                     android:layout_width="wrap_content"
                     android:layout_height="?attr/listPreferredItemHeightSmall"
-                    android:background="@drawable/bg_rounded_colorprimary"
+                    android:background="@drawable/new_tv_spcl_contest"
                     android:gravity="center"
                     android:minWidth="@dimen/height_120"
                     android:text=""
@@ -124,7 +125,7 @@
                     android:id="@+id/tvRemainingText"
                     android:layout_width="wrap_content"
                     android:layout_height="?attr/listPreferredItemHeightSmall"
-                    android:background="@drawable/bg_rounded_colorprimary"
+                    android:background="@drawable/new_tv_spcl_contest"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
                     android:minWidth="@dimen/height_120"
@@ -155,6 +156,7 @@
                     android:layout_gravity="center"
                     android:button="@drawable/checkbox_green_selector"
                     android:gravity="center"
+                    android:buttonTint="@color/white"
                     android:singleLine="true"
                     tools:ignore="MissingConstraints" />
 
@@ -166,7 +168,7 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="Pause"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_10sdp" />
             </LinearLayout>
 
@@ -196,7 +198,6 @@
                 android:gravity="center"
                 android:padding="5dp"
                 android:src="@drawable/ic_chiku" />
-
 
             <ImageView
                 android:id="@+id/imgI"
@@ -490,7 +491,7 @@
             android:layout_marginTop="@dimen/margin_10"
             android:fontFamily="@font/montserrat_semibold"
             android:text=""
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/white"
             android:textSize="@dimen/_14sdp" />
 
         <LinearLayout
@@ -498,21 +499,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_5sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/slot_bg"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/Oprions"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_70sdp"
                 android:layout_weight="1"
-                android:background="@color/color_bg"
+                android:layout_margin="@dimen/_8sdp"
                 android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/yellow_forground"
                 android:weightSum="3">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvOprions"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:clickable="false"
                     android:orientation="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
@@ -529,7 +535,7 @@
                 android:layout_weight="0.5"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:visibility="visible">
+                android:visibility="gone">
 
 
                 <TextView
@@ -538,7 +544,7 @@
                     android:layout_marginTop="@dimen/_6sdp"
                     android:fontFamily="@font/montserrat_medium"
                     android:text="@string/yourselection"
-                    android:textColor="@color/color_424242"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_11sdp" />
 
                 <TextView
@@ -587,14 +593,17 @@
                     android:id="@+id/tv_LockNow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:background="@drawable/bg_colorprimary"
+                    android:background="@drawable/my_gradient_drawable_round"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
-                    android:padding="@dimen/_5sdp"
-                    android:text="LOCK ALL"
+                    android:minHeight="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:text="LOCK"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_12sdp" />
+                    android:textSize="@dimen/_14sdp" />
 
                 <TextView
                     android:id="@+id/tvLockTime"
@@ -602,7 +611,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_medium"
                     android:padding="@dimen/_5sdp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_8sdp"
                     android:visibility="gone"
                     tools:text="Locked at: 12:29:55s"
@@ -614,8 +623,7 @@
                     android:layout_height="@dimen/_15sdp"
                     android:src="@drawable/padlock"
                     android:visibility="gone"
-
-
+                    android:tint="@color/white"
                     tools:visibility="visible" />
             </LinearLayout>
         </LinearLayout>
@@ -626,8 +634,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/margin_10"
+            android:background="@color/darkblue"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="5"
+            android:visibility="visible"
             tools:listitem="@layout/list_spinning_tickets" />
 
     </LinearLayout>

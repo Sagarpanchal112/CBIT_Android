@@ -50,7 +50,7 @@ public class PrivateRoomTicketsAdapter extends RecyclerView.Adapter<PrivateRoomT
         viewHolder.binding.tvGroupTicket.setText("Game Type:" + groupName.get(i).getGameType());
         viewHolder.binding.tvLockStyle.setText("Lock Style:" + groupName.get(i).getLock_style());
         if (groupName.get(i).getGame_type().equals("spinning_machine")) {
-            viewHolder.binding.imgGameType.setImageDrawable(context.getDrawable(R.drawable.slot_machine));
+            viewHolder.binding.imgGameType.setImageDrawable(context.getDrawable(R.drawable.whatsmost));
             viewHolder.binding.imgLockStyle.setImageDrawable(context.getDrawable(R.drawable.ic_paper_chit));
          } else {
             viewHolder.binding.imgGameType.setImageDrawable(context.getDrawable(R.drawable.classic_grid));

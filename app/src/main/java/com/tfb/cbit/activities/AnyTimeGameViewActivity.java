@@ -604,7 +604,7 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
     public void colorrdb() {
         binding.rdBlue.setBackground(ContextCompat.getDrawable(context, R.drawable.price_group_sel_blue));
         binding.rdDraw.setBackground(ContextCompat.getDrawable(context, R.drawable.price_group_sel));
-        binding.rdDraw.setTextColor(context.getResources().getColor(R.color.colorPrimary));
+        binding.rdDraw.setTextColor(context.getResources().getColor(R.color.lightblue));
         binding.rdRed.setBackground(ContextCompat.getDrawable(context, R.drawable.price_group_sel_red));
     }
 
@@ -617,16 +617,16 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
     }
 
     public void color09() {
-        binding.rdZero.setBackground(ContextCompat.getDrawable(context, R.drawable.price_group_sel));
-        binding.rdOne.setBackground(ContextCompat.getDrawable(context, R.drawable.price_group_sel));
-        binding.rdTwo.setBackground(ContextCompat.getDrawable(context, R.drawable.price_group_sel));
-        binding.rdThree.setBackground(ContextCompat.getDrawable(context, R.drawable.price_group_sel));
-        binding.rdFour.setBackground(ContextCompat.getDrawable(context, R.drawable.price_group_sel));
-        binding.rdFive.setBackground(ContextCompat.getDrawable(context, R.drawable.price_group_sel));
-        binding.rdSix.setBackground(ContextCompat.getDrawable(context, R.drawable.price_group_sel));
-        binding.rdSeven.setBackground(ContextCompat.getDrawable(context, R.drawable.price_group_sel));
-        binding.rdEight.setBackground(ContextCompat.getDrawable(context, R.drawable.price_group_sel));
-        binding.rdNine.setBackground(ContextCompat.getDrawable(context, R.drawable.price_group_sel));
+        binding.rdZero.setBackground(ContextCompat.getDrawable(context, R.drawable.new_price_group_sel));
+        binding.rdOne.setBackground(ContextCompat.getDrawable(context, R.drawable.new_price_group_sel));
+        binding.rdTwo.setBackground(ContextCompat.getDrawable(context, R.drawable.new_price_group_sel));
+        binding.rdThree.setBackground(ContextCompat.getDrawable(context, R.drawable.new_price_group_sel));
+        binding.rdFour.setBackground(ContextCompat.getDrawable(context, R.drawable.new_price_group_sel));
+        binding.rdFive.setBackground(ContextCompat.getDrawable(context, R.drawable.new_price_group_sel));
+        binding.rdSix.setBackground(ContextCompat.getDrawable(context, R.drawable.new_price_group_sel));
+        binding.rdSeven.setBackground(ContextCompat.getDrawable(context, R.drawable.new_price_group_sel));
+        binding.rdEight.setBackground(ContextCompat.getDrawable(context, R.drawable.new_price_group_sel));
+        binding.rdNine.setBackground(ContextCompat.getDrawable(context, R.drawable.new_price_group_sel));
     }
 
     public void gray09() {

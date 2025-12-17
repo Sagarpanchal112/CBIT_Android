@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/bg_a0a0a0_stock_1"
+        android:background="@color/darkblue"
         android:padding="@dimen/padding_10">
         <LinearLayout
             android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
                 android:maxLines="1"
                 android:text="Game No :  1(₹5)"
                 android:fontFamily="@font/montserrat_semibold"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_12sdp"
                 android:textStyle="bold" />
 
@@ -47,7 +47,7 @@
                     android:text="Entry Fees"
                     android:textSize="@dimen/_10sdp"
                     android:gravity="center"
-                    android:textColor="@color/color_424242"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/montserrat_medium"
                     android:maxLines="1"
                     android:ellipsize="end"/>
@@ -58,7 +58,7 @@
                     tools:text="₹ 1000"
                     android:fontFamily="@font/montserrat_medium"
                     android:textSize="@dimen/_10sdp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:gravity="center"
                     android:maxLines="1"
                     android:ellipsize="end"/>
@@ -80,22 +80,23 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:textSize="@dimen/_10sdp"
                         android:gravity="center"
-                        android:textColor="@color/color_424242"
+                        android:textColor="@color/white"
                         android:maxLines="1"
                         android:ellipsize="end"/>
 
                 </LinearLayout>
+
                 <TextView
                     android:id="@+id/tvTotalTicket"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:text="500"
-                    android:textSize="@dimen/_10sdp"
+                    android:ellipsize="end"
                     android:fontFamily="@font/montserrat_medium"
-                    android:textColor="@color/colorPrimary"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:ellipsize="end"/>
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sdp"
+                    tools:text="500" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -113,7 +114,7 @@
                         android:text="Winnings"
                         android:textSize="@dimen/_10sdp"
                         android:gravity="center"
-                        android:textColor="@color/color_424242"
+                        android:textColor="@color/white"
                         android:fontFamily="@font/montserrat_medium"
                         android:maxLines="1"
                         android:ellipsize="end"/>
@@ -125,7 +126,7 @@
                     android:layout_height="wrap_content"
                     tools:text="₹ 2000"
                     android:textSize="@dimen/_10sdp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
                     android:maxLines="1"
@@ -148,7 +149,7 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:textSize="@dimen/_10sdp"
                         android:gravity="center"
-                        android:textColor="@color/color_424242"
+                        android:textColor="@color/white"
                         android:maxLines="1"
                         android:ellipsize="end"/>
 
@@ -159,7 +160,7 @@
                     android:layout_height="wrap_content"
                     tools:text="3000"
                     android:textSize="@dimen/_10sdp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
                     android:maxLines="1"
@@ -175,14 +176,15 @@
                     android:id="@+id/tvViewWinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btn_login"
+                    android:background="@drawable/new_tv_spcl_contest"
                     android:ellipsize="end"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
+                    android:minHeight="@dimen/_32sdp"
                     android:maxLines="2"
                     android:text="@string/viewwinner"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/_10sdp" />
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9sdp" />
 
                 <TextView
                     android:id="@+id/tvCancelled"
@@ -206,49 +208,47 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
             android:orientation="horizontal"
             android:padding="@dimen/_5sdp"
             android:scrollbars="horizontal">
 
             <RadioButton
                 android:id="@+id/rd_red"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_25sdp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_marginRight="@dimen/_5sdp"
-                android:background="@drawable/price_group_sel_red"
+                android:background="@drawable/ic_red"
                 android:button="@android:color/transparent"
                 android:fontFamily="@font/montserrat_medium"
                 android:clickable="false"
                 android:padding="@dimen/_5sdp"
-                android:text="Red Win"
                 android:textColor="@drawable/text_group_sel" />
 
             <RadioButton
                 android:id="@+id/rd_draw"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_25sdp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_marginRight="@dimen/_5sdp"
-                android:background="@drawable/price_group_sel"
+                android:background="@drawable/ic_draw"
                 android:button="@android:color/transparent"
                 android:clickable="false"
                 android:gravity="center"
                 android:minWidth="@dimen/_55sdp"
                 android:fontFamily="@font/montserrat_medium"
                 android:padding="@dimen/_5sdp"
-                android:text="Draw"
                 android:textColor="@color/white" />
 
             <RadioButton
                 android:id="@+id/rd_blue"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_25sdp"
-                android:background="@drawable/price_group_sel_blue"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/ic_blue"
                 android:button="@android:color/transparent"
                 android:clickable="false"
                 android:fontFamily="@font/montserrat_medium"
                 android:gravity="center"
                 android:padding="@dimen/_5sdp"
-                android:text="Blue Win"
                 android:textColor="@drawable/text_group_sel" />
 
         </RadioGroup>
@@ -261,7 +261,7 @@
             android:orientation="horizontal"
             android:padding="@dimen/_10sdp"
             android:visibility="gone"
-            android:background="@drawable/bg_rounded_colorprimary_ticket"
+            android:background="@drawable/new_tv_spcl_contest"
             >
 
             <TextView
@@ -336,7 +336,7 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="100 Played/400 Pending"
-                    android:textColor="@color/color_red"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_9sdp"
                     />
 
@@ -350,7 +350,7 @@
                 android:textSize="@dimen/_10sdp"
                 tools:text="Locked at: 12:29:55s"
                 android:fontFamily="@font/montserrat_medium"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/white"
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/tvAns"
@@ -360,7 +360,7 @@
                 android:textSize="@dimen/_11sdp"
                 android:fontFamily="@font/montserrat_medium"
                 tools:text="Your Answer : 0"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/white"
                 android:gravity="right"/>
         </LinearLayout>
 
@@ -372,7 +372,7 @@
             android:maxLines="1"
             android:fontFamily="@font/montserrat_medium"
             android:text="You chose right answer"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold" />
         <TextView
@@ -422,6 +422,11 @@
             android:textSize="@dimen/_14sdp"
             tools:ignore="MissingPrefix"
             tools:text="No win : \u20b9 0000" />
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/darkred"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_height="@dimen/_1sdp"/>
     </LinearLayout>
+
 </FrameLayout>

@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_yellow"
+        android:background="@drawable/new_appbar"
         app:contentInsetEnd="0dp"
         app:contentInsetLeft="0dp"
         app:contentInsetRight="0dp"
@@ -30,6 +30,7 @@
                 android:clickable="true"
                 android:contentDescription="@null"
                 android:focusable="true"
+                android:tint="@color/white"
                 android:focusableInTouchMode="true"
                 android:padding="@dimen/padding_10"
                 android:src="@drawable/ic_arrow" />
@@ -45,7 +46,7 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:text="Contest Name"
-                android:textColor="@color/color_424242"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 tools:ignore="MissingPrefix" />
 
@@ -61,7 +62,7 @@
                 android:visibility="gone"
                 android:singleLine="true"
                 android:text="ATG"
-                android:textColor="@color/color_424242"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 tools:ignore="MissingPrefix" />
 
@@ -71,6 +72,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/darkblue"
         android:layout_below="@+id/toolbar">
 
         <ProgressBar
@@ -101,7 +103,7 @@
                 android:gravity="center"
                 android:padding="@dimen/margin_5"
                 android:text=""
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:visibility="visible"
                 android:textSize="16sp" />
             <TextView
@@ -128,7 +130,7 @@
                     android:gravity="center"
                     android:padding="@dimen/margin_5"
                     android:text=""
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="18sp" />
 
                 <TextView
@@ -138,9 +140,8 @@
                     android:gravity="center"
                     android:padding="@dimen/margin_5"
                     android:text="You gave correct answer in 1.578 secs"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
-
                     android:visibility="gone" />
 
                 <TextView
@@ -150,12 +151,15 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="@dimen/margin_5"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     tools:text="Red Total : 00" />
 
             </LinearLayout>
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@color/darkred"
+                android:layout_height="@dimen/_1sdp"/>
             <TextView
                 android:id="@+id/tvAns"
                 android:layout_width="wrap_content"
@@ -164,7 +168,7 @@
                 android:padding="@dimen/margin_5"
                 android:visibility="gone"
                 android:text="You gave correct answer in 1.578 secs"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/white"
                 android:textSize="18sp" />
             <TextView
                 android:id="@+id/tvWinnings"
@@ -230,6 +234,7 @@
                 android:id="@+id/rvTickets"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/darkblue"
                 android:layout_marginTop="@dimen/margin_5" />
 
         </LinearLayout>

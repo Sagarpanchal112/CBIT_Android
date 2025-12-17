@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/darkblue"
     tools:context=".activities.TicketSelectionActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_yellow"
+        android:background="@drawable/new_appbar"
         app:contentInsetEnd="0dp"
         app:contentInsetLeft="0dp"
         app:contentInsetRight="0dp"
@@ -33,6 +33,7 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:padding="@dimen/padding_10"
+                android:tint="@color/white"
                 android:src="@drawable/ic_arrow" />
 
             <TextView
@@ -45,7 +46,7 @@
                 android:lines="1"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textColor="@color/color_424242"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_13sdp"
                 tools:ignore="MissingPrefix"
                 tools:text="Royal Casino" />
@@ -60,8 +61,8 @@
                 android:lines="1"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:text="ATG"
-                android:textColor="@color/color_424242"
+                android:text="Play Anytime"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 tools:ignore="MissingPrefix" />
 
@@ -85,7 +86,7 @@
             android:paddingStart="@dimen/padding_10"
             android:paddingEnd="@dimen/padding_10"
             android:text="Any Time Game : Spinning Machine"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:visibility="gone" />
 
@@ -107,7 +108,7 @@
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"></androidx.viewpager.widget.ViewPager>
+            android:layout_weight="1"/>
 
 
     </LinearLayout>
@@ -141,7 +142,7 @@
             android:paddingStart="@dimen/_10sdp"
             android:paddingEnd="@dimen/_10sdp"
             android:text=""
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/white"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold" />
 

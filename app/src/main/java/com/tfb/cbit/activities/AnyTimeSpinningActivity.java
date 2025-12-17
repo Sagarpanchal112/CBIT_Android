@@ -124,7 +124,7 @@ public class AnyTimeSpinningActivity extends FragmentActivity {
         if (!EventBus.getDefault().isRegistered(this))
             EventBus.getDefault().register(this);
         //  toolbar_title.setText(bundle.getString(CONTEST_NAME, ""));
-        pagerTabStri = (PagerSlidingTabStrip) findViewById(R.id.pager_header);
+        pagerTabStri = findViewById(R.id.pager_header);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         viewPager.setPageTransformer(false, new CustPagerTransformer(this));
         //getAnyTimeGameContestList();

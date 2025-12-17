@@ -14,7 +14,7 @@
         android:layout_marginStart="@dimen/margin_10"
         android:fontFamily="@font/montserrat_medium"
         android:gravity="center_vertical"
-        android:textColor="@color/color_green_dark"
+        android:textColor="@color/white"
         android:textSize="@dimen/fontsize_16"
         tools:text="Date: 15-06-2019" />
 
@@ -31,7 +31,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/my_gradient_drawable"
+            android:background="@drawable/new_my_gradient_drawable"
             android:orientation="vertical">
 
             <LinearLayout
@@ -48,6 +48,7 @@
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginRight="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_3sdp"
                     android:contentDescription="@null"
                     tools:src="@drawable/ic_easy" />
 
@@ -216,7 +217,7 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_35sdp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn_colorprimary_radius_left_side"
+                    android:background="@drawable/new_btn_colorprimary_radius_left_side"
                     android:clickable="true"
                     android:focusable="true"
                     android:fontFamily="@font/montserrat_semibold"
@@ -230,7 +231,7 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_35sdp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn_light_green"
+                    android:background="@drawable/new_btn_light_green"
                     android:clickable="true"
                     android:focusable="true"
                     android:fontFamily="@font/montserrat_semibold"

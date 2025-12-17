@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_green_dark"
+        android:background="@drawable/new_appbar"
         app:contentInsetEnd="0dp"
         app:contentInsetLeft="0dp"
         app:contentInsetRight="0dp"
@@ -60,6 +60,7 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/linearFooter"
         android:layout_below="@+id/toolbar"
+        android:background="@color/darkblue"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_empty="@layout/layout_no_data_found"
         app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
@@ -72,7 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentBottom="true"
-        android:background="@color/color_green_dark">
+        android:background="@drawable/new_appbar">
 
         <LinearLayout
             android:layout_width="0dp"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/margin_10"
-    android:background="@drawable/bg_a0a0a0_stock_1"
+    android:background="@drawable/new_tv_spcl_contest"
     android:padding="@dimen/margin_5">
 
     <LinearLayout
@@ -32,7 +32,7 @@
                     android:maxLines="1"
                     android:fontFamily="@font/montserrat_medium"
                     android:text="Entry Fees"
-                    android:textColor="@color/color_424242"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_10sdp" />
 
                 <TextView
@@ -42,7 +42,7 @@
                     android:ellipsize="end"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/montserrat_medium"
                     android:textSize="@dimen/_10sdp"
                     tools:text="₹ 1000" />
@@ -68,7 +68,7 @@
                         android:gravity="center"
                         android:maxLines="1"
                         android:text="Players"
-                        android:textColor="@color/color_424242"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_10sdp" />
 
                 </LinearLayout>
@@ -81,7 +81,7 @@
                     android:ellipsize="end"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_10sdp"
                     tools:text="500" />
             </LinearLayout>
@@ -106,7 +106,7 @@
                         android:maxLines="1"
                         android:fontFamily="@font/montserrat_medium"
                         android:text="Winnings"
-                        android:textColor="@color/color_424242"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_10sdp" />
 
                 </LinearLayout>
@@ -119,7 +119,7 @@
                     android:gravity="center"
                     android:fontFamily="@font/montserrat_medium"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_10sdp"
                     tools:text="₹ 2000" />
             </LinearLayout>
@@ -144,7 +144,7 @@
                         android:gravity="center"
                         android:maxLines="1"
                         android:text="Max winners"
-                        android:textColor="@color/color_424242"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_10sdp" />
 
                 </LinearLayout>
@@ -157,7 +157,7 @@
                     android:gravity="center"
                     android:fontFamily="@font/montserrat_medium"
                     android:maxLines="1"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_10sdp"
                     tools:text="3000" />
             </LinearLayout>
@@ -170,6 +170,7 @@
             android:layout_marginStart="@dimen/margin_10"
             android:layout_marginTop="@dimen/margin_10"
             android:layout_marginEnd="@dimen/margin_10"
+            android:visibility="gone"
             android:layout_marginBottom="@dimen/margin_10"
             android:background="@drawable/bg_rounded_colorprimary_ticket"
             android:paddingStart="@dimen/padding_10"
@@ -282,7 +283,7 @@
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -337,6 +338,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_10"
+                android:tint="@color/white"
                 android:src="@drawable/padlock" />
 
             <TextView

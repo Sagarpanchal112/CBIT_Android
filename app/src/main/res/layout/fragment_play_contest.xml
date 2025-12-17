@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/yellow_gradiant"
+    android:background="@drawable/new_yellow_gradiant"
     tools:context=".fragments.PlayContestFragment">
 
     <com.malinskiy.superrecyclerview.SuperRecyclerView
