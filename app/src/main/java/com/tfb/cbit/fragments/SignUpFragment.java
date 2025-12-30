@@ -290,12 +290,14 @@ public class SignUpFragment extends Fragment {
             binding. tvAge.setTextColor(getActivity().getResources().getColor(R.color.color_red));
             //    Utils.showToast(context, "Check to Agree Terms & Condition and Privacy Policy");
             return false;
-        } else if (! binding.chkState.isChecked()) {
-            binding.  tvState.setTextColor(getActivity().getResources().getColor(R.color.color_red));
-            binding. tvAge.setTextColor(getActivity().getResources().getColor(R.color.white));
-            //    Utils.showToast(context, "Check to Agree Terms & Condition and Privacy Policy");
-            return false;
-        }/*else if(isUserNameTaken){
+        }
+//        else if (! binding.chkState.isChecked()) {
+//            binding.  tvState.setTextColor(getActivity().getResources().getColor(R.color.color_red));
+//            binding. tvAge.setTextColor(getActivity().getResources().getColor(R.color.white));
+//            //    Utils.showToast(context, "Check to Agree Terms & Condition and Privacy Policy");
+//            return false;
+//        }
+        /*else if(isUserNameTaken){
             edtUserName.setError("username already taken");
             edtUserName.requestFocus();
             return false;

@@ -434,7 +434,7 @@ public class LoginWithMobileFragment extends Fragment {
                         checkVersion();
                     }else if (loginMobileModel.getContent().getStatuss().equalsIgnoreCase("MobileNo")) {
                         CustomDialog customDialog = new CustomDialog();
-                        customDialog.showDialogOneButton(context, "Welcome to Cbit Original", "Please enter your details to register with Cbit Original .",
+                        customDialog.showDialogOneButton(context, "Welcome to Kitty Games", "Please enter your details to register with Kitty Games .",
                                 "OK", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
@@ -480,7 +480,7 @@ public class LoginWithMobileFragment extends Fragment {
             @Override
             public void success(String responseData) {
                 CustomDialog customDialog = new CustomDialog();
-                customDialog.showDialogOneButton(context, "Welcome to Cbit Original", "Please enter your details to register with Cbit Original .",
+                customDialog.showDialogOneButton(context, "Welcome to Kitty Games", "Please enter your details to register with Kitty Games .",
                         "OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -573,7 +573,7 @@ public class LoginWithMobileFragment extends Fragment {
                     bundle.putString("socialtype", social_type);
                     if (getActivity() != null) {
                         CustomDialog customDialog = new CustomDialog();
-                        customDialog.showDialogOneButton(context, "Welcome to Cbit Original", "Please enter your details to register with Cbit Original .",
+                        customDialog.showDialogOneButton(context, "Welcome to Kitty Games", "Please enter your details to register with Kitty Games .",
                                 "OK", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {

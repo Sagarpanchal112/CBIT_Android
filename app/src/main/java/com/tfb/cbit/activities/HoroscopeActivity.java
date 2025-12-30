@@ -38,7 +38,7 @@ public class HoroscopeActivity extends AppCompatActivity {
             }
 
             public void onFinish() {
-                binding.tvRemainingText.setText("Cbit Original");
+                binding.tvRemainingText.setText("Kitty Games");
             }
         };
         Count.start();

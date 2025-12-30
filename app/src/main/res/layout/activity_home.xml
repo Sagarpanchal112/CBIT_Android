@@ -339,6 +339,7 @@
                     android:layout_height="?attr/listPreferredItemHeightSmall"
                     android:fontFamily="@font/montserrat_semibold"
                     android:text="@string/faqs"
+                    android:visibility="gone"
                     tools:ignore="MissingPrefix" />
 
                 <TextView

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cbit Original</string>
+    <string name="app_name">Kitty Games</string>
     <string name="login" translatable="false">Login</string>
     <string name="signup">Sign UP</string>
     <string name="download_completed">New Version Download Completed</string>
@@ -393,7 +393,7 @@
     <string name="fromutilizedbalance">From Unutilized Balance:</string>
     <string name="fromwithdrawablebalance">From Withdrawable Balance:</string>
     <string name="total">Total:</string>
-    <string name="welcometocbit">Welcome To Cbit Original!</string>
+    <string name="welcometocbit">Welcome To Kitty Games!</string>
     <string name="enterlogindetail">Enter Mobile Number</string>
     <string name="donthaveanaccount">Don\'t have an account?</string>
     <string name="register"><b><u>Register</u></b></string>
@@ -412,15 +412,28 @@
     <string name="buytickets">Buy Tickets</string>
     <string name="totalbalance">Total Balance</string>
     <string name="privacypolicy">Privacy Policy</string>
-    <string name="legality">Legality</string>
+<!--    <string name="legality">Legality</string>-->
+    <string name="legality">Cookie Policy</string>
 
     <!-- Link -->
-    <string name="about_link">http://www.cbitoriginal.com</string>
-    <string name="termscondition">https://cbitoriginal.com/j_tickit.html</string>
+
+<!--<string name="about_link">http://www.cbitoriginal.com</string>-->
+    <string name="about_link">https://www.jtechgloballimited.com/#about</string>
+
+<!--    <string name="termscondition">https://cbitoriginal.com/j_tickit.html</string>-->
+    <string name="termscondition">https://www.jtechgloballimited.com/terms-and-conditions</string>
+
     <string name="faqsLink">https://Cbitoriginal.com/faq.html</string>
-    <string name="legality_link">http://188.166.46.24:3500/page/legality</string>
-    <string name="privacy_link">http://cbitoriginal.com/privacy-policy-app.html</string>
-    <string name="terms_link">http://188.166.46.24:3500/page/termsofuse_mobileapp</string>
+
+<!--    <string name="legality_link">http://188.166.46.24:3500/page/legality</string>-->
+    <string name="legality_link">https://www.jtechgloballimited.com/cookie-policy</string>
+
+<!--    <string name="privacy_link">http://cbitoriginal.com/privacy-policy-app.html</string>-->
+    <string name="privacy_link">https://www.jtechgloballimited.com/privacy-policy</string>
+
+<!--    <string name="terms_link">http://188.166.46.24:3500/page/termsofuse_mobileapp</string>-->
+    <string name="terms_link">https://www.jtechgloballimited.com/terms-and-conditions</string>
+
     <string name="help">Help</string>
     <string name="popup_title">Checkmark the box and click on pay at the bottom of the screen to proceed. Join contest now and wait for the game time to play the game.</string>
     <string name="popup_subtitle">Note :- you can join multiple contest too.</string>

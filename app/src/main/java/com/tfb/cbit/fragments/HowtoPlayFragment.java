@@ -37,10 +37,10 @@ public class HowtoPlayFragment extends Fragment {
     private String faqFormate = "<p><span style=\"font-weight: 400;\">FAQ</span></p>\n" +
             "<p>&nbsp;</p>\n" +
             "<ul>\n" +
-            "<li style=\"font-weight: 400;\"><span style=\"font-weight: 400;\">What is Cbit Original app about ?</span></li>\n" +
+            "<li style=\"font-weight: 400;\"><span style=\"font-weight: 400;\">What is Kitty Games app about ?</span></li>\n" +
             "</ul>\n" +
             "<p>&nbsp;</p>\n" +
-            "<p><span style=\"font-weight: 400;\">Cbit original is a mobile gaming app based on real money winnings . It&rsquo;s a game of skill based on calculation .</span></p>\n" +
+            "<p><span style=\"font-weight: 400;\">Kitty Games is a mobile gaming app based on real money winnings . It&rsquo;s a game of skill based on calculation .</span></p>\n" +
             "<p>&nbsp;</p>\n" +
             "<ul>\n" +
             "<li style=\"font-weight: 400;\"><span style=\"font-weight: 400;\">How to Play Red Win / Draw / Blue win.?</span></li>\n" +

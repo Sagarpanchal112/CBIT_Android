@@ -754,7 +754,7 @@ public class Utils {
         SessionUtil sessionUtil = new SessionUtil(context);
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");
-        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Hey there , Start Money Trading in the Form of Gaming . Install the ‘Cbit Original‘ Gaming App with my " +
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Hey there , Start Money Trading in the Form of Gaming . Install the ‘Kitty Games‘ Gaming App with my " +
                 "referral code - " + "' " + Html.fromHtml("<font color=#dd4b39>" + sessionUtil.getReferralcode() + "</font>") + "' " + "\n # Win-win Gaming # World’s most shortest and easiest game # Responsible Gaming # Digital Money Market # contests starting @ ₹5/- only . Click on this link " + "https://" + context.getString(R.string.host_deep_link2) + " to download the app . Join Now !");
         context.startActivity(Intent.createChooser(sharingIntent, context.getResources().getString(R.string.share)));
     }
@@ -772,7 +772,7 @@ public class Utils {
         sharingIntent.setType("image/*");
         // sharingIntent.setType("text/plain");
         sharingIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
-        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml("Hey there ,<br /> <br />Install the ‘Cbit Original‘ Gaming App with my " +
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml("Hey there ,<br /> <br />Install the ‘Kitty Games‘ Gaming App with my " +
                 "referral code - ") + "" + Html.fromHtml("<font color=#dd4b39><b>*" + sessionUtil.getReferralcode() + "*</b></font>") + "" + Html.fromHtml("<br /><br />• Shortests and easiest games to Win cash prizes \uD83C\uDFC6<br />• Cashback \uD83D\uDCB5 Upto 180% on loosing. <br />• Refer and earn \uD83D\uDCB0commission upto ₹15 lakhs / year *<br /><br />Terms & conditions apply  <br /><br />Hurry up! Download now!- " + context.getString(R.string.host_deep_link2))); /*+ sessionUtil.getReferralcode() + ". <br /><br />Hurry! Download it now!*/;
         context.startActivity(Intent.createChooser(sharingIntent, context.getResources().getString(R.string.share)));
     }

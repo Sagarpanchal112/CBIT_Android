@@ -110,7 +110,7 @@ public class TimerService extends Service {
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID);
         Notification notification = notificationBuilder.setOngoing(true)
                 .setSmallIcon(R.mipmap.app_green_icon)
-                .setContentTitle("Cbit Original")
+                .setContentTitle("Kitty Games")
                 .setContentText("Tap to return to the timer")
                 .setPriority(NotificationManager.IMPORTANCE_HIGH)
                 .setCategory(Notification.CATEGORY_SERVICE)
