@@ -20,7 +20,6 @@ import org.greenrobot.eventbus.ThreadMode;
 
 public class PaymentSummaryActivity extends BaseAppCompactActivity {
 
-
     private Context context;
     private SessionUtil sessionUtil = null;
     private ActivityPaymentSummaryBinding binding;

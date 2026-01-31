@@ -72,7 +72,7 @@ public class EasyJoinModel implements Serializable {
         public int type;
         @SerializedName("rows")
         @Expose
-        public int rows;
+        public String rows;
         @SerializedName("game_type")
         @Expose
         public String game_type;
@@ -127,11 +127,11 @@ public class EasyJoinModel implements Serializable {
             this.type = type;
         }
 
-        public int getRows() {
+        public String getRows() {
             return rows;
         }
 
-        public void setRows(int rows) {
+        public void setRows(String rows) {
             this.rows = rows;
         }
 

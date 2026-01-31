@@ -67,7 +67,7 @@ public class AddMoneyActivity extends BaseAppCompactActivity {
     public int tranId;
 
     String apiEndPoint = "/pg/v1/pay";
-    String salt = "a6334ff7-da0e-4d51-a9ce-76b97d518b1e";
+//    String salt = "a6334ff7-da0e-4d51-a9ce-76b97d518b1e";
     int saltIndex = 1;
     private static int B2B_PG_REQUEST_CODE = 777;
     private ActivityAddMoneyBinding binding;
@@ -96,7 +96,8 @@ public class AddMoneyActivity extends BaseAppCompactActivity {
 
         binding.btnAddMoney.setOnClickListener(view -> {
             if (isValidForm()) {
-                startTransaction();
+                startTransaction(); // EXISTING CASHFREE FLOW
+//                startRevolutTransaction();   // 🔥 NEW REVOLUT FLOW
             }
         });
     }
@@ -138,7 +139,6 @@ public class AddMoneyActivity extends BaseAppCompactActivity {
             }
         });
     }
-
 
     private boolean isValidForm() {
         return MyValidator.isBlankETError(context, binding.edtAmount, "Enter Amount", 1, 100);
@@ -360,31 +360,30 @@ public class AddMoneyActivity extends BaseAppCompactActivity {
 
     String refID = "";
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CFPaymentService.REQ_CODE && data != null) {
-            Bundle bundle = data.getExtras();
-            if (bundle != null)
-                for (String key : bundle.keySet()) {
-                    if (bundle.getString(key) != null) {
-                        Log.i("key", "=>" + key);
-                        Log.i("key", "=>" + bundle.getString(key));
-                        if (key.equals("referenceId")) {
-                            refID=bundle.getString(key);
-                        }
-                        if (bundle.getString(key).equals("SUCCESS")) {
-                            addMoney(refID);
-                        }
-
-                    }
-                }
-        }
-       /* if (requestCode == B2B_PG_REQUEST_CODE) {
-            addMoney(String.valueOf(tranId));
-
-        }*/
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == CFPaymentService.REQ_CODE && data != null) {
+//            Bundle bundle = data.getExtras();
+//            if (bundle != null)
+//                for (String key : bundle.keySet()) {
+//                    if (bundle.getString(key) != null) {
+//                        Log.i("key", "=>" + key);
+//                        Log.i("key", "=>" + bundle.getString(key));
+//                        if (key.equals("referenceId")) {
+//                            refID=bundle.getString(key);
+//                        }
+//                        if (bundle.getString(key).equals("SUCCESS")) {
+//                            addMoney(refID);
+//                        }
+//                    }
+//                }
+//        }
+//       /* if (requestCode == B2B_PG_REQUEST_CODE) {
+//            addMoney(String.valueOf(tranId));
+//
+//        }*/
+//    }
 
     public String transfromBundleToString(Bundle bundle) {
         String response = "";
@@ -485,5 +484,140 @@ public class AddMoneyActivity extends BaseAppCompactActivity {
         if (EventBus.getDefault().isRegistered(this))
             EventBus.getDefault().unregister(this);
         super.onDestroy();
+    }
+
+    /* Revolut Payment Flow */
+    private int revolutTranId = 0;
+    private static final int REVOLUT_REQUEST_CODE = 8001;
+
+    private void startRevolutTransaction() {
+        JSONObject jsonObject = new JSONObject();
+        byte[] data;
+        String request = "";
+
+        try {
+            jsonObject.put("amount", binding.edtAmount.getText().toString().trim());
+            jsonObject.put("mobileNo", sessionUtil.getMob());
+
+            request = jsonObject.toString();
+            request = CBit.getCryptLib()
+                    .encryptPlainTextWithRandomIV(request, getString(R.string.crypt_pass));
+            data = request.getBytes("UTF-8");
+            request = Base64.encodeToString(data, Base64.DEFAULT);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Call<ResponseBody> call = APIClient.getInstance()
+                .startTransaction(sessionUtil.getToken(), sessionUtil.getId(), request);
+
+        new NewApiCall().makeApiCall(context, true, call, new ApiCallback() {
+            @Override
+            public void success(String responseData) {
+                try {
+                    JSONObject obj = new JSONObject(responseData);
+                    if (obj.getInt("statusCode") == Utils.StandardStatusCodes.SUCCESS) {
+                        JSONObject content = obj.getJSONObject("content");
+                        revolutTranId = content.getInt("transID");
+
+                        createRevolutOrder(); // NEXT STEP
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void failure(String responseData) {}
+        });
+    }
+    private void createRevolutOrder() {
+
+        JSONObject jsonObject = new JSONObject();
+        byte[] data;
+        String request = "";
+
+        try {
+            jsonObject.put("ORDER_ID", revolutTranId + "");
+            jsonObject.put("ORDER_AMOUNT", binding.edtAmount.getText().toString().trim());
+
+            request = jsonObject.toString();
+            request = CBit.getCryptLib()
+                    .encryptPlainTextWithRandomIV(request, getString(R.string.crypt_pass));
+            data = request.getBytes("UTF-8");
+            request = Base64.encodeToString(data, Base64.DEFAULT);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Call<ResponseBody> call = APIClient.getInstance()
+                .generateToken(sessionUtil.getToken(), sessionUtil.getId(), request);
+
+        new NewApiCall().makeApiCall(context, true, call, new ApiCallback() {
+            @Override
+            public void success(String responseData) {
+                try {
+                    JSONObject obj = new JSONObject(responseData);
+                    if (obj.getInt("statusCode") == Utils.StandardStatusCodes.SUCCESS) {
+                        String checkoutUrl = obj.getJSONObject("content")
+                                .getString("checkout_url");
+
+                        openRevolutCheckout(checkoutUrl);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void failure(String responseData) {}
+        });
+    }
+    private void openRevolutCheckout(String checkoutUrl) {
+        Intent intent = new Intent(this, RevolutCheckoutActivity.class);
+        intent.putExtra("URL", checkoutUrl);
+        startActivityForResult(intent, REVOLUT_REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REVOLUT_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                verifyRevolutPayment();
+            } else {
+                Utils.showToast(this, "Revolut payment cancelled");
+            }
+        }
+    }
+    private void verifyRevolutPayment() {
+
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("transactionId", revolutTranId);
+        } catch (Exception e) {}
+
+        Call<ResponseBody> call = APIClient.getInstance()
+                .addMoney(sessionUtil.getToken(), sessionUtil.getId(), jsonObject.toString());
+
+        new NewApiCall().makeApiCall(context, true, call, new ApiCallback() {
+
+            @Override
+            public void success(String responseData) {
+                try {
+                    JSONObject obj = new JSONObject(responseData);
+                    if (obj.getBoolean("paymentSuccess")) {
+                        addMoney(String.valueOf(revolutTranId));
+                    } else {
+                        Utils.showToast(context, "Payment verification failed");
+                    }
+                } catch (Exception e) {}
+            }
+
+            @Override
+            public void failure(String responseData) {}
+        });
     }
 }
