@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_25sdp"
         android:orientation="horizontal">
 
         <TextView
@@ -306,6 +306,7 @@
                 android:layout_marginTop="@dimen/margin_10"
                 android:background="@drawable/new_bg_gradiant_green_strock"
                 android:gravity="center"
+                android:visibility="gone"
                 android:orientation="vertical">
 
                 <LinearLayout
