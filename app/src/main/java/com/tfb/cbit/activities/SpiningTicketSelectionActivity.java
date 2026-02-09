@@ -527,7 +527,13 @@ public class SpiningTicketSelectionActivity extends BaseAppCompactActivity imple
                                 calendar.setTime(sdf.parse(upcomingContestModel.getContestDateTime()));
                             } catch (ParseException e) {
                             }
-                            startAlert(upcomingContestModel);
+                            try {
+                                startAlert(upcomingContestModel);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+//                            startAlert(upcomingContestModel);
 
                             startActivity(new Intent(context, PaymentSummaryActivity.class));
                             finish();

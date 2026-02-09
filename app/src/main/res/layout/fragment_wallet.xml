@@ -11,8 +11,43 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:minWidth="@dimen/_200sdp"
+        android:minHeight="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/new_tv_spcl_contest_round"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 £  = 1 Coin"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontsize_18"
+            android:paddingEnd="6dp"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/kittycoin"
+            android:contentDescription="coin"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="For 18 years and above only. Play responsibly"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fontsize_14"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
         android:orientation="horizontal">
 
         <TextView
@@ -218,13 +253,13 @@
                         android:id="@+id/tvCredetiaCC"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
                         android:padding="@dimen/margin_5"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_13sdp"
-                        android:fontFamily="@font/montserrat_medium"
                         android:textStyle="bold"
                         tools:ignore="MissingPrefix"
-                        tools:text="CC 000" />
+                        android:text="0" />
 
                 </LinearLayout>
 
@@ -438,6 +473,7 @@
                 android:layout_marginTop="@dimen/margin_10"
                 android:background="@drawable/new_bg_gradiant_green_strock"
                 android:gravity="center"
+                android:visibility="gone"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -566,9 +602,11 @@
                 android:text="@string/kyc"
                 android:fontFamily="@font/montserrat_medium"
                 android:textColor="@color/white"
+                android:visibility="gone"
                 android:textSize="@dimen/fontsize_14" />
 
         </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

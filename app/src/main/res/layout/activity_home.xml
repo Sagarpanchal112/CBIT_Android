@@ -63,6 +63,7 @@
                     android:drawableEnd="@drawable/ic_white_right_arrow"
                     android:fontFamily="@font/montserrat_semibold"
                     android:paddingEnd="@dimen/margin_10"
+                    android:visibility="gone"
                     android:text="Apply for cashback"
                     tools:ignore="MissingPrefix" />
 
@@ -196,6 +197,7 @@
                     android:fontFamily="@font/montserrat_semibold"
                     android:paddingEnd="@dimen/margin_10"
                     android:text="Referral Network"
+                    android:visibility="gone"
                     tools:ignore="MissingPrefix" />
 
                 <TextView

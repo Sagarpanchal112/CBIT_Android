@@ -250,11 +250,10 @@ public class DashBoardFragment extends Fragment implements OnItemClickListener {
                 Gson gson = new Gson();
                 JHitsTotalAmountModel jAssetsModel = gson.fromJson(responseData, JHitsTotalAmountModel.class);
                 if (jAssetsModel.getStatusCode() == Utils.StandardStatusCodes.SUCCESS) {
-                    binding.tvJHitsAmount.setText(Utils.INDIAN_RUPEES + (jAssetsModel.getContent().getTotalsum()));
+//                    binding.tvJHitsAmount.setText(Utils.INDIAN_RUPEES + (jAssetsModel.getContent().getTotalsum()));
+                    binding.tvJHitsAmount.setText((jAssetsModel.getContent().getTotalsum())+ " Points");
                 }
-
             }
-
             @Override
             public void failure(String responseData) {
                 Log.d(TAG, "success: " + responseData);

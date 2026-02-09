@@ -660,6 +660,11 @@
                         android:id="@+id/linearPay"
                         android:layout_width="match_parent"
                         android:layout_height="?attr/actionBarSize"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_25sdp"
                         android:background="@drawable/my_gradient_drawable_round">
 
                         <TextView

@@ -1225,7 +1225,9 @@ public class HomeActivity extends BaseAppCompactActivity {
             try {
                 double amount = Double.parseDouble(sessionUtil.getAmount());
                 double wAmount = Double.parseDouble(sessionUtil.getWAmount());
-                binding.header.tvWallet.setText(Utils.getCurrencyFormat(String.valueOf((amount + wAmount))));
+//                binding.header.tvWallet.setText(Utils.getCurrencyFormat(String.valueOf((amount + wAmount))));
+                Utils.getCoinFormat(context,binding.header.tvWallet,String.valueOf((amount + wAmount)));
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

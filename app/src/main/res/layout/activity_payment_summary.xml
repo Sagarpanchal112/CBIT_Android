@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_green_dark"
+        android:background="@drawable/new_appbar"
         app:contentInsetEnd="0dp"
         app:contentInsetLeft="0dp"
         app:contentInsetRight="0dp"
@@ -118,10 +118,10 @@
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/margin_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_login"
+            android:background="@drawable/new_tv_spcl_contest_round"
             android:fontFamily="@font/montserrat_semibold"
             android:text="@string/dashboard"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/white"
             android:textSize="@dimen/fontsize_20" />
     </LinearLayout>
 </RelativeLayout>

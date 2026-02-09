@@ -83,7 +83,7 @@ public class WalletFragment extends Fragment {
 
     private SessionUtil sessionUtil;
     private Context context;
-    private List<JAssetsModel.RedemedList> allRequestArrayList = new ArrayList<>();
+    private final List<JAssetsModel.RedemedList> allRequestArrayList = new ArrayList<>();
 
     public WalletFragment() {
         // Required empty public constructor
@@ -322,8 +322,12 @@ public class WalletFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        binding. tvBalance.setText(String.valueOf(Utils.getCurrencyFormat(sessionUtil.getAmount())));
-        binding. tvWinningBalance.setText(String.valueOf(Utils.getCurrencyFormat(sessionUtil.getWAmount())));
+//        binding. tvBalance.setText(Utils.getCurrencyFormat(sessionUtil.getAmount()));
+//        binding. tvWinningBalance.setText(Utils.getCurrencyFormat(sessionUtil.getWAmount()));
+
+        Utils.getCoinFormat(context,binding.tvBalance,sessionUtil.getAmount());
+        Utils.getCoinFormat(context,binding.tvWinningBalance,sessionUtil.getWAmount());
+
         Log.d(TAG, "wallertauth: " + sessionUtil.getWalletAuth());
         if (sessionUtil.getWalletAuth().equalsIgnoreCase("1")) {
             binding. btnUBTWallet.setVisibility(View.VISIBLE);
@@ -335,7 +339,9 @@ public class WalletFragment extends Fragment {
         try {
             double amount = Double.parseDouble(sessionUtil.getAmount());
             double wAmount = Double.parseDouble(sessionUtil.getWAmount());
-            binding. tvTotalBalance.setText(Utils.getCurrencyFormat(String.valueOf((amount + wAmount))));
+//            binding. tvTotalBalance.setText(Utils.getCurrencyFormat(String.valueOf((amount + wAmount))));
+            Utils.getCoinFormat(context,binding.tvTotalBalance,String.valueOf((amount + wAmount)));
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -354,7 +360,8 @@ public class WalletFragment extends Fragment {
                 Gson gson = new Gson();
                 JHitsTotalAmountModel jAssetsModel = gson.fromJson(responseData, JHitsTotalAmountModel.class);
                 if (jAssetsModel.getStatusCode() == Utils.StandardStatusCodes.SUCCESS) {
-                    binding.  tvJHitsAmount.setText(Utils.INDIAN_RUPEES + (jAssetsModel.getContent().getTotalsum()));
+//                    binding.  tvJHitsAmount.setText(Utils.INDIAN_RUPEES + (jAssetsModel.getContent().getTotalsum()));
+                    Utils.getCoinFormat(context,binding.tvJHitsAmount,jAssetsModel.getContent().getTotalsum());
                 }
 
             }
@@ -377,7 +384,8 @@ public class WalletFragment extends Fragment {
                 ReferralComissionModel jAssetsModel = gson.fromJson(responseData, ReferralComissionModel.class);
                 if (jAssetsModel.getStatusCode() == Utils.StandardStatusCodes.SUCCESS) {
                     binding. tvTds.setText((jAssetsModel.getContent().getTds()));
-                    binding.  tvEarning.setText(Utils.getCurrencyFormat(jAssetsModel.getContent().getEarning()));
+//                    binding.  tvEarning.setText(Utils.getCurrencyFormat(jAssetsModel.getContent().getEarning()));
+                    Utils.getCoinFormat(context,binding.tvEarning,jAssetsModel.getContent().getEarning());
                 }
             }
 
@@ -390,12 +398,19 @@ public class WalletFragment extends Fragment {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(UpdateWallet updateWallet) {
-        binding. tvBalance.setText(String.valueOf(Utils.getCurrencyFormat(sessionUtil.getAmount())));
-        binding. tvWinningBalance.setText(String.valueOf(Utils.getCurrencyFormat(sessionUtil.getWAmount())));
+
+//        binding. tvBalance.setText(Utils.getCurrencyFormat(sessionUtil.getAmount()));
+//        binding. tvWinningBalance.setText(Utils.getCurrencyFormat(sessionUtil.getWAmount()));
+
+        Utils.getCoinFormat(context,binding.tvBalance,sessionUtil.getAmount());
+        Utils.getCoinFormat(context,binding.tvWinningBalance,sessionUtil.getWAmount());
+
         try {
             double amount = Double.parseDouble(sessionUtil.getAmount());
             double wAmount = Double.parseDouble(sessionUtil.getWAmount());
-            binding.  tvTotalBalance.setText(Utils.getCurrencyFormat(String.valueOf((amount + wAmount))));
+//            binding.  tvTotalBalance.setText(Utils.getCurrencyFormat(String.valueOf((amount + wAmount))));
+            Utils.getCoinFormat(context,binding.tvTotalBalance,String.valueOf((amount + wAmount)));
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -227,6 +227,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_10"
+                android:visibility="gone"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -264,6 +265,7 @@
                 android:fontFamily="@font/montserrat_medium"
                 android:padding="@dimen/margin_5"
                 android:textColor="@color/color_212121"
+                android:visibility="gone"
                 android:textSize="@dimen/fontsize_18"
                 tools:text="@string/pannumber" />
 

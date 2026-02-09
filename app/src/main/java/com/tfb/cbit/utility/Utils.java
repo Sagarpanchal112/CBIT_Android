@@ -7,6 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -21,9 +22,11 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
@@ -677,8 +680,44 @@ public class Utils {
             e.printStackTrace();
             return "";
         }
-
     }
+
+    // New Coin Fun
+    public static void getCoinFormat(
+            Context context,
+            TextView textView,
+            String amount
+    ) {
+        try {
+            double value = Double.parseDouble(amount);
+
+            DecimalFormat formatter = new DecimalFormat("##,##,###.##");
+            String formattedAmount =
+                    value < 1 ? "0.00" : formatter.format(value);
+
+            textView.setText(formattedAmount + " Coins");
+
+            Drawable coin = ContextCompat.getDrawable(context, R.drawable.kittycoin);
+            if (coin != null) {
+                int size = (int) (textView.getTextSize());
+                coin.setBounds(0, 0, size, size);
+
+                textView.setCompoundDrawablesRelative(
+                        coin,
+                        null,
+                        null,
+                        null
+                );
+                textView.setCompoundDrawablePadding(6);
+            }
+
+        } catch (Exception e) {
+            textView.setText("0.00 Coins");
+            textView.setCompoundDrawables(null, null, null, null);
+        }
+    }
+
+
 
     public static String getCurrencySingleFormat(String number) {
         try {

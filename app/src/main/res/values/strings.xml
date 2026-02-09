@@ -30,7 +30,7 @@
     <string name="action_settings">Settings</string>
     <string name="dashboard">Home</string>
     <string name="organize">Organize</string>
-    <string name="wallet">Wallet</string>
+    <string name="wallet">Bag</string>
     <string name="auto_renew">Auto Renew</string>
     <string name="notification">Notification</string>
     <string name="history">History</string>

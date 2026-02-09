@@ -168,22 +168,16 @@ public class MyJTicktAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     packageHolder.binding.btnApplyNow.setEnabled(false);
                     packageHolder.binding.btnApplyNow.setBackgroundColor(Color.parseColor("#26b34b"));
                 }
-                packageHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                packageHolder.itemView.setOnClickListener(v -> {
 
-                    }
                 });
 
-                packageHolder.binding.rlFront.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (isFlipped) {
-                            foldAllFlipper();
-                        }
-                        isFlipped = true;
-                        flipViewFlipper(packageHolder.binding.myEasyFlipView);
+                packageHolder.binding.rlFront.setOnClickListener(view -> {
+                    if (isFlipped) {
+                        foldAllFlipper();
                     }
+                    isFlipped = true;
+                    flipViewFlipper(packageHolder.binding.myEasyFlipView);
                 });
 
                 packageHolder.binding.rlBack.setOnClickListener(new View.OnClickListener() {
