@@ -9,6 +9,7 @@ import static com.cashfree.pg.CFPaymentService.PARAM_ORDER_CURRENCY;
 import static com.cashfree.pg.CFPaymentService.PARAM_ORDER_ID;
 import static com.cashfree.pg.CFPaymentService.PARAM_ORDER_NOTE;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cashfree.pg.CFPaymentService;
@@ -94,10 +96,27 @@ public class AddMoneyActivity extends BaseAppCompactActivity {
             onBackPressed();
         });
 
+//        binding.btnAddMoney.setOnClickListener(view -> {
+//            if (isValidForm()) {
+//                startTransaction(); // EXISTING CASHFREE FLOW
+////                startRevolutTransaction();   // 🔥 NEW REVOLUT FLOW
+//            }
+//        });
         binding.btnAddMoney.setOnClickListener(view -> {
             if (isValidForm()) {
-                startTransaction(); // EXISTING CASHFREE FLOW
-//                startRevolutTransaction();   // 🔥 NEW REVOLUT FLOW
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+                ImageView imageView = new ImageView(this);
+                imageView.setImageResource(R.drawable.invoicee);
+                imageView.setAdjustViewBounds(true);
+                imageView.setPadding(20,20,20,20);
+
+                builder.setView(imageView)
+                        .setPositiveButton("OK", (dialog, which) -> dialog.dismiss());
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
     }

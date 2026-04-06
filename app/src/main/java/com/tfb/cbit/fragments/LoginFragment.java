@@ -316,6 +316,7 @@ public class LoginFragment extends Fragment {
             jsonObject.put("password", binding.edtPassword.getText().toString().trim());
             jsonObject.put("deviceId", sessionUtil.getFcmtoken());
             jsonObject.put("deviceType", "android");
+            jsonObject.put("plateform", "Android");
             jsonObject.put("OneSignalID", OneSignal.getDeviceState().getUserId());// OneSignal.getPermissionSubscriptionState().getSubscriptionStatus().getUserId());
             jsonObject.put("version", Utils.getVersionName(context));
 

@@ -235,7 +235,7 @@ public class AnyTimeGameHistoryActivity extends BaseAppCompactActivity implement
                     binding.tvTBlue.setText("Blue Total : " + gtm.getContent().getBlue());
                     binding.tvTRed.setText("Red Total : " + gtm.getContent().getRed());
                     if (gtm.getContent().getGame_type().equals("rdb")) {
-                        binding.toolbarTitle.setText("Which Colour has a bigger total?");
+                        binding.toolbarTitle.setText("What's More?");
                         binding.tvTitle.setText("Which Colour has a bigger total?");
 
                     } else {

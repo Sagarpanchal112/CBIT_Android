@@ -19,6 +19,7 @@ import com.tfb.cbit.CBit;
 import com.tfb.cbit.R;
 import com.tfb.cbit.databinding.ActivityAboutUsBinding;
 import com.tfb.cbit.databinding.ActivityLoginSignUpBinding;
+import com.tfb.cbit.fragments.LoginFragment;
 import com.tfb.cbit.fragments.LoginWithMobileFragment;
 import com.tfb.cbit.utility.Utils;
 
@@ -66,6 +67,7 @@ public class LoginSignUpActivity extends BaseAppCompactActivity {
                     .commit();*/
             getSupportFragmentManager()
                     .beginTransaction()
+//                    .add(R.id.frameContainer, LoginFragment.newInstance())
                     .add(R.id.frameContainer, LoginWithMobileFragment.newInstance())
                     .commit();
 
@@ -83,7 +85,7 @@ public class LoginSignUpActivity extends BaseAppCompactActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.frameContainer, LoginWithMobileFragment.newInstance())
-                    //.add(R.id.frameContainer, LoginFragment.newInstance())
+//                    .add(R.id.frameContainer, LoginFragment.newInstance())
                     .commit();
         }
 

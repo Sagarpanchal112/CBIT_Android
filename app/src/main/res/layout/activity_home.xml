@@ -207,6 +207,7 @@
                     android:layout_height="?attr/listPreferredItemHeightSmall"
                     android:fontFamily="@font/montserrat_semibold"
                     android:paddingEnd="@dimen/margin_10"
+                    android:visibility="gone"
                     android:text="Easy Join"
                     tools:ignore="MissingPrefix" />
 
@@ -217,6 +218,7 @@
                     android:layout_height="?attr/listPreferredItemHeightSmall"
                     android:fontFamily="@font/montserrat_semibold"
                     android:paddingEnd="@dimen/margin_10"
+                    android:visibility="gone"
                     android:text="Auto join live game"
                     tools:ignore="MissingPrefix" />
 
@@ -323,7 +325,7 @@
                     android:layout_height="?attr/listPreferredItemHeightSmall"
                     android:fontFamily="@font/montserrat_semibold"
                     android:text="@string/howtoplay1"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     tools:ignore="MissingPrefix" />
                 <TextView
                     android:id="@+id/tvReport"

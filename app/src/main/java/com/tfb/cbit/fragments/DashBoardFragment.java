@@ -251,7 +251,7 @@ public class DashBoardFragment extends Fragment implements OnItemClickListener {
                 JHitsTotalAmountModel jAssetsModel = gson.fromJson(responseData, JHitsTotalAmountModel.class);
                 if (jAssetsModel.getStatusCode() == Utils.StandardStatusCodes.SUCCESS) {
 //                    binding.tvJHitsAmount.setText(Utils.INDIAN_RUPEES + (jAssetsModel.getContent().getTotalsum()));
-                    binding.tvJHitsAmount.setText((jAssetsModel.getContent().getTotalsum())+ " Points");
+                    binding.tvJHitsAmount.setText((jAssetsModel.getContent().getTotalsum())+ " Coins");
                 }
             }
             @Override

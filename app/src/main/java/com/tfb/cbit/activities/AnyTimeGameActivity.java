@@ -423,7 +423,7 @@ public class AnyTimeGameActivity extends BaseAppCompactActivity implements OnIte
                 played = anyTimeGameResponse.getContent().get(0).getPlayers_played();
                 anyticketList.addAll(anyTimeGameResponse.getContent());
                 ticketSelectionAdapter.notifyDataSetChanged();
-                binding.toolbarTitle.setText("Colour Colour");
+                binding.toolbarTitle.setText("What's More?");
                 binding.tvRemainingText.setText("Which Colour has a bigger total?");
 
                 for (int i = 0; i < anyticketList.size(); i++) {

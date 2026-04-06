@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_green_dark"
+        android:background="@drawable/new_appbar"
         app:contentInsetEnd="0dp"
         app:contentInsetLeft="0dp"
         app:contentInsetRight="0dp"
@@ -141,10 +141,10 @@
                 android:fontFamily="@font/montserrat_medium"
                 android:gravity="center"
                 android:hint="@string/enteramount"
-
                 android:imeOptions="actionDone"
                 android:inputType="number"
                 android:maxLines="1"
+                android:text="50"
                 android:padding="@dimen/padding_10"
                 android:textColor="@color/color_424242"
                 android:textColorHint="@color/color_a0a0a0"
@@ -223,7 +223,7 @@
                 android:layout_height="?attr/listPreferredItemHeightSmall"
                 android:layout_marginTop="@dimen/margin_20"
                 android:layout_marginBottom="@dimen/margin_10"
-                android:background="@drawable/btn_login_new"
+                android:background="@drawable/my_gradient_drawable_round"
                 android:clickable="false"
                 android:enabled="false"
                 android:alpha="0.5"
@@ -231,8 +231,7 @@
                 android:fontFamily="@font/montserrat_semibold"
                 android:foreground="?attr/selectableItemBackground"
                 android:text="@string/addmoney"
-
-                android:textColor="@color/color_green_dark"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp" />
         </LinearLayout>
     </ScrollView>
