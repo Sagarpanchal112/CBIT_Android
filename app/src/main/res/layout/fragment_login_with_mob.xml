@@ -229,7 +229,7 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:gravity="center"
                         android:padding="@dimen/padding_10"
-                        android:text="+91"
+                        android:text="+44"
                         android:textColor="@color/black"
                         android:textSize="@dimen/fontsize_18" />
 
