@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.AddPaymentStatusActivity"
+    android:fitsSystemWindows="true"
     android:background="@color/white">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_green_dark"
         app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:background="@drawable/new_appbar"
         app:contentInsetEnd="0dp"
         app:contentInsetLeft="0dp"
         app:contentInsetRight="0dp"
@@ -97,7 +98,7 @@
         android:text="@string/ok"
         android:textColor="@color/color_green_dark"
         android:fontFamily="@font/montserrat_semibold"
-        android:background="@drawable/btn_login_new"
+        android:background="@drawable/my_gradient_drawable_round"
         android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/margin_20"

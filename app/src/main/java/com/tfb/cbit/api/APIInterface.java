@@ -178,6 +178,14 @@ public interface APIInterface {
     );
 
     @FormUrlEncoded
+    @POST("emerchant/createOrder")
+    Call<ResponseBody> createETransaction(
+            @Header("Authorization") String Authorization,
+            @Header("Author") String Author,
+            @Field("data") String data
+    );
+
+    @FormUrlEncoded
     @POST("startTransaction")
     Call<ResponseBody> startTransaction(
             @Header("Authorization") String Authorization,

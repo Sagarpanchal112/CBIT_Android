@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cashfree.pg.CFPaymentService;
 import com.google.gson.Gson;
@@ -45,6 +46,7 @@ import com.tfb.cbit.utility.Utils;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+import org.jetbrains.annotations.Nullable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -96,33 +98,33 @@ public class AddMoneyActivity extends BaseAppCompactActivity {
             onBackPressed();
         });
 
-//        binding.btnAddMoney.setOnClickListener(view -> {
-//            if (isValidForm()) {
-//                startTransaction(); // EXISTING CASHFREE FLOW
-////                startRevolutTransaction();   // 🔥 NEW REVOLUT FLOW
-//            }
-//        });
         binding.btnAddMoney.setOnClickListener(view -> {
             if (isValidForm()) {
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-                ImageView imageView = new ImageView(this);
-                imageView.setImageResource(R.drawable.invoicee);
-                imageView.setAdjustViewBounds(true);
-                imageView.setPadding(20,20,20,20);
-
-                builder.setView(imageView)
-                        .setPositiveButton("OK", (dialog, which) -> dialog.dismiss());
-
-                AlertDialog dialog = builder.create();
-                dialog.show();
+//                startTransaction(); // EXISTING CASHFREE FLOW
+//                startRevolutTransaction();   // 🔥 NEW REVOLUT FLOW
+                createOrder(); // FOR eMerchantPay
             }
         });
+//        binding.btnAddMoney.setOnClickListener(view -> {
+//            if (isValidForm()) {
+//
+//                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//
+//                ImageView imageView = new ImageView(this);
+//                imageView.setImageResource(R.drawable.invoicee);
+//                imageView.setAdjustViewBounds(true);
+//                imageView.setPadding(20,20,20,20);
+//
+//                builder.setView(imageView)
+//                        .setPositiveButton("OK", (dialog, which) -> dialog.dismiss());
+//
+//                AlertDialog dialog = builder.create();
+//                dialog.show();
+//            }
+//        });
     }
 
     public void getLatestUpdate() {
-
         Call<ResponseBody> call = APIClient.getInstance().getAddmoneyStatus(sessionUtil.getToken(), sessionUtil.getId());
         NewApiCall newApiCall = new NewApiCall();
         newApiCall.makeApiCall(context, true, call, new ApiCallback() {
@@ -143,9 +145,7 @@ public class AddMoneyActivity extends BaseAppCompactActivity {
                             binding.btnAddMoney.setClickable(false);
                             binding.btnAddMoney.setEnabled(false);
                             binding.btnAddMoney.setAlpha(.5f);
-
                         }
-
                     }
                 } catch (Exception e) {
 
@@ -160,7 +160,28 @@ public class AddMoneyActivity extends BaseAppCompactActivity {
     }
 
     private boolean isValidForm() {
-        return MyValidator.isBlankETError(context, binding.edtAmount, "Enter Amount", 1, 100);
+
+        if (!MyValidator.isBlankETError(context, binding.edtAmount, "Enter Amount", 1, 100)) {
+            return false;
+        }
+
+        String amountStr = binding.edtAmount.getText().toString().trim();
+
+        try {
+            double amount = Double.parseDouble(amountStr);
+
+            if (amount <= 0) {
+                binding.edtAmount.setError("Amount must be greater than 0");
+                binding.edtAmount.requestFocus();
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            binding.edtAmount.setError("Enter valid amount");
+            binding.edtAmount.requestFocus();
+            return false;
+        }
+
+        return true;
     }
 
     @Override
@@ -507,6 +528,7 @@ public class AddMoneyActivity extends BaseAppCompactActivity {
 
     /* Revolut Payment Flow */
     private int revolutTranId = 0;
+    private String eMerchantTranId = "";
     private static final int REVOLUT_REQUEST_CODE = 8001;
 
     private void startRevolutTransaction() {
@@ -600,17 +622,17 @@ public class AddMoneyActivity extends BaseAppCompactActivity {
         startActivityForResult(intent, REVOLUT_REQUEST_CODE);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REVOLUT_REQUEST_CODE) {
-            if (resultCode == RESULT_OK) {
-                verifyRevolutPayment();
-            } else {
-                Utils.showToast(this, "Revolut payment cancelled");
-            }
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == REVOLUT_REQUEST_CODE) {
+//            if (resultCode == RESULT_OK) {
+//                verifyRevolutPayment();
+//            } else {
+//                Utils.showToast(this, "Revolut payment cancelled");
+//            }
+//        }
+//    }
     private void verifyRevolutPayment() {
 
         JSONObject jsonObject = new JSONObject();
@@ -639,4 +661,185 @@ public class AddMoneyActivity extends BaseAppCompactActivity {
             public void failure(String responseData) {}
         });
     }
+
+//    ************************* 09/07/26 (eMerchantPay Integrate) ************************
+    //Initiate the Payment
+    private static final int PAYMENT_REQUEST_CODE = 1001;
+    private void createOrder() {
+
+        JSONObject jsonObject = new JSONObject();
+        String request = "";
+        try {
+            jsonObject.put("amount", binding.edtAmount.getText().toString().trim());
+            request = jsonObject.toString();
+            request = CBit.getCryptLib().encryptPlainTextWithRandomIV(request, getString(R.string.crypt_pass));
+            request = Base64.encodeToString(request.getBytes("UTF-8"), Base64.NO_WRAP
+            );
+
+        } catch (Exception e) {e.printStackTrace();return;}
+
+        Call<ResponseBody> call = APIClient.getInstance()
+                .createETransaction(sessionUtil.getToken(),sessionUtil.getId(), request);
+
+        new NewApiCall().makeApiCall(context, true, call, new ApiCallback() {
+
+            @Override
+            public void success(String responseData) {
+                try {
+                    JSONObject obj = new JSONObject(responseData);
+
+                    if (obj.getInt("statusCode") == 200) {
+                        JSONObject content = obj.getJSONObject("content");
+                        String transactionId =
+                                content.getString("transaction_id");
+                        String redirectUrl =
+                                content.getString("redirect_url");
+                        openCheckout(transactionId, redirectUrl);
+                        eMerchantTranId = transactionId;
+
+                    } else {
+                        Toast.makeText(context,
+                                obj.optString("message"),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void failure(String responseData) {
+                Toast.makeText(context,
+                        "Unable to create payment.",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    //Redirect the User
+    private void openCheckout(String transactionId, String checkoutUrl) {
+        Intent intent = new Intent(this, EMerchantCheckoutActivity.class);
+        intent.putExtra("URL", checkoutUrl);
+        intent.putExtra("TRANSACTION_ID", transactionId);
+        startActivityForResult(intent, PAYMENT_REQUEST_CODE);
+    }
+
+    //Get back data after payment
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PAYMENT_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(this, "Payment Successful", Toast.LENGTH_SHORT).show();
+                // Refresh Wallet API
+                submitAddMoney(eMerchantTranId);
+
+            } else {
+                Toast.makeText(this,
+                        "Payment Failed",
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+    private void submitAddMoney(String transactionId) {
+        JSONObject jsonObject = new JSONObject();
+        byte[] data;
+        String request = "";
+        try {
+            jsonObject.put("amount", binding.edtAmount.getText().toString().trim());
+            jsonObject.put("transactionId", transactionId);
+            request = jsonObject.toString();
+            Log.i("request", "=>" + request);
+            request = CBit.getCryptLib().encryptPlainTextWithRandomIV(request, getString(R.string.crypt_pass));
+            data = request.getBytes("UTF-8");
+            request = Base64.encodeToString(data, Base64.DEFAULT);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        final Call<ResponseBody> call = APIClient.getInstance()
+                .addMoney(sessionUtil.getToken(), sessionUtil.getId(), request);
+
+        NewApiCall newApiCall = new NewApiCall();
+        newApiCall.makeApiCall(context, true, call, new ApiCallback() {
+            @Override
+            public void success(String responseData) {
+                Log.d("API_RESPONSE >>>>>", responseData);
+                DecimalFormat format = new DecimalFormat("0.##");
+                Gson gson = new Gson();
+                JoinContest joinContest = gson.fromJson(responseData, JoinContest.class);
+                if (joinContest.getStatusCode() == Utils.StandardStatusCodes.SUCCESS) {
+                    sessionUtil.setAmount(format.format(joinContest.getContent().getPbAmount()));
+                    sessionUtil.setWAmount(format.format(joinContest.getContent().getSbAmount()));
+                    completeTransaction("1", transactionId, "Success");
+                } else {
+                    Utils.showToast(context, joinContest.getMessage());
+                }
+            }
+
+            @Override
+            public void failure(String responseData) {
+
+            }
+        });
+    }
+
+    private void completeTransaction(String status, String transactionId, String remarks) {
+        JSONObject jsonObject = new JSONObject();
+        byte[] data;
+        String request = "";
+        try {
+            jsonObject.put("transID", eMerchantTranId);
+            jsonObject.put("status", status);
+            jsonObject.put("transaction_id", transactionId);
+            jsonObject.put("remarks", remarks);
+            request = jsonObject.toString();
+            Log.i("request :", request);
+            request = CBit.getCryptLib().encryptPlainTextWithRandomIV(request, getString(R.string.crypt_pass));
+            data = request.getBytes("UTF-8");
+            request = Base64.encodeToString(data, Base64.DEFAULT);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        final Call<ResponseBody> call = APIClient.getInstance()
+                .endTransaction(sessionUtil.getToken(), sessionUtil.getId(), request);
+
+        NewApiCall newApiCall = new NewApiCall();
+        newApiCall.makeApiCall(context, true, call, new ApiCallback() {
+            @Override
+            public void success(String responseData) {
+                Log.i("sucess :", responseData);
+
+                try {
+                    JSONObject jObj = new JSONObject(responseData);
+                    if (jObj.getInt("statusCode") == Utils.StandardStatusCodes.SUCCESS) {
+                        if (status.equalsIgnoreCase("1")) {
+                            Intent intent = new Intent(context, AddPaymentStatusActivity.class);
+                            if (!ticketAmount.isEmpty()) {
+                                EventBus.getDefault().post(new UpdateTicketFooterEvent());
+                            }
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void failure(String responseData) {
+
+            }
+        });
+    }
+
+    //    ************************* 09/07/26 (eMerchantPay Integrate) ************************
+
 }

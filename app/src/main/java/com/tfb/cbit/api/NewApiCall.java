@@ -60,7 +60,11 @@ public class NewApiCall {
                             bodyString = new String(response.body().bytes());
                             // Log.d(TAG, "onResponse>>: "+response.);
                             PrintLog.e(TAG, "WS call success res encrypt:=> " + bodyString);
-                            bodyString = CBit.getCryptLib().decryptCipherTextWithRandomIV(bodyString, context.getString(R.string.crypt_pass));
+                            String path = call.request().url().encodedPath();
+
+                            if (!path.contains("emerchant/createOrder")) {
+                                bodyString = CBit.getCryptLib().decryptCipherTextWithRandomIV(bodyString, context.getString(R.string.crypt_pass));
+                            }
                             PrintLog.e(TAG, "WS call success res :=> " + bodyString);
                             CommonRes commonRes = gson.fromJson(bodyString, CommonRes.class);
                             switch (commonRes.getStatus()) {
