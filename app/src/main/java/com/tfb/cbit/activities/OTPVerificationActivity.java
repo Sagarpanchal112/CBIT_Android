@@ -80,11 +80,11 @@ public class OTPVerificationActivity extends BaseAppCompactActivity {
         otp = bundle.getString("otp", "");
         if (screentype.equals("wallet")) {
             binding.edtOTP.setText(bundle.getString("otp", ""));
-            binding.tvOtpTitle.setText("Please enter Verification code send\nto +91 " + sessionUtil.getMob());
+            binding.tvOtpTitle.setText("Please enter Verification code send\nto " + sessionUtil.getEmail());
         } else if (screentype.equals("register")) {
-            binding. tvOtpTitle.setText("Please enter Verification code send\nto +91 " + bundle.getString("mobile_no", ""));
+            binding. tvOtpTitle.setText("Please enter Verification code send\nto " + bundle.getString("email", ""));
         } else if (screentype.equals("loginwithmobile")) {
-            binding. tvOtpTitle.setText("Please enter Verification code send\nto +91 " + bundle.getString("mobile_no", ""));
+            binding. tvOtpTitle.setText("Please enter Verification code send\nto " + bundle.getString("email", ""));
         }
         binding.ivBack.setOnClickListener(view -> {
             onBackPressed();
@@ -123,7 +123,7 @@ public class OTPVerificationActivity extends BaseAppCompactActivity {
         byte[] data;
         String request = "";
         try {
-            jsonObject.put("mobile_no", bundle.getString("mobile_no", ""));
+            jsonObject.put("email", bundle.getString("email", ""));
             jsonObject.put("version", Utils.getVersionName(context));
             jsonObject.put("plateform", "Android");
             //  jsonObject.put("email",bundle.getString("email",""));
@@ -310,7 +310,7 @@ public class OTPVerificationActivity extends BaseAppCompactActivity {
         byte[] data;
         String request = "";
         try {
-            jsonObject.put("mobile_no", bundle.getString("mobile_no", ""));
+            jsonObject.put("email", bundle.getString("email", ""));
             jsonObject.put("deviceId", bundle.getString("deviceId", ""));
             jsonObject.put("deviceType", bundle.getString("deviceType", ""));
             jsonObject.put("OneSignalID", OneSignal.getDeviceState().getUserId());
@@ -326,7 +326,7 @@ public class OTPVerificationActivity extends BaseAppCompactActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Call<ResponseBody> call = APIClient.getInstance().signUpwithMobile(request);
+        Call<ResponseBody> call = APIClient.getInstance().loginwitemail(request);
         NewApiCall newApiCall = new NewApiCall();
         newApiCall.makeApiCall(context, true, call, new ApiCallback() {
             @Override

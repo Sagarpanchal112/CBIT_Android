@@ -168,7 +168,7 @@ public class LoginWithMobileFragment extends Fragment {
 
 
     protected void btnLoginClick() {
-        if (isValidForm()) {
+        if (isValidFormEmail()) {
             getOtp();
         }
     }
@@ -385,7 +385,7 @@ public class LoginWithMobileFragment extends Fragment {
     }
 
 
-    private boolean isValidForm() {
+    private boolean isValidFormMob() {
         if (!MyValidator.isBlankETError(context,  binding.edtMobile, "Enter Mobile", 10, 10)) {
             return false;
         } else {
@@ -393,12 +393,17 @@ public class LoginWithMobileFragment extends Fragment {
         }
     }
 
+    private boolean isValidFormEmail() {
+        return MyValidator.isBlankETError(context, binding.edtEmail, "Enter Email", 1, 100) &&
+                MyValidator.isValidEmail(context, "Enter Valid Email", binding.edtEmail);
+    }
+
     private void getOtp() {
         JSONObject jsonObject = new JSONObject();
         byte[] data;
         String request = "";
         try {
-            jsonObject.put("mobile_no", binding. edtMobile.getText().toString().trim());
+            jsonObject.put("email", binding. edtEmail.getText().toString().trim());
             jsonObject.put("version", Utils.getVersionName(context));
             jsonObject.put("plateform", "Android");
             request = jsonObject.toString();
@@ -410,7 +415,8 @@ public class LoginWithMobileFragment extends Fragment {
         }
         String UUID = OneSignal.getDeviceState().getUserId();
 
-        Call<ResponseBody> call = APIClient.getInstance().loginwithmob(request);
+//        Call<ResponseBody> call = APIClient.getInstance().loginwithmob(request);//For Mobile
+        Call<ResponseBody> call = APIClient.getInstance().loginwithemail(request); // For Email
         newApiLoginCall.makeApiCall(context, true, call, new ApiCallback() {
             @Override
             public void success(String responseData) {
@@ -419,7 +425,7 @@ public class LoginWithMobileFragment extends Fragment {
                 OTPModel otpModel = gson.fromJson(responseData, OTPModel.class);
                 if (otpModel.getStatusCode() == Utils.StandardStatusCodes.SUCCESS) {
                     Bundle bundle = new Bundle();
-                    bundle.putString("mobile_no",  binding.edtMobile.getText().toString().trim());
+                    bundle.putString("email",  binding.edtEmail.getText().toString().trim());
                     bundle.putString("deviceId", UUID);
                     bundle.putString("deviceType", "android");
                     bundle.putString("otpId", String.valueOf(otpModel.getContent().getOtpId()));
@@ -428,11 +434,13 @@ public class LoginWithMobileFragment extends Fragment {
                     Intent intent = new Intent(context, OTPVerificationActivity.class);
                     intent.putExtras(bundle);
                     startActivity(intent);
-                } else if (otpModel.getStatusCode() == Utils.StandardStatusCodes.Update_USER) {
+                } else if (otpModel.getStatusCode() == Utils.StandardStatusCodes.Update_USER
+                        || otpModel.getStatusCode() == Utils.StandardStatusCodes.NO_DATA_FOUND) {
                     LoginMobileModel loginMobileModel = gson.fromJson(responseData, LoginMobileModel.class);
-                    if (loginMobileModel.getContent().getStatuss().equalsIgnoreCase("Update")) {
+                    if ("Update".equalsIgnoreCase(loginMobileModel.getContent().getStatuss())) {
                         checkVersion();
-                    }else if (loginMobileModel.getContent().getStatuss().equalsIgnoreCase("MobileNo")) {
+                    }else if ("MobileNo".equalsIgnoreCase(loginMobileModel.getContent().getStatuss())
+                            || "Email is not registered".equalsIgnoreCase(loginMobileModel.getMessage())) {
                         CustomDialog customDialog = new CustomDialog();
                         customDialog.showDialogOneButton(context, "Welcome to Kitty Games", "Please enter your details to register with Kitty Games .",
                                 "OK", new DialogInterface.OnClickListener() {
@@ -441,7 +449,7 @@ public class LoginWithMobileFragment extends Fragment {
                                         dialog.dismiss();
                                         getActivity().getSupportFragmentManager()
                                                 .beginTransaction()
-                                                .replace(R.id.frameContainer, SignUpFragment.newInstance("",  binding.edtMobile.getText().toString()))
+                                                .replace(R.id.frameContainer, SignUpFragment.newInstance("",  binding.edtEmail.getText().toString()))
                                                 .addToBackStack(null)
                                                 .commit();
                                     }
@@ -502,9 +510,6 @@ public class LoginWithMobileFragment extends Fragment {
             }
         });
     }
-
-
-
 
     private void getSocialLogin(final String social_Id, final String fname, final String lname, final String email, final String social_type) {
         JSONObject jsonObject = new JSONObject();
@@ -601,8 +606,6 @@ public class LoginWithMobileFragment extends Fragment {
         });
 
     }
-
-
 
     @Override
     public void onDestroyView() {

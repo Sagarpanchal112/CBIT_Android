@@ -65,7 +65,7 @@ public class SignUpFragment extends Fragment {
     private boolean isUserNameTaken = false;
     //FB
     private String socialid = "", socialtype = "";
-    String code = "", mobile = "";
+    String code = "", email = "";
      StateAdapter stateAdapter;
     List<StateCityDetailsModel> Statecitylist = new ArrayList<>();
 
@@ -79,11 +79,11 @@ public class SignUpFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static SignUpFragment newInstance(String code, String mobile) {
+    public static SignUpFragment newInstance(String code, String email) {
         SignUpFragment fragment = new SignUpFragment();
         Bundle bundle = new Bundle();
         bundle.putString("code", code);
-        bundle.putString("mobile", mobile);
+        bundle.putString("email", email);
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -100,14 +100,12 @@ public class SignUpFragment extends Fragment {
         this.context = context;
     }
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             code = getArguments().getString("code", "");
-            mobile = getArguments().getString("mobile", "");
+            email = getArguments().getString("email", "");
 
         }
      /*   OneSignal.idsAvailable(new OneSignal.IdsAvailableHandler() {
@@ -124,15 +122,12 @@ public class SignUpFragment extends Fragment {
     private FragmentSignUpBinding binding;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentSignUpBinding.bind(LayoutInflater.from(container.getContext()).inflate(R.layout.fragment_sign_up, container, false));
         View view = binding.getRoot();
         return view;
     }
-
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -148,9 +143,9 @@ public class SignUpFragment extends Fragment {
             socialtype = getArguments().getString("socialtype", "");
             binding. edtReferralCode.setText(CBit.referealCode);
         }
-        binding. edtMobile.setText(mobile);
-        binding.  edtReferralCode.setText(CBit.referealCode);
-        binding. edtPassword.setText("12345678");
+        binding.edtEmail.setText(email);
+        binding.edtReferralCode.setText(CBit.referealCode);
+        binding.edtPassword.setText("12345678");
         getStateCity();
         /*edtUserName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -214,7 +209,6 @@ public class SignUpFragment extends Fragment {
             getActivity().onBackPressed();
         });
 
-
     }
     protected void linearLoginClick() {
         if (getActivity() != null) {
@@ -224,7 +218,6 @@ public class SignUpFragment extends Fragment {
                     .commit();
         }
     }
-
     protected void btnRegisterClick() {
         if (isValidForm()) {
             checkUsername();
@@ -257,9 +250,6 @@ public class SignUpFragment extends Fragment {
         view.setMovementMethod(LinkMovementMethod.getInstance());
         view.setText(spanTxt, TextView.BufferType.SPANNABLE);
     }
-
-
-
     private boolean isValidForm() {
         if (!MyValidator.isBlankETError(context,  binding.edtFName, "Enter Firstname", 1, 100)) {
             return false;
@@ -307,8 +297,6 @@ public class SignUpFragment extends Fragment {
             return true;
         }
     }
-
-
     private void getStateCity() {
         System.err.println("getToken " + sessionUtil.getToken());
         System.err.println("getId " + sessionUtil.getId());

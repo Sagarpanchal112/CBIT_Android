@@ -90,6 +90,10 @@ public class NewApiLoginCall {
                                     msg = commonRes.getMessage();
                                     Utils.showToast(context, msg);
                                     break;
+                                    case Utils.StandardStatusCodes.Error_429:
+                                    msg = commonRes.getMessage();
+                                    Utils.showToast(context, msg);
+                                    break;
                                 case Utils.StandardStatusCodes.UNAUTHORISE:
                                     ApiCallback.failure(bodyString);
                                     Intent intent = new Intent(context, LoginSignUpActivity.class);

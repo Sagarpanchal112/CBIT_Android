@@ -212,6 +212,7 @@ public class Utils {
         int DUPLICATE_ERROR = 208;
         int BLOCK_USER = 423;
         int Update_USER = 410;
+        int Error_429 = 429;
     }
 
     public static void showToast(Context context, String msg) {

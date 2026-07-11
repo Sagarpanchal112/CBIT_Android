@@ -217,6 +217,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:orientation="horizontal">
 
                     <EditText
@@ -272,8 +273,7 @@
                         android:padding="@dimen/padding_10"
                         android:textColor="@color/black"
                         android:textColorHint="@color/text_hint"
-                        android:textSize="@dimen/fontsize_18"
-                        android:visibility="gone" />
+                        android:textSize="@dimen/fontsize_18" />
 
                     <EditText
                         android:id="@+id/edtPassword"

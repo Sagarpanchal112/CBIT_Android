@@ -626,6 +626,17 @@ public interface APIInterface {
             @Field("data") String data
     );
     @FormUrlEncoded
+    @POST("EmailLoginOtp")
+    Call<ResponseBody> loginwitemail(
+            @Field("data") String data
+    );
+
+    @FormUrlEncoded
+    @POST("EmailLoginSendOtp")
+    Call<ResponseBody> loginwithemail(
+            @Field("data") String data
+    );
+    @FormUrlEncoded
     @POST("checkForReferral")
     Call<ResponseBody> checkForReferral(
             @Field("data") String data
