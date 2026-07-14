@@ -90,9 +90,38 @@ public class AlarmService extends Service {
         }
       //  Utils.appendLog("Alaram ring==>" + Utils.getTodayDate());
         Intent notificationIntent;
-        CONTESTID = Integer.parseInt(intent.getStringExtra(SpinningMmachineGameViewActivity.CONTESTID));
+//        CONTESTID = Integer.parseInt(intent.getStringExtra(SpinningMmachineGameViewActivity.CONTESTID));
+//        CONTESTTITLE = intent.getStringExtra(SpinningMmachineGameViewActivity.CONTESTTITLE);
+//        CONTESTTYPE = intent.getStringExtra(SpinningMmachineGameViewActivity.CONTESTTYPE);
+
+
+        if (intent == null) {
+            stopSelf();
+            return START_NOT_STICKY;
+        }
+
+        String contestId = intent.getStringExtra(SpinningMmachineGameViewActivity.CONTESTID);
+
+        if (contestId != null && !contestId.trim().isEmpty()) {
+            try {
+                CONTESTID = Integer.parseInt(contestId);
+            } catch (NumberFormatException e) {
+                CONTESTID = 0;
+            }
+        } else {
+            CONTESTID = 0;
+        }
+
         CONTESTTITLE = intent.getStringExtra(SpinningMmachineGameViewActivity.CONTESTTITLE);
+        if (CONTESTTITLE == null)
+            CONTESTTITLE = "CBIT";
+
         CONTESTTYPE = intent.getStringExtra(SpinningMmachineGameViewActivity.CONTESTTYPE);
+        if (CONTESTTYPE == null)
+            CONTESTTYPE = "";
+
+
+
         if (CONTESTTYPE.equalsIgnoreCase("spinning-machine")) {
             notificationIntent = new Intent(this, SpinningMmachineGameViewActivity.class);
             Log.i("SpinningMmachine", "==>" + CONTESTTITLE);
@@ -109,9 +138,15 @@ public class AlarmService extends Service {
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         notificationIntent.putExtra("TAG", "reminder");
 
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, CONTESTID, notificationIntent, 0);
+//        PendingIntent pendingIntent = PendingIntent.getActivity(this, CONTESTID, notificationIntent, 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+                this,
+                CONTESTID,
+                notificationIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+        );
         startActivity(notificationIntent);
-        Log.i("alarmTitle 1", "==>" + intent.getStringExtra(CONTESTTITLE));
+//        Log.i("alarmTitle 1", "==>" + intent.getStringExtra(CONTESTTITLE));
         String alarmTitle = String.format("%s Alarm", intent.getStringExtra(CONTESTTITLE));
 
         Log.i("alarmTitle 2", "==>" + alarmTitle);
