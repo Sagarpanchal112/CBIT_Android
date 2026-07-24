@@ -576,7 +576,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/margin_10"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:itemCount="5"
+            tools:itemCount="2"
             tools:listitem="@layout/list_spinning_tickets" />
 
     </LinearLayout>

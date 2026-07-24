@@ -841,9 +841,12 @@ private Emitter.Listener onContestLive = new Emitter.Listener() {
         Intent intent = new Intent(context, HomeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra(GameViewActivity.CONTESTID, contestId);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, notificationID,
-                intent, PendingIntent.FLAG_ONE_SHOT);
-
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+                context,
+                notificationID,
+                intent,
+                PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_IMMUTABLE
+        );
         Bitmap icon = BitmapFactory.decodeResource(context.getResources(),
                 R.mipmap.app_green_icon);
         String CHANNEL_ID = context.getApplicationContext().getPackageName();

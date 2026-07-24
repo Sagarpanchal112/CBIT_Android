@@ -439,24 +439,26 @@ public class LoginWithMobileFragment extends Fragment {
                     LoginMobileModel loginMobileModel = gson.fromJson(responseData, LoginMobileModel.class);
                     if ("Update".equalsIgnoreCase(loginMobileModel.getContent().getStatuss())) {
                         checkVersion();
-                    }else if ("MobileNo".equalsIgnoreCase(loginMobileModel.getContent().getStatuss())
-                            || "Email is not registered".equalsIgnoreCase(loginMobileModel.getMessage())) {
-                        CustomDialog customDialog = new CustomDialog();
-                        customDialog.showDialogOneButton(context, "Welcome to Kitty Games", "Please enter your details to register with Kitty Games .",
-                                "OK", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.dismiss();
-                                        getActivity().getSupportFragmentManager()
-                                                .beginTransaction()
-                                                .replace(R.id.frameContainer, SignUpFragment.newInstance("",  binding.edtEmail.getText().toString()))
-                                                .addToBackStack(null)
-                                                .commit();
-                                    }
-                                });
-                    } else {
-                       checkReferal();
                     }
+//                    else if ("MobileNo".equalsIgnoreCase(loginMobileModel.getContent().getStatuss())
+//                            || "Email is not registered".equalsIgnoreCase(loginMobileModel.getMessage())) {
+//                        CustomDialog customDialog = new CustomDialog();
+//                        customDialog.showDialogOneButton(context, "Welcome to Kitty Games", "Please enter your details to register with Kitty Games .",
+//                                "OK", new DialogInterface.OnClickListener() {
+//                                    @Override
+//                                    public void onClick(DialogInterface dialog, int which) {
+//                                        dialog.dismiss();
+//                                        getActivity().getSupportFragmentManager()
+//                                                .beginTransaction()
+//                                                .replace(R.id.frameContainer, SignUpFragment.newInstance("",  binding.edtEmail.getText().toString()))
+//                                                .addToBackStack(null)
+//                                                .commit();
+//                                    }
+//                                });
+//                    }
+//                    else {
+//                       checkReferal();
+//                    }
                 } else {
                     Utils.showToast(context, otpModel.getMessage());
                 }
