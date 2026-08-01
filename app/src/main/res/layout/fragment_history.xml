@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/darkblue"
     android:orientation="vertical"
     tools:context=".fragments.HistoryFragment">
 
@@ -13,10 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/white"
-        app:tabIndicatorColor="@color/color_login_btn"
+        app:tabIndicatorColor="@color/lighred"
         app:tabIndicatorHeight="2dp"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/darkblue"
         app:tabTextAppearance="@style/TabTextAppearance"
         app:tabTextColor="@color/text_hint" />
 

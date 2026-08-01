@@ -353,7 +353,7 @@ public class AnyTimeSpinningGameFragment extends Fragment implements OnItemClick
             for (int i = 0; i < listFile.length; i++) {
 
                 iamgesList.add(listFile[i].getAbsolutePath());
-                LogHelper.d("Total Download ::: ", listFile[i].getAbsolutePath() + "");
+//                LogHelper.d("Total Download ::: ", listFile[i].getAbsolutePath() + "");
 
             }
         }

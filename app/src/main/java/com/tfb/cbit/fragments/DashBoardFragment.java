@@ -34,6 +34,7 @@ import com.tfb.cbit.R;
 import com.tfb.cbit.activities.AnyTimeGameActivity;
 import com.tfb.cbit.activities.AnyTimeNumberGameActivity;
 import com.tfb.cbit.activities.AnyTimeSpinningActivity;
+import com.tfb.cbit.activities.HomeActivity;
 import com.tfb.cbit.activities.IdsActivity;
 import com.tfb.cbit.activities.KYCVerificationActivity;
 import com.tfb.cbit.activities.SpiningTicketSelectionActivity;
@@ -180,9 +181,10 @@ public class DashBoardFragment extends Fragment implements OnItemClickListener {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getActivity(), LiveHistoryTabFragment.class);
-                i.putExtra("game_type", "rdb");
-                getActivity().startActivity(i);
+//                Intent i = new Intent(getActivity(), LiveHistoryTabFragment.class);
+//                i.putExtra("game_type", "rdb");
+//                getActivity().startActivity(i);
+                ((HomeActivity) requireActivity()).openHistoryFragment();
 
             }
         });

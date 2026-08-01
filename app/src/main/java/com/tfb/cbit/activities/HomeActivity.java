@@ -22,7 +22,6 @@ import android.os.IBinder;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -31,7 +30,6 @@ import android.view.WindowManager;
 import android.webkit.URLUtil;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -41,10 +39,8 @@ import android.widget.VideoView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -57,7 +53,6 @@ import com.tfb.cbit.api.APIClient;
 import com.tfb.cbit.api.ApiCallback;
 import com.tfb.cbit.api.NewApiCall;
 import com.tfb.cbit.databases.DatabaseHandler;
-import com.tfb.cbit.databinding.ActivityAboutUsBinding;
 import com.tfb.cbit.databinding.ActivityHomeBinding;
 import com.tfb.cbit.event.SocketConnectionEvent;
 import com.tfb.cbit.event.UnAuthorizedEvent;
@@ -66,10 +61,10 @@ import com.tfb.cbit.event.UpdateVersionEvent;
 import com.tfb.cbit.fragments.AutoRenewFragment;
 import com.tfb.cbit.fragments.DashBoardFragment;
 import com.tfb.cbit.fragments.EasyJoinFragment;
+import com.tfb.cbit.fragments.HistoryFragment;
 import com.tfb.cbit.fragments.JTicketAutomationFragment;
 import com.tfb.cbit.fragments.JTicketWaitingRoomFragment;
 import com.tfb.cbit.fragments.JoinByCodeFragment;
-import com.tfb.cbit.fragments.LiveHistoryTabFragment;
 import com.tfb.cbit.fragments.MyContestPkgFragment;
 import com.tfb.cbit.fragments.MyJTicketFragment;
 import com.tfb.cbit.fragments.PackegesFragment;
@@ -112,9 +107,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import okhttp3.ResponseBody;
@@ -1248,7 +1241,16 @@ public class HomeActivity extends BaseAppCompactActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
     }
-
+    public void openHistoryFragment() {
+        binding.header.ivInfo.setVisibility(View.GONE);
+        binding.header.linWallet.setVisibility(View.GONE);
+        binding.header.toolbarTitle.setText(getString(R.string.history));
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frameContent, HistoryFragment.newInstance())
+                .addToBackStack(null) // agar back support chahiye
+                .commit();
+    }
     private void inIt() {
         binding.sideMenu.tvUsername.setText(sessionUtil.getUserName());
         Bundle bundle = getIntent().getExtras();
@@ -1466,6 +1468,7 @@ public class HomeActivity extends BaseAppCompactActivity {
                 binding.tvOrganize.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_white_right_arrow, 0);
             }
         });
+
         binding.tvJTckt.setOnClickListener(view -> {
             if (binding.linearAboutSubMenu.getVisibility() == View.VISIBLE) {
                 binding.linearAboutSubMenu.setVisibility(View.GONE);
@@ -1542,7 +1545,7 @@ public class HomeActivity extends BaseAppCompactActivity {
                 binding.tvAboutUs.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_white_right_arrow, 0);
             }
             if (!binding.tvWallet.isSelected()) {
-                menuSelectUnSelect(3);
+                menuSelectUnSelect(1);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -1573,13 +1576,8 @@ public class HomeActivity extends BaseAppCompactActivity {
                 binding.tvAboutUs.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_white_right_arrow, 0);
             }
             if (!binding.tvNotification.isSelected()) {
-                //   menuSelectUnSelect(4);
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        startActivity(new Intent(context, NotificationActivity.class));
-                    }
-                }, 200);
+//                menuSelectUnSelect(2);
+                new Handler().postDelayed(() -> startActivity(new Intent(context, NotificationActivity.class)), 200);
             }
         });
 
@@ -1601,15 +1599,21 @@ public class HomeActivity extends BaseAppCompactActivity {
                 binding.tvAboutUs.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_white_right_arrow, 0);
             }
             if (!binding.tvHistory.isSelected()) {
-                menuSelectUnSelect(5);
+                menuSelectUnSelect(3);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         // ivSorting.setVisibility(View.VISIBLE);
                         // ivFilter.setVisibility(View.VISIBLE);
-                        Intent i = new Intent(HomeActivity.this, LiveHistoryTabFragment.class);
-                        i.putExtra("game_type", "rdb");
-                        startActivity(i);
+//                        Intent i = new Intent(HomeActivity.this, LiveHistoryTabFragment.class);
+//                        i.putExtra("game_type", "rdb");
+//                        startActivity(i);
+
+                        binding.header.toolbarTitle.setText(getString(R.string.history));
+                        getSupportFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.frameContent, HistoryFragment.newInstance())
+                                .commit();
                     }
                 }, 200);
             }
@@ -1694,7 +1698,7 @@ public class HomeActivity extends BaseAppCompactActivity {
                 binding.tvAboutUs.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_white_right_arrow, 0);
             }
             if (!binding.tvSettings.isSelected()) {
-                menuSelectUnSelect(9);
+                menuSelectUnSelect(4);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -1921,7 +1925,7 @@ public class HomeActivity extends BaseAppCompactActivity {
                 }, null);
     }
 
-    private void menuSelectUnSelect(int pos) {
+    private void OLDmenuSelectUnSelect(int pos) {
 //        for (int i = 0; i < menuViews.size(); i++) {
 //            if (i == pos) {
 //                menuViews.get(i).setSelected(true);
@@ -1931,6 +1935,56 @@ public class HomeActivity extends BaseAppCompactActivity {
 //        }
     }
 
+    private void menuSelectUnSelect(int pos) {
+
+        binding.tvDashboard.setSelected(false);
+        binding.tvWallet.setSelected(false);
+        binding.tvNotification.setSelected(false);
+        binding.tvHistory.setSelected(false);
+        binding.tvSettings.setSelected(false);
+        binding.tvEasyJoin.setSelected(false);
+        binding.tvAutoRenew.setSelected(false);
+        binding.tvPackages.setSelected(false);
+        binding.tvJTckt.setSelected(false);
+        binding.tvOrganize.setSelected(false);
+        binding.tvAboutUs.setSelected(false);
+        binding.tvHelpCenter.setSelected(false);
+        binding.tvReport.setSelected(false);
+
+        switch (pos) {
+            case 0:
+                binding.tvDashboard.setSelected(true);
+                break;
+
+            case 1:
+                binding.tvWallet.setSelected(true);
+                break;
+
+            case 2:
+                binding.tvNotification.setSelected(true);
+                break;
+
+            case 3:
+                binding.tvHistory.setSelected(true);
+                break;
+
+            case 4:
+                binding.tvSettings.setSelected(true);
+                break;
+
+            case 8:
+                binding.tvAutoRenew.setSelected(true);
+                break;
+
+            case 9:
+                binding.tvPackages.setSelected(true);
+                break;
+
+            case 11:
+                binding.tvEasyJoin.setSelected(true);
+                break;
+        }
+    }
     private void sortingPopup() {
         if (popupWindow != null) {
             if (popupWindow.isShowing()) {
@@ -2062,7 +2116,7 @@ public class HomeActivity extends BaseAppCompactActivity {
                                     lf.delete();
 
                                 }
-                                LogHelper.d("Total Download ::: ", totalDownloads + "");
+//                                LogHelper.d("Total Download ::: ", totalDownloads + "");
                                 totalDownloads++;
                                 LogHelper.d("TAG My LOG :: ", "Total: " + totalDownloads + "  , Complete : " + completedDownload);
                                 mapImages.put(url, localUrl);

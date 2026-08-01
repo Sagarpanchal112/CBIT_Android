@@ -102,7 +102,7 @@ public class SpinerTicketResultAdapter extends RecyclerView.Adapter<SpinerTicket
                 viewHolder.binding.tvAns.setVisibility(View.GONE);
                 viewHolder.binding.tvSelection.setText("Your Selection : \nNo Answer");
                 for (int j = 0; j < ticketList.get(i).getSlotes().size(); j++) {
-                    if (!ticketList.get(i).getUserSelect().getDisplayValue().equalsIgnoreCase("No Answer")) {
+                    if (!"No Answer".equalsIgnoreCase(ticketList.get(i).getUserSelect().getDisplayValue())) {
                         if (ticketList.get(i).getUserSelect().getDisplayValue().equalsIgnoreCase(ticketList.get(i).getSlotes().get(j).getDisplayValue())) {
                             Glide.with(context)
                                     .load(SDCardPath + ticketList.get(i).getSlotes().get(j).getImage())

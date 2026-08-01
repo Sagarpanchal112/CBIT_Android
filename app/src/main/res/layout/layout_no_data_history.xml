@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/my_gradient_drawable">
+    android:background="@drawable/bg_full_dark_blue_radius">
     <ImageView
         android:id="@+id/ivIcon"
         android:layout_width="@dimen/height_100"

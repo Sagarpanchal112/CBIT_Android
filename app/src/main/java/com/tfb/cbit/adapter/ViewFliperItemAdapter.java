@@ -1,6 +1,7 @@
 package com.tfb.cbit.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,10 +61,10 @@ public class ViewFliperItemAdapter extends RecyclerView.Adapter<ViewFliperItemAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+//        Log.i("Result", "==> ayazzzzzzz calling ");
 
         if(bricksItems.get(i).equals("draw.jpg")) {
             viewHolder.imgSlot.setImageResource(R.drawable.ic_draw);
-
         }else{
             RequestOptions options = new RequestOptions()
                     .centerCrop()

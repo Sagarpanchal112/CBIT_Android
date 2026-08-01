@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.gson.Gson;
-import com.malinskiy.superrecyclerview.SuperRecyclerView;
 import com.tfb.cbit.CBit;
 import com.tfb.cbit.R;
 import com.tfb.cbit.activities.AnySpinerGameHistoryActivity;
@@ -26,7 +25,6 @@ import com.tfb.cbit.adapter.HistoryAdapter;
 import com.tfb.cbit.api.APIClient;
 import com.tfb.cbit.api.ApiCallback;
 import com.tfb.cbit.api.NewApiCall;
-import com.tfb.cbit.databinding.FragmentAboutBinding;
 import com.tfb.cbit.databinding.FragmentHistoryTabBinding;
 import com.tfb.cbit.event.UpdateHistoryEvent;
 import com.tfb.cbit.interfaces.OnItemClickListener;
@@ -70,6 +68,8 @@ public class HistoryTabFragment extends Fragment implements OnItemClickListener,
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private static final String ARG_GAME_TYPE = "game_type";
+    private String gameType = "1";
     public String jType = "";
 
     public HistoryTabFragment() {
@@ -92,9 +92,11 @@ public class HistoryTabFragment extends Fragment implements OnItemClickListener,
     // TODO: Rename and change types and number of parameters
     public static HistoryTabFragment newInstance(String type) {
         HistoryTabFragment fragment = new HistoryTabFragment();
+
         Bundle args = new Bundle();
-        args.putString("jType", type);
+        args.putString(ARG_GAME_TYPE, type);
         fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -102,10 +104,14 @@ public class HistoryTabFragment extends Fragment implements OnItemClickListener,
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            jType = getArguments().getString("jType");
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            gameType = getArguments().getString(ARG_GAME_TYPE, "1");
         }
+//        if (getArguments() != null) {
+//            jType = getArguments().getString("jType");
+//            mParam1 = getArguments().getString(ARG_PARAM1);
+//            mParam2 = getArguments().getString(ARG_PARAM2);
+//        }
+
     }
     private FragmentHistoryTabBinding binding;
 
@@ -122,14 +128,14 @@ public class HistoryTabFragment extends Fragment implements OnItemClickListener,
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+            binding.toolbar.setVisibility(View.GONE);
         sessionUtil = new SessionUtil(context);
         newApiCall = new NewApiCall();
 
         getHistory(false);
         LinearLayoutManager llm = new LinearLayoutManager(context);
         binding. rvHistoryList.setLayoutManager(llm);
-      //  historyAdapter = new HistoryAdapter(context, this);
+        historyAdapter = new HistoryAdapter(requireContext());
         historyAdapter.setOnItemClickListener(this);
         binding. rvHistoryList.setAdapter(historyAdapter);
         binding. rvHistoryList.showProgress();
@@ -176,10 +182,11 @@ public class HistoryTabFragment extends Fragment implements OnItemClickListener,
         if (!isLoadMore) {
             JSONObject jsonObject = new JSONObject();
             byte[] data;
+            Log.d("TAG", "getHistory123: "+gameType);
             try {
                 jsonObject.put("start", "0");
                 jsonObject.put("limit", "10");
-                jsonObject.put("is_anytimegame", "1");
+                jsonObject.put("is_anytimegame", gameType);
                 request = jsonObject.toString();
                 request = CBit.getCryptLib().encryptPlainTextWithRandomIV(request, getString(R.string.crypt_pass));
                 data = request.getBytes("UTF-8");
@@ -328,7 +335,7 @@ public class HistoryTabFragment extends Fragment implements OnItemClickListener,
         try {
             jsonObject.put("start", historyAdapter.getItemCount());
             jsonObject.put("limit", "10");
-            jsonObject.put("is_anytimegame", "1");
+            jsonObject.put("is_anytimegame", gameType);
             request = jsonObject.toString();
             request = CBit.getCryptLib().encryptPlainTextWithRandomIV(request, getString(R.string.crypt_pass));
             data = request.getBytes(StandardCharsets.UTF_8);

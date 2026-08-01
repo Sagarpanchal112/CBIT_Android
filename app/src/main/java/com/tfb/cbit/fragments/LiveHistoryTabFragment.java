@@ -28,7 +28,7 @@ import com.tfb.cbit.activities.GameResultActivity;
 import com.tfb.cbit.activities.HistoryGameResultActivity;
 import com.tfb.cbit.activities.HistorySpinningResultActivity;
 import com.tfb.cbit.activities.SpinerGameResultActivity;
-import com.tfb.cbit.adapter.HistoryAdapter;
+import com.tfb.cbit.adapter.HistoryNewAdapter;
 import com.tfb.cbit.api.APIClient;
 import com.tfb.cbit.api.ApiCallback;
 import com.tfb.cbit.api.NewApiCall;
@@ -56,7 +56,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 
 
-public class LiveHistoryTabFragment extends BaseAppCompactActivity implements OnItemClickListener, HistoryAdapter.OnLoadMoreListener {
+public class LiveHistoryTabFragment extends BaseAppCompactActivity implements OnItemClickListener, HistoryNewAdapter.OnLoadMoreListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,7 +65,7 @@ public class LiveHistoryTabFragment extends BaseAppCompactActivity implements On
 
     private Context context;
     private SessionUtil sessionUtil;
-    private HistoryAdapter historyAdapter;
+    private HistoryNewAdapter historynewAdapter;
     private NewApiCall newApiCall;
     private List<Content> tempHistoryList = new ArrayList<>();
     private List<Content> historyList = new ArrayList<>();
@@ -97,17 +97,17 @@ public class LiveHistoryTabFragment extends BaseAppCompactActivity implements On
 
         LinearLayoutManager llm = new LinearLayoutManager(context);
         binding. rvHistoryList.setLayoutManager(llm);
-        historyAdapter = new HistoryAdapter(context);
-        historyAdapter.setOnItemClickListener(this);
-        binding. rvHistoryList.setAdapter(historyAdapter);
+        historynewAdapter = new HistoryNewAdapter(context);
+        historynewAdapter.setOnItemClickListener(this);
+        binding. rvHistoryList.setAdapter(historynewAdapter);
         binding. rvHistoryList.showProgress();
         binding. rvHistoryList.getRecyclerView().addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 LinearLayoutManager llManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-                if (dy > 0 && llManager.findLastCompletelyVisibleItemPosition() == (historyAdapter.getItemCount() - 2)) {
-                    historyAdapter.showLoading();
+                if (dy > 0 && llManager.findLastCompletelyVisibleItemPosition() == (historynewAdapter.getItemCount() - 2)) {
+                    historynewAdapter.showLoading();
                 }
 
             }
@@ -140,11 +140,11 @@ public class LiveHistoryTabFragment extends BaseAppCompactActivity implements On
     @Override
     public void onItemClick(View view, int position) {
         Log.i("position","==>"+position);
-        if(historyAdapter.historyList.get(position).getIs_watch().equals("0")){
-            if(historyAdapter.historyList.get(position).getGame_time().equals("-")) {
-                getAnyContestDetails(historyAdapter.historyList.get(position).getId() + "",historyAdapter.historyList.get(position).getGame_no(),historyAdapter.historyList.get(position).getContestPriceID() );
+        if(historynewAdapter.historyList.get(position).getIs_watch().equals("0")){
+            if(historynewAdapter.historyList.get(position).getGame_time().equals("-")) {
+                getAnyContestDetails(historynewAdapter.historyList.get(position).getId() + "",historynewAdapter.historyList.get(position).getGame_no(),historynewAdapter.historyList.get(position).getContestPriceID() );
             }else{
-                updateIsWatch(historyAdapter.historyList.get(position).getId(),historyAdapter.historyList.get(position).getGame_no(),historyAdapter.historyList.get(position).getContestPriceID());
+                updateIsWatch(historynewAdapter.historyList.get(position).getId(),historynewAdapter.historyList.get(position).getGame_no(),historynewAdapter.historyList.get(position).getContestPriceID());
 
             }
 
@@ -152,7 +152,7 @@ public class LiveHistoryTabFragment extends BaseAppCompactActivity implements On
            // updateIsWatch(historyList.get(position).getId(),historyList.get(position).getGame_no(),historyList.get(position).getContestPriceID());
            // getContestDetails(historyList.get(position).getId(),historyList.get(position).getGame_no(),historyList.get(position).getContestPriceID());
             Gson gson = new Gson();
-            getAnyContestDetails(historyAdapter.historyList.get(position).getId() + "",historyAdapter.historyList.get(position).getGame_no(),historyAdapter.historyList.get(position).getContestPriceID() );
+            getAnyContestDetails(historynewAdapter.historyList.get(position).getId() + "",historynewAdapter.historyList.get(position).getGame_no(),historynewAdapter.historyList.get(position).getContestPriceID() );
 
         }
         //startActivity(new Intent(context, ContestHistoryActivity.class));
@@ -192,8 +192,8 @@ public class LiveHistoryTabFragment extends BaseAppCompactActivity implements On
                                     tempHistoryList.add(hm.getContent().get(i));
                         }
                       //  Log.i("TAG", "jType : " + jType + " SIZE: -> "+tempHistoryList.size() );
-                        historyAdapter.addAllClass(hm.getContent());
-                        historyAdapter.notifyDataSetChanged();
+                        historynewAdapter.addAllClass(hm.getContent());
+                        historynewAdapter.notifyDataSetChanged();
 
 
                     } else {
@@ -203,14 +203,14 @@ public class LiveHistoryTabFragment extends BaseAppCompactActivity implements On
                                     tempHistoryList.add(hm.getContent().get(i));
 
                         }
-                        historyAdapter.dismissLoading();
-                        historyAdapter.addItemMore(hm.getContent());
-                        historyAdapter.setMore(true);
+                        historynewAdapter.dismissLoading();
+                        historynewAdapter.addItemMore(hm.getContent());
+                        historynewAdapter.setMore(true);
 
 
                     }
                 } else {
-                    historyAdapter.dismissLoading();
+                    historynewAdapter.dismissLoading();
 
                 }
 
@@ -219,7 +219,7 @@ public class LiveHistoryTabFragment extends BaseAppCompactActivity implements On
             @Override
             public void failure(String responseData) {
                 try {
-                    historyAdapter.dismissLoading();
+                    historynewAdapter.dismissLoading();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -353,7 +353,7 @@ public class LiveHistoryTabFragment extends BaseAppCompactActivity implements On
         JSONObject jsonObject = new JSONObject();
         byte[] data;
         try {
-            jsonObject.put("start", historyAdapter.getItemCount());
+            jsonObject.put("start", historynewAdapter.getItemCount());
             jsonObject.put("limit", "10");
             jsonObject.put("is_anytimegame", "1");
             request = jsonObject.toString();

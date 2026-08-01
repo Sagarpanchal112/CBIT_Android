@@ -894,7 +894,7 @@ public class SpiningTicketSelectionActivity extends BaseAppCompactActivity imple
         String SDCardPath = getFilesDir().getAbsolutePath() + "/";
         for (int i = startPos; i <= endPos; i++) {
             bricksItems.add(SDCardPath + winningOptionsList.get(new Random().nextInt(winningOptionsList.size())).getImage());
-            LogHelper.d("getFromSdcard ", SDCardPath + winningOptionsList.get(new Random().nextInt(winningOptionsList.size())).getImage());
+//            LogHelper.d("getFromSdcard ", SDCardPath + winningOptionsList.get(new Random().nextInt(winningOptionsList.size())).getImage());
         }
 
         rv.setLayoutManager(new LinearLayoutManager(context));
@@ -920,7 +920,7 @@ public class SpiningTicketSelectionActivity extends BaseAppCompactActivity imple
             for (int i = 0; i < listFile.length; i++) {
 
                 iamgesList.add(listFile[i].getAbsolutePath());
-                LogHelper.d("Total Download ::: ", listFile[i].getAbsolutePath() + "");
+//                LogHelper.d("Total Download ::: ", listFile[i].getAbsolutePath() + "");
 
             }
         }

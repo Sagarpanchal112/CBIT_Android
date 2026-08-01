@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
-        android:background="@drawable/history_rounded_bg"
+        android:background="@drawable/new_blue_gradiant"
         android:layout_marginStart="@dimen/margin_10"
         android:layout_marginTop="@dimen/margin_10"
         app:cardElevation="4dp">
@@ -35,6 +35,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_semibold"
                     android:padding="@dimen/padding_10"
+                    android:layout_marginStart="@dimen/_15sdp"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_15sdp"
                     tools:text="Royal Card" />
