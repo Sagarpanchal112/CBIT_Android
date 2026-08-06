@@ -210,7 +210,7 @@ public class GameViewActivity extends BaseAppCompactActivity implements OnItemCl
         binding = ActivityGameViewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setContentView(R.layout.activity_game_view);
+//        setContentView(R.layout.activity_game_view);
 
         cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         nInfo = cm.getActiveNetworkInfo();
@@ -538,7 +538,7 @@ public class GameViewActivity extends BaseAppCompactActivity implements OnItemCl
                     try {
                         String res = "";
                         res = CBit.getCryptLib().decryptCipherTextWithRandomIV(args[0].toString(), context.getString(R.string.crypt_pass));
-                        Log.d(TAG, "onContestLive:--> " + res);
+                        Log.d(TAG, "onContestLive 786:--> " + res);
                         try {
                             JSONObject jsonObject = new JSONObject(res);
 
@@ -1470,12 +1470,12 @@ public class GameViewActivity extends BaseAppCompactActivity implements OnItemCl
                 if (cdm.getStatusCode() == Utils.StandardStatusCodes.SUCCESS) {
 
                     binding.toolbarTitle.setText(cdm.getContent().getName());
+                    binding.gameNote.setText(cdm.getContent().getTitle());
                     ticketAdapter.setViewType(cdm.getContent().getType());
                     ticketAdapter.setGameStatus(cdm.getContent().getGameStatus());
                     ticketAdapter.setMinAns(cdm.getContent().getAnsRangeMin());
                     ticketAdapter.setMaxAns(cdm.getContent().getAnsRangeMax());
                     ticketAdapter.setGameType(cdm.getContent().getGame_type());
-                    binding.gameNote.setText(cdm.getContent().getTitle());
 
                     String givenDateString = cdm.getContent().getStartDate();
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
