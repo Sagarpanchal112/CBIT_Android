@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.tfb.cbit.CBit;
 import com.tfb.cbit.R;
+import com.tfb.cbit.activities.HomeActivity;
 import com.tfb.cbit.activities.LoginSignUpActivity;
 import com.tfb.cbit.models.CommonRes;
 import com.tfb.cbit.utility.CustomDialog;
@@ -86,6 +87,17 @@ public class NewApiCall {
                                     break;
                                 case Utils.StandardStatusCodes.BLOCK_USER:
                                     ApiCallback.success(bodyString);
+                                    break;
+                                    case Utils.StandardStatusCodes.Refund:
+                                        CustomDialog customDialog1 = new CustomDialog();
+                                        customDialog1.showDialogOneButton(context, "Submission Time Expired", commonRes.getMessage(),
+                                                "OK", (dialog, which) -> {
+                                                    dialog.dismiss();
+                                                    Intent intent = new Intent(context, HomeActivity.class);
+                                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                    context.startActivity(intent);
+                                                    dialog.dismiss();
+                                                });
                                     break;
                                 case Utils.StandardStatusCodes.Update_USER:
                                     msg = commonRes.getMessage();
