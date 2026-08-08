@@ -70,8 +70,8 @@ public class Utils {
    // public static final String BASE_URL = "http://3.111.215.20:3600"; //Test API URL
 //    public static final String BASE_URL = "http://13.201.77.144:3600"; //Test API URL //
     // public static final String BASE_URL = "http://207.154.223.43:3700"; //Test API URL
-     public static final String BASE_URL = "http://35.154.98.129:3600"; //Set this Base on 19-04-26
-//     public static final String BASE_URL = "https://vsn7s49j-3600.inc1.devtunnels.ms"; //Set this Base on 19-04-26
+//     public static final String BASE_URL = "http://35.154.98.129:3600"; //Set this Base on 19-04-26
+     public static final String BASE_URL = "https://3wztszjb-3600.inc1.devtunnels.ms"; //Set this Base on 19-04-26
     public static final String API_URL = BASE_URL + "/api/";
     public static final String SOCKET_URI = BASE_URL;
     public static final String INDIAN_RUPEES = "\u00A3";

@@ -2164,26 +2164,29 @@ public class HomeActivity extends BaseAppCompactActivity {
         mProgressDialog.setMax(100);
 
         int totalDownloads = mapImages.size();
+        mProgressDialog.setMax(totalDownloads);
         AtomicInteger completedDownload = new AtomicInteger(0);
 
         for (Map.Entry<String, String> entry : mapImages.entrySet()) {
             String url = entry.getKey().replace(" ", "%20");
+            if (url.contains("localhost")) {
+                String name = new File(entry.getValue()).getName();
+                url = Utils.BASE_URL + "/images/ad/" + name;
+            }
+            final String finalUrl = url;
             String path = entry.getValue();
 
-            PRDownloader.download(url, new File(path).getParent(), new File(path).getName())
+            PRDownloader.download(finalUrl, new File(path).getParent(), new File(path).getName())
                     .build()
-                    .setOnStartOrResumeListener(() -> Log.d("Download", "Started: " + url))
-                    .setOnPauseListener(() -> Log.d("Download", "Paused: " + url))
-                    .setOnCancelListener(() -> Log.d("Download", "Cancelled: " + url))
-                    .setOnProgressListener(progress -> {
-                        int percent = (int) ((progress.currentBytes * 100) / progress.totalBytes);
-                        mProgressDialog.setProgress(percent);
-                    })
+                    .setOnStartOrResumeListener(() -> Log.d("Download", "Started: " + finalUrl))
+                    .setOnPauseListener(() -> Log.d("Download", "Paused: " + finalUrl))
+                    .setOnCancelListener(() -> Log.d("Download", "Cancelled: " + finalUrl))
                     .start(new OnDownloadListener() {
                         @Override
                         public void onDownloadComplete() {
                             int done = completedDownload.incrementAndGet();
-                            Log.i("Download", "Completed: " + url);
+                            mProgressDialog.setProgress(done);
+                            Log.i("Download", "Completed: " + finalUrl);
                             if (done == totalDownloads) {
                                 sessionUtil.setLastUpdatedDate(Utils.getTodayDate());
                                 mProgressDialog.dismiss();
@@ -2192,10 +2195,11 @@ public class HomeActivity extends BaseAppCompactActivity {
 
                         @Override
                         public void onError(com.downloader.Error error) {
-                            completedDownload.incrementAndGet();
-                            Log.e("Download", "Failed: " + url + " -> " + error);
+                            int done = completedDownload.incrementAndGet();
+                            mProgressDialog.setProgress(done);
+                            Log.e("Download", "Failed: " + finalUrl + " -> " + error);
                             sessionUtil.setLastUpdatedDate("");
-                            if (completedDownload.get() == totalDownloads) {
+                            if (done == totalDownloads) {
                                 mProgressDialog.dismiss();
                             }
                         }

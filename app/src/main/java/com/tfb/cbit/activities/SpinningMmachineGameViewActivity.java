@@ -191,8 +191,8 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
         nInfo = cm.getActiveNetworkInfo();
         SDCardPath = getFilesDir().getAbsolutePath() + "/";
 
-        //  configureSocketForSSL();
-        //
+        connectSocket();
+        
         mTimer = new Timer();
         mTimer.scheduleAtFixedRate(new CheckForConnection(), 0, 5 * 1000);
 
@@ -370,7 +370,7 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
         PrintLog.e(TAG, "Net Connected");
         if (!mSocket.connected()) {
             PrintLog.e(TAG, "mSocket Connected");
-            // connectSocket();
+            connectSocket();
         }
     }
 
@@ -461,6 +461,44 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
 
     }
 
+    private void checkAndDownloadMissingAssets() {
+        String sdPath = getFilesDir().getAbsolutePath() + "/";
+        for (int i = 0; i < winningOptionsList.size(); i++) {
+            final com.tfb.cbit.models.contestdetails.WinningOptions option = winningOptionsList.get(i);
+            if (option.getImage() != null && !option.getImage().isEmpty()) {
+                java.io.File file = new java.io.File(sdPath + option.getImage());
+                if (!file.exists()) {
+                    String url = option.getImageUrl();
+                    if (url != null && !url.isEmpty()) {
+                        if (url.contains("localhost")) {
+                            url = com.tfb.cbit.utility.Utils.BASE_URL + "/images/ad/" + option.getImage();
+                        }
+                        final String finalUrl = url;
+                        com.downloader.PRDownloader.download(finalUrl, sdPath, option.getImage())
+                                .build()
+                                .start(new com.downloader.OnDownloadListener() {
+                                    @Override
+                                    public void onDownloadComplete() {
+                                        android.util.Log.d(TAG, "Downloaded missing asset: " + option.getImage());
+                                        runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                setupSlotDumy();
+                                            }
+                                        });
+                                    }
+
+                                    @Override
+                                    public void onError(com.downloader.Error error) {
+                                        android.util.Log.e(TAG, "Failed to download asset: " + option.getImage() + " from URL: " + finalUrl + " Error: " + (error != null && error.getServerErrorMessage() != null ? error.getServerErrorMessage() : (error != null && error.getConnectionException() != null ? error.getConnectionException().getMessage() : "Unknown")));
+                                    }
+                                });
+                    }
+                }
+            }
+        }
+    }
+
     private void getContestDetails(final boolean isRecall) {
         JSONObject jsonObject = new JSONObject();
         byte[] data;
@@ -514,7 +552,10 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
                 winningOptionsList.clear();
                 boxJson.clear();
                 boxJson.addAll(cdm.getContent().getBoxJson());
+                tempJsonList.clear();
+                tempJsonList.addAll(cdm.getContent().getBoxJson());
                 winningOptionsList.addAll(cdm.getContent().getWinningOptions());
+                checkAndDownloadMissingAssets();
                 int dumytimeCount = time - 30;
 
                 ticketAdapter.setGameStatus(cdm.getContent().getGameStatus());
@@ -536,6 +577,7 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
                     //  differenceSecond=mills-mill;
                 } else {
                     hideTimer(isRecall);
+                    setupSlotDumy();
                 }
             }
 
@@ -648,6 +690,7 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
     }
 
     public void setUpRecyclr(RecyclerView rv, int startPos, int endPos) {
+        if (tempJsonList.isEmpty()) return;
         ArrayList<String> bricksItems = new ArrayList<>();
         // this is dynamic image load from local doenloaded logic
         String SDCardPath = getFilesDir().getAbsolutePath() + "/";
@@ -847,12 +890,12 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
                                 tempJsonList.addAll(boxJsonList);
                                 int dumytimeCount = time - 30;
                                 Log.d(TAG, "dumytimeCount : " + dumytimeCount + "");
-                               /* if (dumytimeCount > 0 && !setRoll) {
+                                if (dumytimeCount > 0 && !setRoll) {
 
                                     setupSlotDumy();
-                                    startRoll();
+                                    // startRoll();
                                     setRoll = true;
-                                }*/
+                                }
                                 if (!isGameStartBool) {
                                     setUpSlots();
                                 }
@@ -860,7 +903,7 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
                                 if (dumytimeCount > 0 && !isStartSlot) {
                                     isStartSlot = true;
 
-                                /*    remainingTime = new CountDown(timeInMilliseconds, 1000) {
+                                    remainingTime = new CountDown(timeInMilliseconds, 1000) {
                                         @Override
                                         public void onTick(final long l) {
                                             runOnUiThread(new Runnable() {
@@ -886,7 +929,7 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
                                             });
                                         }
                                     };
-                                    remainingTime.start();*/
+                                    remainingTime.start();
                                 }
                                 setRollDuration(jsonObject.getString("time"));
                                 if (jsonObject.getString("time").equalsIgnoreCase("00:16")) {
@@ -929,10 +972,10 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
 
                                         }
                                         isGameStartBool = true;
-                                       /* if (remainingTime != null) {
+                                        if (remainingTime != null) {
                                             remainingTime.cancel();
                                             remainingTime.onFinish();
-                                        }*/
+                                        }
                                         // setUpSlots();
                                         viewFliperItemAdapter.setStatus(true);
                                         viewFliperItemAdapter.notifyDataSetChanged();
@@ -948,6 +991,19 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
 
                                             public void onFinish() {
                                                 binding.tvText.setText("00:000");
+                                                waitingPopup();
+                                                new Handler().postDelayed(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        CheckGameStatus = "gameEnd";
+                                                        EventBus.getDefault().post(new UpdateMyContestEvent());
+                                                        Intent intent = new Intent(context, SpinerGameResultActivity.class);
+                                                        intent.putExtra(SpinerGameResultActivity.CONTEST_ID, contest_id);
+                                                        intent.putExtra(SpinerGameResultActivity.IS_REMINDER, isReminderScreen);
+                                                        startActivity(intent);
+                                                        finishAffinity();
+                                                    }
+                                                }, 5000);
                                             }
                                         };
                                         Count.start();
@@ -970,7 +1026,9 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
                                         binding.tvRemainingText.setVisibility(View.GONE);
                                         handler.removeCallbacks(runnable);
                                         Log.d(TAG, "callGameStart: " + jsonObject.getString("time"));
-                                        // tvText.setText(jsonObject.getString("gameTime"));
+                                        if (!isGameStartBool) {
+                                            binding.tvText.setText(jsonObject.getString("time"));
+                                        }
                                       /*  List<BoxJson> boxJsonList = new ArrayList<>();
                                         for (int i = 0; i < jsonObject.getJSONObject("contest").getJSONArray("boxJson").length(); i++) {
                                             JSONObject object = jsonObject.getJSONObject("contest").getJSONArray("boxJson").getJSONObject(i);
@@ -1697,11 +1755,11 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
         } else if (tempJsonList.size() == 25) {
             slot5By5Dumy();
         }
-        //  FadinAnimaiton(rv_I);
-        ///  FadinAnimaiton(rv_IV);
-        //  FadinAnimaiton(rv_VII);
-        //  FadinAnimaiton(rv_X);
-        //  FadinAnimaiton(rv_XIII);
+        FadinAnimaiton(binding.rvI);
+        FadinAnimaiton(binding.rvIV);
+        FadinAnimaiton(binding.rvVII);
+        FadinAnimaiton(binding.rvX);
+        FadinAnimaiton(binding.rvXIII);
     }
 
     public void setupRollSlotDumy() {
@@ -1779,6 +1837,7 @@ public class SpinningMmachineGameViewActivity extends AppCompatActivity implemen
     ViewFliperItemAdapter viewFliperItemAdapter;
 
     public void setUpRecyclrDumy(RecyclerView rv, int startPos, int endPos) {
+        if (winningOptionsList.isEmpty()) return;
         ArrayList<String> bricksItems = new ArrayList<>();
         // this is dynamic image load from local doenloaded logic
         String SDCardPath = getFilesDir().getAbsolutePath() + "/";

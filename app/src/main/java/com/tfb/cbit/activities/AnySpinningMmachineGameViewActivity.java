@@ -245,7 +245,7 @@ public class AnySpinningMmachineGameViewActivity extends AppCompatActivity imple
             public void onTick(long millisUntilFinished) {
                 countdown = millisUntilFinished;
                 binding.tvRemainingText.setText("Game Starts in: " + millisUntilFinished / 1000);
-                setupSlotDumy();
+                // setupSlotDumy();
                 setRollDuration(String.valueOf((millisUntilFinished / 1000)));
                  }
 
@@ -379,6 +379,44 @@ public class AnySpinningMmachineGameViewActivity extends AppCompatActivity imple
     }
 
 
+    private void checkAndDownloadMissingAssets() {
+        String sdPath = getFilesDir().getAbsolutePath() + "/";
+        for (int i = 0; i < winningOptionsList.size(); i++) {
+            final com.tfb.cbit.models.contestdetails.WinningOptions option = winningOptionsList.get(i);
+            if (option.getImage() != null && !option.getImage().isEmpty()) {
+                java.io.File file = new java.io.File(sdPath + option.getImage());
+                if (!file.exists()) {
+                    String url = option.getImageUrl();
+                    if (url != null && !url.isEmpty()) {
+                        if (url.contains("localhost")) {
+                            url = com.tfb.cbit.utility.Utils.BASE_URL + "/images/ad/" + option.getImage();
+                        }
+                        final String finalUrl = url;
+                        com.downloader.PRDownloader.download(finalUrl, sdPath, option.getImage())
+                                .build()
+                                .start(new com.downloader.OnDownloadListener() {
+                                    @Override
+                                    public void onDownloadComplete() {
+                                        android.util.Log.d(TAG, "Downloaded missing asset: " + option.getImage());
+                                        runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                setupSlotDumy();
+                                            }
+                                        });
+                                    }
+
+                                    @Override
+                                    public void onError(com.downloader.Error error) {
+                                        android.util.Log.e(TAG, "Failed to download asset: " + option.getImage() + " from URL: " + finalUrl + " Error: " + (error != null && error.getServerErrorMessage() != null ? error.getServerErrorMessage() : (error != null && error.getConnectionException() != null ? error.getConnectionException().getMessage() : "Unknown")));
+                                    }
+                                });
+                    }
+                }
+            }
+        }
+    }
+
     private void getContestDetails(final boolean isRecall) {
         JSONObject jsonObject = new JSONObject();
         byte[] data;
@@ -414,8 +452,13 @@ public class AnySpinningMmachineGameViewActivity extends AppCompatActivity imple
                 binding.gameNote.setText("What's Most?");
                 optionsAdapter = new SpiningOptionsAdapter(context, ticketList.get(0).getSlotes(), CheckGameStatus);
                 binding.rvOprions.setAdapter(optionsAdapter);
+                boxJson.clear();
                 boxJson.addAll(cdm.getContent().getBoxJson());
+                tempJsonList.clear();
+                tempJsonList.addAll(cdm.getContent().getBoxJson());
+                winningOptionsList.clear();
                 winningOptionsList.addAll(cdm.getContent().getWinningOptions());
+                checkAndDownloadMissingAssets();
                 int dumytimeCount = time - 41;
                 ticketAdapter.setGameStatus(CheckGameStatus);
                 ticketAdapter.notifyDataSetChanged();
@@ -442,6 +485,7 @@ public class AnySpinningMmachineGameViewActivity extends AppCompatActivity imple
                 } else if (cdm.getContent().getGameStatus().equalsIgnoreCase(Utils.GAME_NOT_START)) {
                     // startRoll();
                     hideTimer(isRecall);
+                    setupSlotDumy();
                     CheckGameStatus = cdm.getContent().getGameStatus();
                     //  ticketList.addAll(CBit.selectedTicketList);
                     Log.i("selectedTicketList size", "==>" + CBit.selectedTicketList.size());
@@ -449,6 +493,7 @@ public class AnySpinningMmachineGameViewActivity extends AppCompatActivity imple
 
                 } else {
                     hideTimer(isRecall);
+                    setupSlotDumy();
                 }
             }
 
@@ -1398,6 +1443,7 @@ public class AnySpinningMmachineGameViewActivity extends AppCompatActivity imple
     }
 
     public void setUpRecyclr(RecyclerView rv, int startPos, int endPos) {
+        if (tempJsonList.isEmpty()) return;
         ArrayList<String> bricksItems = new ArrayList<>();
         // this is dynamic image load from local doenloaded logic
         String SDCardPath = getFilesDir().getAbsolutePath() + "/";
@@ -1486,6 +1532,7 @@ public class AnySpinningMmachineGameViewActivity extends AppCompatActivity imple
     AnyTimeSpinningCatList.Lst content;
 
     public void setUpRecyclrDumy(RecyclerView rv, int startPos, int endPos) {
+        if (content == null || content.getItems() == null || content.getItems().isEmpty()) return;
         ArrayList<String> bricksItems = new ArrayList<>();
         // this is dynamic image load from local doenloaded logic
         String SDCardPath = getFilesDir().getAbsolutePath() + "/";
