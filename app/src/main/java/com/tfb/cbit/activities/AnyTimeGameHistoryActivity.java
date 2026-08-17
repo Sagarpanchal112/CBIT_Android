@@ -57,7 +57,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 
 public class AnyTimeGameHistoryActivity extends BaseAppCompactActivity implements OnItemClickListener {
-    private static final String TAG = "AnyTimeGameResultActivity";
+    private static final String TAG = "AnyTimeGameHistoryActivity";
     /*
      * Game Result Screen
      * (Screen Open with GamePlay and History Item)

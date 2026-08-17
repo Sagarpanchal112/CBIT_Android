@@ -115,8 +115,8 @@ public class AnyTimeTicketResultAdapter extends RecyclerView.Adapter<AnyTimeTick
         } else {
             viewHolder.binding.tvWinnings.setVisibility(View.VISIBLE);
             viewHolder.binding.tvViewWinner.setVisibility(View.VISIBLE);
-
         }
+
         if (constest_type.equalsIgnoreCase("rdb")) {
             viewHolder.binding.rdRdb.setVisibility(View.VISIBLE);
             viewHolder.binding.linear3Options.setVisibility(View.GONE);
@@ -142,7 +142,8 @@ public class AnyTimeTicketResultAdapter extends RecyclerView.Adapter<AnyTimeTick
                         viewHolder.binding.rdDraw.setBackground(context.getResources().getDrawable(R.drawable.bg_white));
                         viewHolder.binding.rdDraw.setTextColor(context.getResources().getColor(R.color.color_yellow));
                     }
-                } else {
+                }
+                else {
                     if (ticketList.get(i).getSlotes().size() == 2) {
 
                         viewHolder.binding.tvMinus.setText(ticketList.get(i).getSlotes().get(0).getDisplayValue());

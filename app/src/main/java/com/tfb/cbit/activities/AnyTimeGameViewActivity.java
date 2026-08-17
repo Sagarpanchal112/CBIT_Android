@@ -29,6 +29,7 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -221,7 +222,8 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
         Bundle bundle = getIntent().getExtras();
         if (bundle == null) {
             finish();
-        } else {
+        }
+        else {
             contest_id = bundle.getString(CONTESTID, "");
             Log.i("contest_id", "=>" + contest_id);
             gameNo = bundle.getString(GAME_NO, "");
@@ -294,6 +296,8 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
         //  getContestDetails(true);
         mTimer = new Timer();
         mTimer.scheduleAtFixedRate(new CheckForConnection(), 0, 5 * 1000);
+
+        // API CALLING
         getJoinContest(tickets_id);
 
         binding.ivBack.setOnClickListener(view -> {
@@ -317,6 +321,7 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
 
     private List<Content> anyticketList = new ArrayList<>();
 
+    // STEP - 3
     public void setCountDown() {
         //  getJoinContest(tickets_id);
         yourCountDownTimer = new CountDownTimer(countdown, 1000) {
@@ -345,6 +350,7 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
 
     String contest_price_game_list;
 
+    // STEP - 1
     private void getJoinContest(final String ticketsIds) {
         JSONObject jsonObject = new JSONObject();
         byte[] data;
@@ -354,8 +360,10 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
             jsonObject.put("tickets", ticketsIds);
             jsonObject.put("list", "[]");
             jsonObject.put("Randomlist", "[]");
-            Log.d(TAG, "getJoinContest: " + contest_id + ">>" + ticketsIds);
+            Log.d(TAG, "getJoinContest:123 " + contest_id + ">>" + ticketsIds);
+            Log.d(TAG, "getJoinContest:123 " + request.toString());
             request = jsonObject.toString();
+            Log.d(TAG, "getJoinContest:123 " + request.toString());
             request = CBit.getCryptLib().encryptPlainTextWithRandomIV(request, getString(R.string.crypt_pass));
             data = request.getBytes(StandardCharsets.UTF_8);
             request = Base64.encodeToString(data, Base64.DEFAULT);
@@ -673,6 +681,7 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
         }
     };
 
+    // Step 7
     private Ack anytimeUpdateGameAll = new Ack() {
         @Override
         public void call(final Object... args) {
@@ -759,7 +768,7 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-
+//                                    Toast.makeText(context, "calll socket", Toast.LENGTH_SHORT).show();
                                     CheckGameStatus = "gameEnd";
                                     isLockAll = true;
                                     Intent intent = new Intent(context, AnyTimeGameHistoryActivity.class);
@@ -809,7 +818,7 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
                 ticketList.get(position).setDisplayView(String.valueOf(ticketList.get(position).getSlotes().get(2).getDisplayValue()));
                 ticketAdapter.notifyItemChanged(position);
             }
-        } else if (id == R.id.tvLockNow) {//Toast.makeText(context, "clickk", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.tvLockNow) {
 
             PrintLog.e(TAG, "tvLockNow click " + position + "");
             if (CheckGameStatus.equalsIgnoreCase(Utils.GAME_START)) {
@@ -911,6 +920,7 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
         }
     };
 
+    // Step 6
     private void setALLAnsLock(String displayValue) {
         try {
             if (displayValue.equalsIgnoreCase("Red win")) {
@@ -1003,6 +1013,7 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
         lockcalculatingDialog.show();
     }
 
+    // STEP - 2
     private void getContestDetails(boolean isRecall) {
         JSONObject jsonObject = new JSONObject();
         byte[] data;
@@ -1064,7 +1075,8 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
                         //   intent.putExtra(AnyTimeGameResultActivity.IS_REMINDER, isReminderScreen);
                         startActivity(intent);
                         finish();*/
-                    } else if (cdm.getContent().getGameStatus().equalsIgnoreCase(Utils.GAME_START)) {
+                    }
+                    else if (cdm.getContent().getGameStatus().equalsIgnoreCase(Utils.GAME_START)) {
                         Log.d(TAG, "success:---- else if GAME START");
                         CheckGameStatus = cdm.getContent().getGameStatus();
                         callGameStart();
@@ -1079,7 +1091,8 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
                         }
                         //  long mill = Utils.convertMillSeconds(cdm.getContent().getStartDate(),cdm.getContent().getCurrentTime());
                         //  differenceSecond=mills-mill;
-                    } else if (cdm.getContent().getGameStatus().equalsIgnoreCase(Utils.GAME_NOT_START)) {
+                    }
+                    else if (cdm.getContent().getGameStatus().equalsIgnoreCase(Utils.GAME_NOT_START)) {
                         Log.d(TAG, "success:---- else if GAME_NOT_START");
                         //  ticketList.clear();
                         setCountDown();
@@ -1095,10 +1108,10 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
                             binding.  gameNote.setText("Total of digits in blue - Total of digits in red");
                             binding.  linNine.setVisibility(View.VISIBLE);
                         }
-                    } else {
+                    }
+                    else {
                         Log.d(TAG, "success:---- else");
-
-                        binding. rvBricks.setVisibility(View.VISIBLE);
+                        binding.rvBricks.setVisibility(View.VISIBLE);
                         hideTimer(isRecall);
                     }
                 }
@@ -1143,6 +1156,7 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
         }
     }
 
+    // STEP :- 4
     private void callGameStart() {
         binding. tvRemainingText.setVisibility(View.GONE);
         binding. tvText.setVisibility(View.VISIBLE);
@@ -1308,7 +1322,8 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
 
             binding. rvBricksRes.setAdapter(new BricksAdapter(context, tempJsonList, true));
             binding. rvBricksRes.setVisibility(View.VISIBLE);
-        } else {
+        }
+        else {
             /* Vishal Change */
             grayrdb();
             gray09();
@@ -1459,7 +1474,8 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
             binding.  rdSeven.setClickable(false);
             binding.  rdEight.setClickable(false);
             binding.  rdNine.setClickable(false);
-        } else {
+        }
+        else {
             binding.  tvNineLockNow.setAlpha(1f);
             binding.  tvNineLockNow.setEnabled(true);
             colorrdb();
@@ -1483,7 +1499,8 @@ public class AnyTimeGameViewActivity extends BaseAppCompactActivity implements O
                     SelectedDisplayView = String.valueOf(radioButton.getText());
                 }
         );
-        binding. tvNineLockNow.setOnClickListener(v -> {
+        //Step 5
+        binding.tvNineLockNow.setOnClickListener(v -> {
             //     if (!cdm.getContent().getGameStatus().equals(Utils.GAME_NOT_START)) {
             Log.d(TAG, "visibilitynine>>: " +binding. linNine.getVisibility());
             Log.d(TAG, "visibilityrdb>>: " + binding.linRdb.getVisibility());

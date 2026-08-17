@@ -185,7 +185,6 @@ public class AnyTimeGameActivity extends BaseAppCompactActivity implements OnIte
                 linearPayClick();
             }
         });
-
         binding.tvPlayAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -608,7 +607,8 @@ public class AnyTimeGameActivity extends BaseAppCompactActivity implements OnIte
             map.put("index", 7);
             bricksColorModel.add(map);
 
-        } else if (totalItem == 16) {
+        }
+        else if (totalItem == 16) {
 
             while (bricksItems.size() < 16) {
                 bricksItems.add(Math.abs(rand(min, max)));
@@ -692,7 +692,8 @@ public class AnyTimeGameActivity extends BaseAppCompactActivity implements OnIte
             map.put("color", R.color.color_green);
             map.put("index", 15);
             bricksColorModel.add(map);
-        } else {
+        }
+        else {
 
             while (bricksItems.size() < 32) {
                 bricksItems.add(Math.abs(rand(min, max)));
@@ -858,7 +859,6 @@ public class AnyTimeGameActivity extends BaseAppCompactActivity implements OnIte
             bricksColorModel.add(map);
 
         }
-
 
         Collections.shuffle(bricksItems);
 

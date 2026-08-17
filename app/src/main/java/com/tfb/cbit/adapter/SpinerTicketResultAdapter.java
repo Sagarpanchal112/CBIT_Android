@@ -2,6 +2,7 @@ package com.tfb.cbit.adapter;
 
 import android.content.Context;
 import android.os.Environment;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -103,11 +104,21 @@ public class SpinerTicketResultAdapter extends RecyclerView.Adapter<SpinerTicket
                 viewHolder.binding.tvSelection.setText("Your Selection : \nNo Answer");
                 for (int j = 0; j < ticketList.get(i).getSlotes().size(); j++) {
                     if (!"No Answer".equalsIgnoreCase(ticketList.get(i).getUserSelect().getDisplayValue())) {
-                        if (ticketList.get(i).getUserSelect().getDisplayValue().equalsIgnoreCase(ticketList.get(i).getSlotes().get(j).getDisplayValue())) {
+//                        if (ticketList.get(i).getUserSelect().getDisplayValue().equalsIgnoreCase(ticketList.get(i).getSlotes().get(j).getDisplayValue())) {
+//                            Glide.with(context)
+//                                    .load(SDCardPath + ticketList.get(i).getSlotes().get(j).getImage())
+//                                    .into(viewHolder.binding.tvAns);
+//
+//                        }
+
+                        if (TextUtils.equals(
+                                ticketList.get(i).getUserSelect().getDisplayValue(),
+                                ticketList.get(i).getSlotes().get(j).getDisplayValue()
+                        )) {
+
                             Glide.with(context)
                                     .load(SDCardPath + ticketList.get(i).getSlotes().get(j).getImage())
                                     .into(viewHolder.binding.tvAns);
-
                         }
                     }
                 }

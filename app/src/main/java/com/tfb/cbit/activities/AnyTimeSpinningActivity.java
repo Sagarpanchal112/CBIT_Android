@@ -1,68 +1,39 @@
 package com.tfb.cbit.activities;
 
-import android.app.Dialog;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.PowerManager;
-import android.provider.Settings;
-import android.text.TextUtils;
 import android.util.Base64;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SimpleItemAnimator;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.gson.Gson;
-import com.malinskiy.superrecyclerview.SuperRecyclerView;
 import com.tfb.cbit.CBit;
 import com.tfb.cbit.R;
-import com.tfb.cbit.adapter.AnySpinerTicketSelectionAdapter;
-import com.tfb.cbit.adapter.AnyTicketSelectionAdapter;
 import com.tfb.cbit.adapter.ViewFliperItemAdapter;
 import com.tfb.cbit.api.APIClient;
 import com.tfb.cbit.api.ApiCallback;
 import com.tfb.cbit.api.NewApiCall;
-import com.tfb.cbit.databinding.ActivityAboutUsBinding;
 import com.tfb.cbit.databinding.ActivityAnyTimeSpinningBinding;
 import com.tfb.cbit.event.UpdateUpcomingContestEvent;
-import com.tfb.cbit.fragments.AnyTimeGameFragment;
 import com.tfb.cbit.fragments.AnyTimeSpinningGameFragment;
-import com.tfb.cbit.interfaces.OnItemClickListener;
-import com.tfb.cbit.interfaces.OnItemLongClickListener;
 import com.tfb.cbit.models.AnyTimeGameContestList;
 import com.tfb.cbit.models.AnyTimeSpinningCatList;
-import com.tfb.cbit.models.anytimegame.AnyTimeGameResponse;
 import com.tfb.cbit.models.anytimegame.Content;
-import com.tfb.cbit.models.contestdetails.ContestDetailsModel;
 import com.tfb.cbit.models.contestdetails.Ticket;
 import com.tfb.cbit.utility.CountDown;
 import com.tfb.cbit.utility.PrintLog;
@@ -76,7 +47,6 @@ import org.greenrobot.eventbus.Subscribe;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -99,11 +69,9 @@ public class AnyTimeSpinningActivity extends FragmentActivity {
     ArrayList<String> iamgesList;
     private NewApiCall newApiCall;
     private SessionUtil sessionUtil;
-    private List<Ticket> ticketList = new ArrayList<>();
-    private String contestId = "";
-    public int no_of_players = 0, pending = 0, played = 0, max_winner = 0, max_winner_per = 0;
 
-    private List<Content> anyticketList = new ArrayList<>();
+    public int no_of_players = 0, pending = 0, played = 0;
+
     public PagerSlidingTabStrip pagerTabStri;
     public static ViewPager viewPager;
     public ArrayList<AnyTimeSpinningGameFragment> fragments = new ArrayList<>();
@@ -125,7 +93,7 @@ public class AnyTimeSpinningActivity extends FragmentActivity {
             EventBus.getDefault().register(this);
         //  toolbar_title.setText(bundle.getString(CONTEST_NAME, ""));
         pagerTabStri = findViewById(R.id.pager_header);
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
+        viewPager = findViewById(R.id.view_pager);
         viewPager.setPageTransformer(false, new CustPagerTransformer(this));
         //getAnyTimeGameContestList();
         spinningItemCategory();
@@ -279,7 +247,6 @@ public class AnyTimeSpinningActivity extends FragmentActivity {
             }
         });
     }
-
     private void spinningItemCategory() {
         Call<ResponseBody> call = APIClient
                 .getInstance()
@@ -315,11 +282,9 @@ public class AnyTimeSpinningActivity extends FragmentActivity {
             }
         });
     }
-
     @Subscribe
     public void onUpdateUpcomingContestEvent(UpdateUpcomingContestEvent updateUpcomingContestEvent) {
     }
-
     public class QuestionAdapter extends FragmentStatePagerAdapter {
         int mNumOfTabs;
         public ArrayList<AnyTimeSpinningGameFragment> mFragments;
@@ -349,7 +314,6 @@ public class AnyTimeSpinningActivity extends FragmentActivity {
 
 
     }
-
     @Override
     protected void onDestroy() {
 
@@ -358,7 +322,6 @@ public class AnyTimeSpinningActivity extends FragmentActivity {
             EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
-
     @Override
     public void onStart() {
         super.onStart();
@@ -366,25 +329,19 @@ public class AnyTimeSpinningActivity extends FragmentActivity {
             Log.v("TAG", "Starting and binding service");
         }
     }
-
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onStop() {
         super.onStop();
     }
-
-
     public void FadinAnimaiton(RecyclerView img) {
         Animation aniFade = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
         img.startAnimation(aniFade);
     }
-
     public void setupSlot() {
 
         //slot3By5();
     }
-
-
     public void setUpRecyclr(RecyclerView rv, int startPos, int endPos) {
         ArrayList<String> bricksItems = new ArrayList<>();
         // this is dynamic image load from local doenloaded logic
@@ -398,6 +355,5 @@ public class AnyTimeSpinningActivity extends FragmentActivity {
         rv.setAdapter(ticketAdapter);
 
     }
-
 
 }
